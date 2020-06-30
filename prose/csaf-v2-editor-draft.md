@@ -9,19 +9,18 @@
 ## 00 Month 2020
 
 #### Technical Committee:
-[OASIS Open Command and Control (OpenC2) TC](https://www.oasis-open.org/committees/openc2/)
+[OASIS Common Security Advisory Framework (CSAF) TC](https://www.oasis-open.org/committees/csaf/)
 
-#### Chairs:
-Joe Brule (jmbrule@nsa.gov), [National Security Agency](https://www.nsa.gov/) \
-Duncan Sparrell (duncan@sfractal.com), [sFractal Consulting LLC](http://www.sfractal.com/)
+#### Chair:
+Omar Santos (osantos@cisco.com), [Cisco](https://cisco.com/)
 
 #### Editors:
-Jason Romano (jdroman@nsa.gov), [National Security Agency](https://www.nsa.gov/) \
-Duncan Sparrell (duncan@sfractal.com), [sFractal Consulting LLC](http://www.sfractal.com/)
+Danny Page (missing@for.now), [Tibco TODO](https://tibco.todo/) \
+Stefan Hagen (stefan@hagen.link), [Individual](https://stefan-hagen.website/)
 
 #### Additional artifacts:
 This prose specification is one component of a Work Product that also includes:
-* XML schemas: (list file names or directory name)
+* JSON schema: csaf.json
 * Other parts (list titles and/or file names)
 * `(Note: Any normative computer language definitions that are part of the Work Product, such as XML instances, schemas and Java(TM) code, including fragments of such, must be (a) well formed and valid, (b) provided in separate plain text files, (c) referenced from the Work Product; and (d) where any definition in these separate files disagrees with the definition found in the specification, the definition in the separate file prevails. Remove this note before submitting for publication.)`
 
@@ -37,7 +36,7 @@ This specification is related to:
 Description of specification.
 
 #### Status:
-This document was last revised or approved by the OASIS Open Command and Control (OpenC2) TC on the above date. The level of approval is also listed above. Check the "Latest version" location noted above for possible later revisions of this document. Any other numbered Versions and other technical work produced by the Technical Committee (TC) are listed at https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=openc2#technical.
+This document was last revised or approved by the OASIS Common Security Advisory Framework (CSAF) TC on the above date. The level of approval is also listed above. Check the "Latest version" location noted above for possible later revisions of this document. Any other numbered Versions and other technical work produced by the Technical Committee (TC) are listed at https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=openc2#technical.
 
 TC members should send comments on this specification to the TC's email list. Others should send comments to the TC's public comment list, after subscribing to it by following the instructions at the "Send A Comment" button on the TC's web page at https://www.oasis-open.org/committees/openc2/.
 
@@ -59,7 +58,7 @@ When referencing this specification the following citation format should be used
 
 **[short-title-v1.0]**
 
-_Specification Title Version 1.0_. Edited by Jason Romano and Duncan Sparrell. 00 Month 2020. OASIS Committee Specification Draft 01 / Public Review Draft 01. this-version.html. Latest version: latest-version.html.
+_Specification Title Version 1.0_. Edited by Dany Page and Stefan Hagen. 00 Month 2020. OASIS Committee Specification Draft 01 / Public Review Draft 01. this-version.html. Latest version: latest-version.html.
 
 -------
 
@@ -322,11 +321,11 @@ Remove this note before submitting for publication.)
 
 The following individuals have participated in the creation of this specification and are gratefully acknowledged:
 
-**OpenC2 TC Members:**
+**CSAF TC Members:**
 
 | First Name | Last Name | Company |
 | :--- | :--- | :--- |
-Philippe | Alman | Something Networks
+Participated | in meetings | Something Company
 Alex | Amirnovman | Company B
 Kris | Anderman | Mini Micro
 Darren | Anstman | Big Networks
