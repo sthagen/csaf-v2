@@ -1,4 +1,5 @@
 black
+jsonpath_rw
 jsonschema
 pylint
 pytest
