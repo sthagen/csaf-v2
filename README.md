@@ -1,2 +1,2 @@
 # csaf-v2
-Personal sandbox for CSAF v2
+Editor sandbox for CSAF v2
