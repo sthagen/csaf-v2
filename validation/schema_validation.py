@@ -5,7 +5,7 @@
 import json
 import sys
 
-from jsonschema import draft7_format_checker, validate
+from jsonschema import draft7_format_checker, validate  # type: ignore
 
 ENCODING = "utf-8"
 
