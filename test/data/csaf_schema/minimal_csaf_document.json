@@ -1,0 +1,52 @@
+{
+  "document": {
+    "lang": "en",
+    "title": "Minimally valid",
+    "type": "Security Advisory",
+    "csaf_version": "2.0",
+    "publisher": {
+      "contact_details": "csaf@example.com",
+      "issuing_authority": "OASIS CSAF TC",
+      "type": "vendor"
+    },
+    "tracking": {
+      "id": "CSAF-2020:0042",
+      "status": "final",
+      "version": "1",
+      "revision_history": [
+        {
+          "number": "1",
+          "date": "2020-07-01T12:34:56Z",
+          "description": "Current version"
+        }
+      ],
+      "initial_release_date": "2020-05-01T12:34:56Z",
+      "current_release_date": "2020-07-01T12:34:56Z",
+      "generator": {
+        "engine": "CSAF_CORE 2020.06.30",
+        "date": "2020-06-30T01:23:45Z"
+      }
+    },
+    "notes": [
+      {
+        "title": "Topic",
+        "type": "summary",
+        "text": "Something small is now available"
+      },
+      {
+        "title": "Details",
+        "type": "general",
+        "text": "Something very general about the advisory"
+      },
+      {
+        "title": "Terms of Use",
+        "type": "legal_disclaimer",
+        "text": "Please see https://www.example.com"
+      }
+    ],
+    "distribution": {
+      "text": "MIT License"
+    },
+    "references": []
+  }
+}
