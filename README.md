@@ -3,4 +3,4 @@ Editor sandbox for CSAF v2.
 
 Prose, machine readable files, tools, and tests.
 
-Another repo moving from the old name for default branch to a new one: default
+Note: The default branch has the name default.
