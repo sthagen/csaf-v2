@@ -16,19 +16,25 @@ def load(file_path):
         return json.load(handle)
 
 
-def main(argv=None):
+def derive(schema):
+    """Derive the strict schema."""
+    for place in jsonpath_rw.parse("$..* where properties").find(schema):
+        place.value["additionalProperties"] = False
+    return schema
+
+
+def main(argv=None, embedded=False):
     """Drive the validation."""
     argv = argv if argv else sys.argv[1:]
     if len(argv) != 1:
         print("Derivation requires one positional argument: schema.json")
         return 2
 
-    json_schema_path = argv[0]
-    schema = load(json_schema_path)
-    for place in jsonpath_rw.parse("$..* where properties").find(schema):
-        place.value["additionalProperties"] = False
+    schema = json.loads(argv[0]) if embedded else load(argv[0])
 
-    sys.stdout.write(json.dumps(schema, sort_keys=True, indent=2))
+    strict = derive(schema)
+
+    sys.stdout.write(json.dumps(strict, sort_keys=True, indent=2))
     sys.stdout.write("\n")
     return 0
 
