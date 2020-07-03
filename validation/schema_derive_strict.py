@@ -25,7 +25,7 @@ def derive(schema):
 
 def main(argv=None, embedded=False):
     """Drive the validation."""
-    argv = argv if argv else sys.argv[1:]
+    argv = argv if argv is not None else sys.argv[1:]
     if len(argv) != 1:
         print("Derivation requires one positional argument: schema.json")
         return 2
