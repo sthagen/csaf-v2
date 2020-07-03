@@ -18,8 +18,8 @@ def test_cli_main_nok_user():
 
 
 def test_cli_main_nok_data():
-    message = "'Expecting property name enclosed in double quotes: line 1 column 2 (char 1)'"
-    with pytest.raises(json.decoder.JSONDecodeError):  #, match=message):
+    message = r"Expecting property name enclosed in double quotes: line 1 column 2 \(char 1\)"
+    with pytest.raises(json.decoder.JSONDecodeError, match=message):
         schema_derive_strict.main(["{"], True)
 
 
