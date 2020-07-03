@@ -24,7 +24,7 @@ def validate(document, schema, conformance=None):
 
 def main(argv=None, embedded=False):
     """Drive the validation."""
-    argv = argv if argv else sys.argv[1:]
+    argv = argv if argv is not None else sys.argv[1:]
     if len(argv) != 2:
         print("Validation requires two positional arguments: schema.json document.json")
         return 2
