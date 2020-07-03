@@ -24,6 +24,6 @@ def test_cli_main_nok_data():
 
 
 def test_cli_main_nok_file():
-    message = r"[Errno 2] No such file or directory: '{'"
-    with pytest.raises(FileNotFoundError):  #, match=message):
+    message = r"\[Errno 2\] No such file or directory: '{'"
+    with pytest.raises(FileNotFoundError, match=message):
         schema_derive_strict.main(["{"], False)
