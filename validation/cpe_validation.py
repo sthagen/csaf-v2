@@ -1,9 +1,9 @@
 #! /usr/bin/env python
 # encoding: utf-8
 # pylint: disable=line-too-long
-"""Minimal CPE preferred URI schema.
+"""Minimal CPE preferred URI schema and String format binding.
 
-The current REGEX is nearly meaningless, maybe like many CPE URI strings out for real ;-)
+The current REGEX is nearly meaningless, maybe like many CPE strings out for real ;-)
 
 It matches all 1001 ABNF derived (positive) test cases ...
 """
@@ -12,7 +12,7 @@ import sys
 
 ENCODING = "utf-8"
 
-CPE_URI = re.compile(r"^cpe:/[^:]*:?[^:]*:?[^:]*:?[^:]*:?[^:]*:?[^:]*:?[^:]*$", re.I)
+CPE_URI = re.compile(r"^cpe:(/|\d+\.\d+)[^:]*:?[^:]*:?[^:]*:?[^:]*:?[^:]*:?[^:]*:?[^:]*$", re.I)
 
 
 def load(file_path):

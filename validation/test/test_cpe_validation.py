@@ -9,8 +9,12 @@ def test_cli_encoding_ok():
     assert cpe_validation.ENCODING == "utf-8"
 
 
-def test_cli_main_ok():
+def test_cli_main_uri_ok():
     assert 0 == cpe_validation.main(["cpe:/"], True)
+
+
+def test_cli_main_sfb_ok():
+    assert 0 == cpe_validation.main(["cpe:2.3"], True)
 
 
 def test_cli_main_nok_user():
