@@ -113,6 +113,7 @@
           "$comment": "TODO: This should have a full regular expression to enforce CPE syntax.",
           "description": "The Common Platform Enumeration (CPE) attribute refers to a method for naming platforms external to this specification.",
           "minLength": 1,
+          "pattern": "^(?i)cpe:(/|\\d+\\.\\d+)[^:]*:?[^:]*:?[^:]*:?[^:]*:?[^:]*:?[^:]*:?[^:]*$",
           "title": "Common Platform Enumeration representation",
           "type": "string"
         },
