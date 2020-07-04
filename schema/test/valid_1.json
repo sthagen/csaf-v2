@@ -1,0 +1,48 @@
+{
+    "$schema": "../csaf.json",
+    "document": {
+        "csaf_version": "2.0",
+        "publisher": {"type": "coordinator"},
+        "title": "unmeEvLCJlEtEKbJ",
+        "tracking": {
+            "id": "jFkviX",
+            "current_release_date": "1523-09-03T23:20:26Z",
+            "initial_release_date": "1342-06-20T09:17:31Z",
+            "revision_history": [
+                {
+                    "number": "7.0.5.94",
+                    "date": "1914-05-11T01:20:04Z",
+                    "description": "xqAz"
+                },
+                {
+                    "number": "2",
+                    "date": "1449-11-09T10:59:14Z",
+                    "description": "GCkjeoWBTU"
+                },
+                {
+                    "number": "4",
+                    "date": "1449-07-12T14:57:49Z",
+                    "description": "OGUL"
+                },
+                {
+                    "number": "0",
+                    "date": "1843-11-12T19:40:29Z",
+                    "description": "RCUqihkJgBkMKJfv"
+                },
+                {
+                    "number": "0.0",
+                    "date": "1121-12-07T15:36:48Z",
+                    "description": "dUXXHqBLAfD"
+                },
+                {
+                    "number": "9.0.3936",
+                    "date": "1097-06-20T07:42:12Z",
+                    "description": "eZnTnX"
+                }
+            ],
+            "status": "draft",
+            "version": "0"
+        },
+        "type": "OT"
+    }
+}
