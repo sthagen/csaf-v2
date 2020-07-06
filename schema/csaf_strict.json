@@ -858,18 +858,45 @@
             "type": "array"
           },
           "scores": {
-            "items": {
-              "cvss_v20": {
-                "$ref": "https://www.first.org/cvss/cvss-v2.0.json"
+            "items": [
+              {
+                "items": {
+                  "$ref": "#/definitions/products_t",
+                  "default": "",
+                  "examples": [
+                    "CVRFID_123",
+                    "CSAFID_0815"
+                  ]
+                },
+                "minItems": 0,
+                "type": "array"
               },
-              "cvss_v30": {
-                "$ref": "https://www.first.org/cvss/cvss-v3.0.json"
+              {
+                "properties": {
+                  "cvss_v20": {
+                    "$ref": "https://www.first.org/cvss/cvss-v2.0.json"
+                  }
+                },
+                "type": "object"
               },
-              "cvss_v31": {
-                "$ref": "https://www.first.org/cvss/cvss-v3.1.json"
+              {
+                "properties": {
+                  "cvss_v30": {
+                    "$ref": "https://www.first.org/cvss/cvss-v3.0.json"
+                  }
+                },
+                "type": "object"
               },
-              "product_ids": "#/definitions/products_t"
-            },
+              {
+                "properties": {
+                  "cvss_v31": {
+                    "$ref": "https://www.first.org/cvss/cvss-v3.1.json"
+                  }
+                },
+                "type": "object"
+              }
+            ],
+            "minItems": 0,
             "type": "array"
           },
           "system_name": {
