@@ -655,18 +655,45 @@
           },
           "scores": {
             "type": "array",
-            "items": {
-              "product_ids": "#/definitions/products_t",
-              "cvss_v20": {
-                "$ref": "https://www.first.org/cvss/cvss-v2.0.json"
+            "minItems": 0,
+            "items": [
+              {
+                "type": "array",
+                "minItems": 0,
+                "items": {
+                  "$ref": "#/definitions/products_t",
+                  "examples": [
+                    "CVRFID_123",
+                    "CSAFID_0815"
+                  ],
+                  "default": ""
+                }
               },
-              "cvss_v30": {
-                "$ref": "https://www.first.org/cvss/cvss-v3.0.json"
+              {
+                "type": "object",
+                "properties": {
+                  "cvss_v20": {
+                    "$ref": "https://www.first.org/cvss/cvss-v2.0.json"
+                  }
+                }
               },
-              "cvss_v31": {
-                "$ref": "https://www.first.org/cvss/cvss-v3.1.json"
+              {
+                "type": "object",
+                "properties": {
+                  "cvss_v30": {
+                    "$ref": "https://www.first.org/cvss/cvss-v3.0.json"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "cvss_v31": {
+                    "$ref": "https://www.first.org/cvss/cvss-v3.1.json"
+                  }
+                }
               }
-            }
+            ]
           },
           "discovery_date": {
             "type": "string",
