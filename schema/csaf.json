@@ -231,7 +231,7 @@
       "type": "array",
       "items": {
         "title": "Reference",
-        "description": "Holds any reference to conferences, papers, advisories, and other resources that are related and considered related to either a surrounding part of or the entire document and to be of value to the document consumer.",
+        "description": "Holds any reference to conferences, papers, advisories, and other resources that are related and considered relatedto either a surrounding part of or the entire document and to be of value to the document consumer.",
         "type": "object",
         "properties": {
           "description": {
@@ -265,7 +265,7 @@
     },
     "version_t": {
       "title": "Version",
-      "description": "Sepcifies a version string with a simple hierarchical counter model to denote clearly the evolution of the content of the document. Format must be understood as 'major.minor.patch.build' version.",
+      "description": "Sepcifies a version string with a simple hierarchical counter model to denote clearly the evolution of the content ofthe document. Format must be understood as 'major.minor.patch.build' version.",
       "examples": [
         "1",
         "0.9",
@@ -658,40 +658,44 @@
             "minItems": 0,
             "items": [
               {
-                "type": "array",
-                "minItems": 0,
-                "items": {
-                  "$ref": "#/definitions/products_t",
-                  "examples": [
-                    "CVRFID_123",
-                    "CSAFID_0815"
-                  ],
-                  "default": ""
-                }
-              },
-              {
-                "type": "object",
-                "properties": {
-                  "cvss_v20": {
-                    "$ref": "https://www.first.org/cvss/cvss-v2.0.json"
+                "anyOf": [
+                  {
+                    "type": "array",
+                    "minItems": 0,
+                    "items": {
+                      "$ref": "#/definitions/products_t",
+                      "examples": [
+                        "CVRFID_123",
+                        "CSAFID_0815"
+                      ],
+                      "default": ""
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "cvss_v20": {
+                        "$ref": "https://www.first.org/cvss/cvss-v2.0.json"
+                      }
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "cvss_v30": {
+                        "$ref": "https://www.first.org/cvss/cvss-v3.0.json"
+                      }
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "cvss_v31": {
+                        "$ref": "https://www.first.org/cvss/cvss-v3.1.json"
+                      }
+                    }
                   }
-                }
-              },
-              {
-                "type": "object",
-                "properties": {
-                  "cvss_v30": {
-                    "$ref": "https://www.first.org/cvss/cvss-v3.0.json"
-                  }
-                }
-              },
-              {
-                "type": "object",
-                "properties": {
-                  "cvss_v31": {
-                    "$ref": "https://www.first.org/cvss/cvss-v3.1.json"
-                  }
-                }
+                ]
               }
             ]
           },
@@ -893,7 +897,7 @@
             "minItems": 1,
             "items": {
               "title": "Threat",
-              "description": "Contains the vulnerability kinetic information. This information can change as the vulnerability ages and new information becomes available.",
+              "description": "Contains the vulnerability kinetic information. This information can change as the vulnerability ages and newinformation becomes available.",
               "type": "object",
               "required": [
                 "description",
