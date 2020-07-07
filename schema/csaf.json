@@ -897,7 +897,7 @@
             "minItems": 1,
             "items": {
               "title": "Threat",
-              "description": "Contains the vulnerability kinetic information. This information can change as the vulnerability ages and newinformation becomes available.",
+              "description": "Contains the vulnerability kinetic information. This information can change as the vulnerability ages and new information becomes available.",
               "type": "object",
               "required": [
                 "description",
