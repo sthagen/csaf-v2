@@ -4,6 +4,7 @@
   "definitions": {
     "acknowledgment_t": {
       "additionalProperties": false,
+      "minProperties": 1,
       "properties": {
         "description": {
           "description": "SHOULD represent any contextual details the document producers wish to make known about the acknowledgment or acknowledged parties",
@@ -24,6 +25,7 @@
             "minLength": 1,
             "type": "string"
           },
+          "minItems": 1,
           "title": "Names of entities being recognized",
           "type": "array"
         },
@@ -38,14 +40,18 @@
             "minLength": 1,
             "type": "string"
           },
+          "minItems": 1,
           "title": "List of contributing organizations",
           "type": "array"
         },
         "urls": {
           "items": {
+            "description": "Contains the URL or location of the reference to be acknowledged.",
             "format": "uri",
+            "title": "URL of acknowledgment",
             "type": "string"
           },
+          "minItems": 1,
           "type": "array"
         }
       },
@@ -54,11 +60,14 @@
     "branch_branches_t": {
       "additionalProperties": false,
       "description": "Is a part of the hierarchical structure of the product tree.",
+      "maxProperties": 3,
+      "minProperties": 3,
       "properties": {
         "branches": {
           "items": {
             "$ref": "#/definitions/branch_branches_t"
           },
+          "minItems": 1,
           "type": "array"
         },
         "name": {
@@ -118,7 +127,7 @@
           "type": "string"
         },
         "name": {
-          "description": "The value of a Full Product Name element should be the product\u2019s full canonical name, including version number and other attributes, as it would be used in a human-friendly document.",
+          "description": "The value of a Full Product Name element should be the product’s full canonical name, including version number and other attributes, as it would be used in a human-friendly document.",
           "examples": [
             "Microsoft Host Integration Server 2006 Service Pack 1",
             "Cisco AnyConnect Secure Mobility Client 2.3.185"
@@ -153,6 +162,7 @@
     "notes_t": {
       "items": {
         "additionalProperties": false,
+        "description": "Is a place to put all manner of text blobs related to the current context.",
         "properties": {
           "audience": {
             "type": "string"
@@ -185,8 +195,10 @@
           "type",
           "text"
         ],
+        "title": "Note",
         "type": "object"
       },
+      "minItems": 1,
       "type": "array"
     },
     "product_group_id_t": {
@@ -205,6 +217,7 @@
       "items": {
         "$ref": "#/definitions/product_group_id_t"
       },
+      "minItems": 1,
       "title": "List of product_group_ids",
       "type": "array",
       "uniqueItems": true
@@ -224,6 +237,7 @@
       "items": {
         "$ref": "#/definitions/product_id_t"
       },
+      "minItems": 1,
       "title": "List of product_ids",
       "type": "array",
       "uniqueItems": true
@@ -263,6 +277,7 @@
         "title": "Reference",
         "type": "object"
       },
+      "minItems": 1,
       "type": "array"
     },
     "version_t": {
@@ -288,18 +303,35 @@
           "items": {
             "$ref": "#/definitions/acknowledgment_t"
           },
+          "minItems": 1,
           "type": "array"
         },
         "aggregate_severity": {
           "additionalProperties": false,
+          "description": "Is a vehicle that is provided by the document producer to convey the urgency and criticality with which the one or more vulnerabilities reported should be addressed. It is a document-level metric and applied to the document as a whole — not any specific vulnerability. The range of values in this field is defined according to the document producer's policies and procedures.",
           "properties": {
             "namespace": {
+              "description": "Points to the namespace so referenced.",
+              "format": "uri",
+              "title": "Namespace of aggregate severity",
               "type": "string"
             },
             "text": {
+              "description": "Provides a severity which s independent of - and in addition to - any other standard metric for determining the impact or severity of a given vulnerability (such as CVSS).",
+              "examples": [
+                "Moderate",
+                "Important",
+                "Critical"
+              ],
+              "minLength": 1,
+              "title": "Text of aggregate severity",
               "type": "string"
             }
           },
+          "required": [
+            "text"
+          ],
+          "title": "Aggregate severity",
           "type": "object"
         },
         "csaf_version": {
@@ -313,6 +345,7 @@
         "distribution": {
           "additionalProperties": false,
           "description": "Describe any constraints on how this document might be shared.",
+          "minProperties": 1,
           "properties": {
             "text": {
               "description": "Provides a textual description of additional constraints.",
@@ -445,6 +478,7 @@
                 "title": "Alternate name",
                 "type": "string"
               },
+              "minItems": 1,
               "type": "array"
             },
             "current_release_date": {
@@ -455,6 +489,7 @@
             },
             "generator": {
               "additionalProperties": false,
+              "minProperties": 1,
               "properties": {
                 "date": {
                   "format": "date-time",
@@ -506,6 +541,7 @@
                 ],
                 "type": "object"
               },
+              "minItems": 1,
               "type": "array"
             },
             "status": {
@@ -550,17 +586,20 @@
     "product_tree": {
       "$comment": "Currently only supports branch_t and full_product_name_t children of product_tree",
       "additionalProperties": false,
+      "minProperties": 1,
       "properties": {
         "branches": {
           "items": {
             "$ref": "#/definitions/branch_branches_t"
           },
+          "minItems": 1,
           "type": "array"
         },
         "full_product_names": {
           "items": {
             "$ref": "#/definitions/full_product_name_t"
           },
+          "minItems": 1,
           "type": "array"
         },
         "product_groups": {
@@ -598,16 +637,19 @@
             "title": "Product group",
             "type": "object"
           },
+          "minItems": 1,
           "type": "array"
         },
         "relationships": {
           "items": {
             "additionalProperties": false,
+            "description": "Establishes a link between two existing full_product_name_t elements, allowing the document producer to define a combination of two products that form a new full_product_name entry.",
             "properties": {
               "full_product_names": {
                 "items": {
                   "$ref": "#/definitions/full_product_name_t"
                 },
+                "minItems": 1,
                 "type": "array"
               },
               "product_reference": {
@@ -629,8 +671,15 @@
                 "type": "string"
               }
             },
+            "required": [
+              "product_reference",
+              "relates_to_product_reference",
+              "relationship_type"
+            ],
+            "title": "Relationship",
             "type": "object"
           },
+          "minItems": 1,
           "type": "array"
         }
       },
@@ -639,11 +688,14 @@
     "vulnerabilities": {
       "items": {
         "additionalProperties": false,
+        "description": "Is a container for the aggregation of all fields that are related to a single vulnerability in the document.",
+        "minProperties": 1,
         "properties": {
           "acknowledgments": {
             "items": {
               "$ref": "#/definitions/acknowledgment_t"
             },
+            "minItems": 1,
             "type": "array"
           },
           "cve": {
@@ -689,6 +741,7 @@
           "involvements": {
             "items": {
               "additionalProperties": false,
+              "description": "Is a container, that allows the document producers to comment on their level of Involvement (or engagement) in the vulnerability identification, scoping, and remediation process.",
               "properties": {
                 "description": {
                   "minLength": 1,
@@ -724,8 +777,10 @@
                 "party",
                 "status"
               ],
+              "title": "Involvement",
               "type": "object"
             },
+            "minItems": 1,
             "type": "array"
           },
           "notes": {
@@ -787,6 +842,7 @@
                     "title": "Entitlement of the remediation",
                     "type": "string"
                   },
+                  "minItems": 1,
                   "type": "array"
                 },
                 "group_ids": {
@@ -900,7 +956,7 @@
                 ]
               }
             ],
-            "minItems": 0,
+            "minItems": 1,
             "type": "array"
           },
           "system_name": {
@@ -955,8 +1011,10 @@
             "type": "string"
           }
         },
+        "title": "Vulnerability",
         "type": "object"
       },
+      "minItems": 1,
       "type": "array"
     }
   },
