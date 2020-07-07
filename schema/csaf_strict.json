@@ -25,9 +25,7 @@
             "minLength": 1,
             "type": "string"
           },
-          "minItems": 1,
-          "title": "Names of entities being recognized",
-          "type": "array"
+          "title": "Names of entities being recognized"
         },
         "organizations": {
           "description": "The list of contributing organizations",
@@ -40,9 +38,7 @@
             "minLength": 1,
             "type": "string"
           },
-          "minItems": 1,
-          "title": "List of contributing organizations",
-          "type": "array"
+          "title": "List of contributing organizations"
         },
         "urls": {
           "items": {
@@ -165,6 +161,15 @@
         "description": "Is a place to put all manner of text blobs related to the current context.",
         "properties": {
           "audience": {
+            "description": "Indicate who is intended to read it.",
+            "examples": [
+              "all",
+              "executives",
+              "operational management and system administrators",
+              "safety engineers"
+            ],
+            "minLength": 1,
+            "title": "Audience of note",
             "type": "string"
           },
           "text": {
@@ -174,6 +179,15 @@
             "type": "string"
           },
           "title": {
+            "description": "Provides a concise description of what is contained in the text of the note.",
+            "examples": [
+              "Details",
+              "Executive summary",
+              "Technical summary",
+              "Impact on safety systems"
+            ],
+            "minLength": 1,
+            "title": "Title of note",
             "type": "string"
           },
           "type": {
@@ -496,6 +510,7 @@
                   "type": "string"
                 },
                 "engine": {
+                  "minLength": 1,
                   "type": "string"
                 }
               },
@@ -508,6 +523,7 @@
                 "RHBA-2019:0024",
                 "cisco-sa-20190513-secureboot"
               ],
+              "minLength": 1,
               "title": "Unique identifier for the document",
               "type": "string"
             },
@@ -528,6 +544,7 @@
                     "type": "string"
                   },
                   "description": {
+                    "minLength": 1,
                     "type": "string"
                   },
                   "number": {
@@ -724,7 +741,9 @@
             "additionalProperties": false,
             "properties": {
               "system_name": {
+                "description": "Indicates the name of the vulnerability tracking or numbering system.",
                 "minLength": 1,
+                "title": "System name",
                 "type": "string"
               },
               "text": {
@@ -809,6 +828,11 @@
               },
               "recommended": {
                 "$ref": "#/definitions/products_t"
+              },
+              "under_investigation": {
+                "$ref": "#/definitions/products_t",
+                "description": "It is not known yet whether this version is or is not affected by the vulnerability. However, it is still under investigation - the result will be provided in a later release of the document.",
+                "title": "Under investigation"
               }
             },
             "type": "object"
@@ -958,11 +982,6 @@
             ],
             "minItems": 1,
             "type": "array"
-          },
-          "system_name": {
-            "description": "For the 'id' property, indicates the name of the vulnerability tracking or numbering system.",
-            "minLength": 1,
-            "type": "string"
           },
           "threats": {
             "items": {
