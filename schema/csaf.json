@@ -16,8 +16,6 @@
             "Johann Sebastian Bach",
             "Albert Einstein"
           ],
-          "type": "array",
-          "minItems": 1,
           "items": {
             "type": "string",
             "minLength": 1
@@ -31,8 +29,6 @@
             "Talos",
             "Google Project Zero"
           ],
-          "type": "array",
-          "minItems": 1,
           "items": {
             "type": "string",
             "minLength": 1
@@ -168,10 +164,28 @@
         "type": "object",
         "properties": {
           "audience": {
-            "type": "string"
+            "title": "Audience of note",
+            "description": "Indicate who is intended to read it.",
+            "examples": [
+              "all",
+              "executives",
+              "operational management and system administrators",
+              "safety engineers"
+            ],
+            "type": "string",
+            "minLength": 1
           },
           "title": {
-            "type": "string"
+            "title": "Title of note",
+            "description": "Provides a concise description of what is contained in the text of the note.",
+            "examples": [
+              "Details",
+              "Executive summary",
+              "Technical summary",
+              "Impact on safety systems"
+            ],
+            "type": "string",
+            "minLength": 1
           },
           "type": {
             "title": "Note type",
@@ -488,7 +502,8 @@
                 "RHBA-2019:0024",
                 "cisco-sa-20190513-secureboot"
               ],
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             },
             "aliases": {
               "type": "array",
@@ -514,7 +529,8 @@
               "minProperties": 1,
               "properties": {
                 "engine": {
-                  "type": "string"
+                  "type": "string",
+                  "minLength": 1
                 },
                 "date": {
                   "type": "string",
@@ -544,7 +560,8 @@
                     "format": "date-time"
                   },
                   "description": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                   }
                 },
                 "required": [
@@ -761,6 +778,8 @@
             "type": "object",
             "properties": {
               "system_name": {
+                "title": "System name",
+                "description": "Indicates the name of the vulnerability tracking or numbering system.",
                 "type": "string",
                 "minLength": 1
               },
@@ -843,6 +862,11 @@
                 "$ref": "#/definitions/products_t"
               },
               "last_affected": {
+                "$ref": "#/definitions/products_t"
+              },
+              "under_investigation": {
+                "title": "Under investigation",
+                "description": "It is not known yet whether this version is or is not affected by the vulnerability. However, it is still under investigation - the result will be provided in a later release of the document.",
                 "$ref": "#/definitions/products_t"
               }
             }
@@ -944,11 +968,6 @@
                 }
               }
             }
-          },
-          "system_name": {
-            "type": "string",
-            "minLength": 1,
-            "description": "For the 'id' property, indicates the name of the vulnerability tracking or numbering system."
           },
           "threats": {
             "type": "array",
