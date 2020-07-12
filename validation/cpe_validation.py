@@ -12,7 +12,7 @@ import sys
 
 ENCODING = "utf-8"
 
-CPE_URI = re.compile(r"^cpe:(/|\d+\.\d+)[^:]*:?[^:]*:?[^:]*:?[^:]*:?[^:]*:?[^:]*:?[^:]*$", re.I)
+CPE_URI = re.compile(r"^[Cc][Pp][Ee]:(\/|\d+\.\d+)[^:]*(:?[^:]*){0,11}$")
 
 
 def load(file_path):
