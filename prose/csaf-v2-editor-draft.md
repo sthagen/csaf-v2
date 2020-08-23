@@ -912,7 +912,7 @@ Notes associated with the whole document. Notes about this set of vulnerabilitie
 
 #### Document Property - Title
 
-Title of this document. This SHOULD be a canonical name for the document, and sufficiently unique to distinguish it from similar documents. Value type is strng with 1 or more characters.
+Title of this document. This SHOULD be a canonical name for the document, and sufficiently unique to distinguish it from similar documents. Value type is string with 1 or more characters.
 
 Examples:
 
@@ -1020,6 +1020,101 @@ Examples:
         }
       }
     },
+
+##### Document Property - Tracking - ID
+
+Unique identifier for the document. The ID is a simple label that provides for a wide range of numbering values, types, and schemes. Its value SHOULD be assigned and maintained by the original document issuing authority. Value type is string with 1 or more characters.
+
+Examples:
+
+    Example Company - 2019-YH3234
+    RHBA-2019:0024
+    cisco-sa-20190513-secureboot
+
+##### Document Property - Tracking - Aliases
+
+    "aliases": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "title": "Alternate name",
+        "description": "Alternate names for the same vulnerability.",
+        "examples": [
+          "CVE-2019-12345"
+        ],
+        "minLength": 1
+      }
+    },
+
+##### Document Property - Tracking - Current Release Date
+
+Current release date. he date of the current revision of this document was released. Value type is string of format date-time.
+
+##### Document Property - Tracking - Generator
+
+    "generator": {
+      "type": "object",
+      "minProperties": 1,
+      "properties": {
+        "engine": {
+          "type": "string",
+          "minLength": 1
+        },
+        "date": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+
+##### Document Property - Tracking - Initial Release Date
+
+Initial release date. The date that this document was first published. Value type is string of format date-time.
+
+##### Document Property - Tracking - Revision History
+
+    "revision_history": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "number": {
+            "$ref": "#/definitions/version_t"
+          },
+          "date": {
+            "title": "Date of the revision",
+            "description": "The date of the revision entry",
+            "type": "string",
+            "format": "date-time"
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "number",
+          "date",
+          "description"
+        ]
+      }
+    },
+
+##### Document Property - Tracking - Status
+
+Document status. Defines the draft status of the document. Value type is string enum. The valid values are:
+
+    draft
+    final
+    interim
+
+##### Document Property - Tracking - Version
+
+    "version": {
+      "$ref": "#/definitions/version_t"
+    }
 
 #### Document Property - Type
 
@@ -1589,11 +1684,7 @@ Product status. ontains different lists of product_ids which provide details on 
 
 ##### Vulnerabilities Property - Vulnerability - Title
 
-    "title": {
-      "type": "string",
-      "minLength": 1
-    }
-
+Title has value type string with 1 or more characters.
 
 # Appendix A. Acknowledgments
 
