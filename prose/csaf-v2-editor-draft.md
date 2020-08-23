@@ -314,6 +314,1287 @@ Remove this note before submitting for publication.)
 
 -------
 
+# Schema Elements
+
+The CSAF schema describes how to represent security advisory information as a JSON document.
+
+The CSAF schema Version 2.0 builds on the JSON Schema draft 07 rules.
+
+    "$schema": "http://json-schema.org/draft-07/schema#"
+
+The schema identifier is (before publication):
+
+    "$id": "https://raw.githubusercontent.com/oasis-tcs/csaf/master/csaf_2.0/json_schema/csaf_json_schema.json"
+
+The further documentation of the schema is organized via Definitions and Properties. 
+
+* Definitions provide types that extend the JSON schema model 
+* Properties use these types to support assembling security advisories
+
+Types and properties together provide the vocabulary for the domain specific language supporting security advisories. 
+
+The single mandatory property is the document. The optional two additional properties are product_tree and vulnerabilities.
+
+## Definitions
+
+### Acknowledgment Type
+
+    "acknowledgment_t": {
+      "type": "object",
+      "minProperties": 1,
+      "properties": {
+        "names": {
+          // ...
+        },
+        "organizations": {
+          // ...
+        },
+        "description": {
+          // ...
+        },
+        "urls": {
+          // ...
+        }
+      }
+    },
+
+#### Acknowledgment Type - Names
+
+Names of entities being recognized. Typically the name of a person belonging to an organization. Value type is string with 1 or more characters.
+
+Examples:
+
+    Johann Sebastian Bach
+    Albert Einstein
+
+#### Acknowledgment Type - Organizations
+
+List of contributing organizations. The list of contributing organizations. Value type is string with 1 or more characters.
+
+Examples:
+
+    US-CERT
+    Talos
+    Google Project Zero
+
+#### Acknowledgment Type - Description
+
+Description of the acknowledgment. SHOULD represent any contextual details the document producers wish to make known about the acknowledgment or acknowledged parties. Value type is string with 1 or more characters.
+
+Example:
+
+    First analysis of Coordinated Multi-Stream Attack (CMSA)
+
+#### Acknowledgment Type - URLs
+
+URL of acknowledgment. Contains the URL or location of the reference to be acknowledged. Value type is string with format URI.
+
+### Branch Type
+
+Branch. Is a part of the hierarchical structure of the product tree. Value type is object with 3 Properties. The properties name and type are mandatory. In addition the object contains either a branches or a product. 
+
+    "branch_branches_t": {
+      // ...
+      "properties": {
+        "name": {
+          // ...
+        },
+        "type": {
+          // ...
+        },
+        "branches": {
+          // ...
+        },
+        "product": {
+          // ...
+        }
+      }
+    },
+
+#### Branch Type - Name
+
+Name of the branch. Contains the canonical descriptor or 'friendly name' of the branch. Value type string with 1 character or more.
+
+Examples:
+
+    Microsoft
+    Siemens
+    Windows
+    Office
+    SIMATIC
+    10
+    365
+    PCS 7
+
+#### Branch Type - Type
+
+Type of the branch. Describes the characteristics of the labeled branch. Value type is string enum. Valid values are:
+
+    architecture
+    host_name
+    language
+    legacy
+    patch_level
+    product_family
+    product_name
+    product_version
+    service_pack
+    specification
+    vendor
+
+#### Branch Type - Branches
+
+Branches have the value type array with 1 or more items of the Branch type (branch_branches_t). 
+
+#### Branch Type - Product
+
+Product has the value type Full Product Name (full_product_name_t).
+
+### Full Product Name Type
+
+Full Product Name. Value type is object with 3 Properties. The properties product_id and name are mandatory. In addition the object may contain a CPE identifier as value of the cpe property.
+
+    "full_product_name_t": {
+      // ...
+      "properties": {
+        "product_id": {
+          // ...
+        },
+        "name": {
+          // ...
+        },
+        "cpe": {
+          // ...
+        }
+      }
+    },
+
+#### Full Product Name Type - Product ID
+
+Product ID has the value type Product ID (product_id_t).
+
+#### Full Product Name Type - Name
+
+Textual description of the product. The value of a Full Product Name element should be the product’s full canonical name, including version number and other attributes, as it would be used in a human-friendly document. Value type is string with 1 or more characters.
+
+Examples:
+
+    Microsoft Host Integration Server 2006 Service Pack 1
+    Cisco AnyConnect Secure Mobility Client 2.3.185
+
+#### Full Product Name Type - CPE
+
+Common Platform Enumeration representation. The Common Platform Enumeration (CPE) attribute refers to a method for naming platforms external to this specification. Value type is string with 1 or more characters matching the regular expression pattern:
+
+    ^(?i)cpe:(/|\\d+\\.\\d+)[^:]*:?[^:]*:?[^:]*:?[^:]*:?[^:]*:?[^:]*:?[^:]*$
+
+### Language Type
+
+Language type. Identifies a language, corresponding to IETF BCP 47 / RFC 5646. 
+
+See IETF language registry: [https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry](https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry)
+
+Value type is string with 2 or 3 characters matching the regular expression pattern:
+
+    ^[a-zA-Z]{2,3}(-.+)?$
+
+Examples:
+
+    de
+    en
+    fr
+    frc
+    jp
+
+### Notes Type
+
+Notes type is array with 1 or more items of type Note. Value type of every such Note item is object with the mandatory properties type and text. A note may provide the additional properties audience and title.
+
+    "notes_t": {
+      // ..
+      "items": {
+        // ...
+        "properties": {
+          "audience": {
+            // ...
+          },
+          "title": {
+            // ...
+          },
+          "type": {
+            // ...
+          },
+          "text": {
+            // ...
+          }
+        },
+        // ...
+      }
+    },
+
+#### Notes Type - Note
+
+Note. Is a place to put all manner of text blobs related to the current context. Value type is object with the 2 mandatory properties type and text as well as the 2 optional properties audience and title. 
+
+    "properties": {
+      "audience": {
+        // ...
+      },
+      "title": {
+        // ...
+      },
+      "type": {
+        // ...
+      },
+      "text": {
+        // ...
+      }
+    },
+
+##### Notes Type - Note - Audience
+
+Audience of note. Indicate who is intended to read it. Value type is string with 1 or more characters.
+
+Examples:
+
+    all
+    executives
+    operational management and system administrators
+    safety engineers
+
+##### Notes Type - Note - Title
+
+Title of note. Provides a concise description of what is contained in the text of the note. Value type is string with 1 or more characters.
+
+Examples:
+
+    Details
+    Executive summary
+    Technical summary
+    Impact on safety systems
+
+##### Notes Type - Note - Type
+
+Note type. Choice of what kind of note this is. Value type is string enum. Valid values are:
+
+    description
+    details
+    faq
+    general
+    legal_disclaimer
+    other
+    summary
+
+##### Notes Type - Note - Text
+
+Note contents. The contents of the note. Content varies depending on type. Value type is string with 1 or more characters.
+
+### Products Type
+
+
+    "products_t": {
+      "title": "List of product_ids",
+      "description": "Specifies a list of product_ids to give context to the parent item.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/product_id_t"
+      },
+      "uniqueItems": true
+    },
+
+
+### Product Groups Type
+
+    "product_groups_t": {
+      "title": "List of product_group_ids",
+      "description": "Specifies a list of product_group_ids to give context to the parent item.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/product_group_id_t"
+      },
+      "uniqueItems": true
+    },
+
+### Product Group ID Type
+
+    "product_group_id_t": {
+      "title": "Reference token for product group instance",
+      "description": "Token required to identify a group of products so that it can be referred to from other parts in the document. There is no predefined or required format for the product_group_id as long as it uniquely identifies a group in the context of the current document.",
+      "examples": [
+        "CSAFGID-0001",
+        "CSAFGID-0002",
+        "CSAFGID-0020"
+      ],
+      "type": "string",
+      "minLength": 1
+    },
+
+### Product ID Type
+
+    "product_id_t": {
+      "title": "Reference token for product instance",
+      "description": "Token required to identify a full_product_name so that it can be referred to from other parts in the document. There is no predefined or required format for the product_id as long as it uniquely identifies a product in the context of the current document.",
+      "examples": [
+        "CVRFPID-0004",
+        "CVRFPID-0008"
+      ],
+      "type": "string",
+      "minLength": 1
+    },
+
+### References Type
+
+    "references_t": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "title": "Reference",
+        "description": "Holds any reference to conferences, papers, advisories, and other resources that are related and considered related to either a surrounding part of or the entire document and to be of value to the document consumer.",
+        "type": "object",
+        "properties": {
+          "description": {
+            "title": "Description of reference",
+            "description": "What does this reference refer to?",
+            "type": "string",
+            "minLength": 1
+          },
+          "type": {
+            "title": "Type of reference",
+            "description": "Indicates whether the reference points to the same document or vulnerability in focus (depending on scope) or to an external resource.",
+            "default": "external",
+            "type": "string",
+            "enum": [
+              "self",
+              "external"
+            ]
+          },
+          "url": {
+            "title": "URL of reference",
+            "description": "Provides the URL for the reference.",
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "url",
+          "description"
+        ]
+      }
+    },
+
+### Version Type
+
+    "version_t": {
+      "title": "Version",
+      "description": "Sepcifies a version string with a simple hierarchical counter model to denote clearly the evolution of the content of the document. Format must be understood as 'major.minor.patch.build' version.",
+      "examples": [
+        "1",
+        "0.9",
+        "1.4.3",
+        "2.40.0.320002"
+      ],
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)(\\.(0|[1-9][0-9]*)){0,3}$"
+    }
+
+## Properties
+
+### Document Property
+
+Document level meta-data. Captures the meta-data about this document describing a particular set of security advisories. Value type is object with the 5 mandatory properties csaf_version, title, publisher, type, and tracking. 
+In addition, the document object may provide the 7 optional properties acknowledgments, aggregate_severity, distribution, lang, source_lang, notes, and references. 
+
+    "document": {
+      // ...
+      "properties": {
+        "acknowledgments": {
+          // ...
+        },
+        "aggregate_severity" : {
+          // ...
+        },
+        "csaf_version": {
+          // ...
+        },
+        "distribution": {
+          // ...
+        },
+        "lang": {
+          // ...
+        },
+        "source_lang": {
+          // ...
+        },
+        "notes": {
+          // ...
+        },
+        "publisher": {
+          // ...
+        },
+        "references": {
+          // ...
+        },
+        "title": {
+          // ...
+        },
+        "tracking": {
+          // ...
+        },
+        "type": {
+          // ...
+        }
+      }
+    },
+
+#### Document Property - Acknowledgements
+
+    "acknowledgments": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/acknowledgment_t"
+      }
+    },
+
+#### Document Property - Aggregate Severity
+
+Aggregate severity. Is a vehicle that is provided by the document producer to convey the urgency and criticality with which the one or more vulnerabilities reported should be addressed. It is a document-level metric and applied to the document as a whole — not any specific vulnerability. The range of values in this field is defined according to the document producer's policies and procedures. Value type is object.
+
+    "aggregate_severity" : {
+      "title": "Aggregate severity",
+      "description": "Is a vehicle that is provided by the document producer to convey the urgency and criticality with which the one or more vulnerabilities reported should be addressed. It is a document-level metric and applied to the document as a whole — not any specific vulnerability. The range of values in this field is defined according to the document producer's policies and procedures.",
+      "type": "object",
+      "properties": {
+        "namespace": {
+          "title": "Namespace of aggregate severity",
+          "description": "Points to the namespace so referenced.",
+          "type": "string",
+          "format": "uri"
+        },
+        "text": {
+          "title": "Text of aggregate severity",
+          "description": "Provides a severity which s independent of - and in addition to - any other standard metric for determining the impact or severity of a given vulnerability (such as CVSS).",
+          "examples": ["Moderate", "Important", "Critical"],
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "text"
+      ]
+    },
+
+#### Document Property - CSAF Version
+
+CSAF version. Gives the version of the CSAF specification which the document was generated for. Value type is string enum. For this edition of the specification the single valid value is:
+
+    2.0
+
+#### Document Property - Distribution
+
+Rules for sharing document. Describe any constraints on how this document might be shared. Value type is object with 1 or more properties.
+
+    "distribution": {
+      "title": "Rules for sharing document",
+      "description": "Describe any constraints on how this document might be shared.",
+      "type": "object",
+      "minProperties": 1,
+      "properties": {
+        "text": {
+          "title": "Description",
+          "description": "Provides a textual description of additional constraints.",
+          "examples": [
+            "Share only on a need-to-know-basis only.",
+            "Distribute freely.",
+            "Copyright 2019, Example Company, All Rights Reserved."
+          ],
+          "type": "string",
+          "minLength": 1
+        },
+        "tlp": {
+          "title": "Traffic Light Protocol (TLP)",
+          "description": "Provides details about the TLP classification of the document.",
+          "type": "object",
+          "required": [
+            "label"
+          ],
+          "properties": {
+            "label": {
+              "title": "Label of TLP",
+              "description": "Provides the TLP label of the document.",
+              "type": "string",
+              "enum": [
+                "RED",
+                "AMBER",
+                "GREEN",
+                "WHITE"
+              ]
+            },
+            "url": {
+              "title": "URL of TLP version",
+              "description": "Provides a URL where to find the textual description of the TLP version which is used in this document. Default is the URL to the definition by FIRST.",
+              "default": "https://www.first.org/tlp/",
+              "examples": [
+                "https://www.us-cert.gov/tlp",
+                "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Kritis/Merkblatt_TLP.pdf"
+              ],
+              "type": "string",
+              "format": "uri"
+            }
+          }
+        }
+      }
+    },
+
+#### Document Property - Language
+
+Document language. Identifies the language used by this document, corresponding to IETF BCP 47 / RFC 5646. Value type is the Language Type (lang_t).
+
+#### Document Property - Source Language
+
+Original translation. If this copy of the document is a translation, from which language was this document translated? Value type is the Language Type (lang_t).
+
+#### Document Property - Notes
+
+Notes associated with the whole document. Notes about this set of vulnerabilities should be added here. Value type is the Notes Type (notes_t).
+
+#### Document Property - Publisher
+
+    "publisher": {
+      "type": "object",
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "contact_details": {
+          "type": "string",
+          "title": "How to contact",
+          "description": "Information on how to contact the publisher, possibly including details such as web sites, email addresses, phone numbers, and postal mail addresses.",
+          "examples": [
+            "Example Company can be reached at contact_us@example.com, or via our website at https://www.example.com/contact."
+          ],
+          "minLength": 1
+        },
+        "issuing_authority": {
+          "title": "What authority",
+          "description": "The name of the issuing party and their authority to release the document, in particular, the party's constituency and responsibilities or other obligations.",
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "title": "Type of publisher",
+          "description": "Provides information about the type of publisher releasing the document.",
+          "type": "string",
+          "enum": [
+            "coordinator",
+            "discoverer",
+            "other",
+            "user",
+            "vendor"
+          ]
+        },
+        "vendor_id": {
+          "title": "Vendor releasing the document",
+          "description": "Vendor ID is a unique identifier (OID) that a vendor uses as issued by FIRST under the auspices of IETF.",
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+
+#### Document Property - References
+
+    "references": {
+      "$ref": "#/definitions/references_t"
+    },
+
+#### Document Property - Title
+
+Title of this document. This SHOULD be a canonical name for the document, and sufficiently unique to distinguish it from similar documents. Value type is strng with 1 or more characters.
+
+Examples:
+
+    Example Company Cross-Site-Scripting Vulnerability in Example Generator
+    Cisco IPv6 Crafted Packet Denial of Service Vulnerability
+
+#### Document Property - Tracking
+
+    "tracking": {
+      "type": "object",
+      "required": [
+        "current_release_date",
+        "id",
+        "initial_release_date",
+        "revision_history",
+        "status",
+        "version"
+      ],
+      "properties": {
+        "id": {
+          "title": "Unique identifier for the document",
+          "description": "The ID is a simple label that provides for a wide range of numbering values, types, and schemes. Its value SHOULD be assigned and maintained by the original document issuing authority.",
+          "examples": ["Example Company - 2019-YH3234", "RHBA-2019:0024", "cisco-sa-20190513-secureboot"],
+          "type": "string",
+          "minLength": 1
+        },
+        "aliases": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "title": "Alternate name",
+            "description": "Alternate names for the same vulnerability.",
+            "examples": [
+              "CVE-2019-12345"
+            ],
+            "minLength": 1
+          }
+        },
+        "current_release_date": {
+          "title": "Current release date",
+          "description": "The date of the current revision of this document was released",
+          "type": "string",
+          "format": "date-time"
+        },
+        "generator": {
+          "type": "object",
+          "minProperties": 1,
+          "properties": {
+            "engine": {
+              "type": "string",
+              "minLength": 1
+            },
+            "date": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        },
+        "initial_release_date": {
+          "title": "Initial release date",
+          "description": "The date that this document was first published.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "revision_history": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "properties": {
+              "number": {
+                "$ref": "#/definitions/version_t"
+              },
+              "date": {
+                "title": "Date of the revision",
+                "description": "The date of the revision entry",
+                "type": "string",
+                "format": "date-time"
+              },
+              "description": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "number",
+              "date",
+              "description"
+            ]
+          }
+        },
+        "status": {
+          "title": "Document status",
+          "description": "Defines the draft status of the document.",
+          "type": "string",
+          "enum": [
+            "draft",
+            "final",
+            "interim"
+          ]
+        },
+        "version": {
+          "$ref": "#/definitions/version_t"
+        }
+      }
+    },
+
+#### Document Property - Type
+
+    "type": {
+      "type": "string",
+      "minLength": 1
+    }
+
+### Product Tree Property
+
+Product Tree. Value type object with 1 or more properties. The properties are branches, full_product_names, product_groups, and relationships.
+
+    "product_tree": {
+      // ...
+      "properties": {
+        "branches": {
+          // ...
+        },
+        "full_product_names": {
+          // ...
+        },
+        "product_groups": {
+          // ...
+        },
+        "relationships": {
+          // ...
+      }
+    },
+
+#### Product Tree Property - Product Tree
+
+    "product_tree": {
+      "$comment": "Currently only supports branch_t and full_product_name_t children of product_tree",
+      "type": "object",
+      "minProperties": 1,
+      "properties": {
+
+#### Product Tree Property - Branches
+
+        "branches": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/branch_branches_t"
+          }
+        },
+
+#### Product Tree Property - Full Product Names
+
+        "full_product_names": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/full_product_name_t"
+          }
+        },
+
+#### Product Tree Property - Product Groups
+
+        "product_groups": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "title": "Product group",
+            "description": "Defines a new logical group of products that can then be referred to in other parts of the document to address a group of products with a single identifier.",
+            "type": "object",
+            "required": [
+              "group_id",
+              "product_ids"
+            ],
+            "properties": {
+              "description": {
+                "title": "Description of the product group",
+                "description": "Gives a short, optional description of the group.",
+                "examples": [
+                  "The x64 versions of the operating system.",
+                  "Products supporting Modbus."
+                ],
+                "type": "string",
+                "minLength": 1
+              },
+              "group_id": {
+                "$ref": "#/definitions/product_group_id_t"
+              },
+              "product_ids": {
+                "title": "List of product_ids",
+                "description": "Lists the product_ids of those products which known as one group in the document.",
+                "type": "array",
+                "minItems": 2,
+                "items": {
+                  "$ref": "#/definitions/product_id_t"
+                }
+              }
+            }
+          }
+        },
+
+        "relationships": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "title": "Relationship",
+            "description": "Establishes a link between two existing full_product_name_t elements, allowing the document producer to define a combination of two products that form a new full_product_name entry.",
+            "type": "object",
+            "properties": {
+              "full_product_names": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "#/definitions/full_product_name_t"
+                }
+              },
+              "product_reference": {
+                "$ref": "#/definitions/product_id_t"
+              },
+              "relates_to_product_reference": {
+                "$ref": "#/definitions/product_id_t"
+              },
+              "relationship_type": {
+                "title": "Relationship type",
+                "description": "Defines the type of relationship for the referenced component.",
+                "type": "string",
+                "enum": [
+                  "default_component_of",
+                  "optional_component_of",
+                  "external_component_of",
+                  "installed_on",
+                  "installed_with"
+                ]
+              }
+            },
+            "required": [
+              "product_reference",
+              "relates_to_product_reference",
+              "relationship_type"
+            ]
+          }
+        }
+      }
+    },
+
+
+### Vulnerabilities Property
+
+Vulnerabilities. Value type is array. with 1 or more objects representing vulnerabilities and providing 1 or more properties.
+
+    "vulnerabilities": {
+      "items": {
+        // ...
+      }
+    }
+
+#### Vulnerabilities Property - Vulnerability
+
+Vulnerability. Is a container for the aggregation of all fields that are related to a single vulnerability in the document. Value type is object with 1 or more properties. Any vulnerability may provide the optional properties acknowledgments, cve, cwe, scores, discovery_date, id, involvements, notes, product_status, references, release_date, remediations, and title. 
+
+    "acknowledgments": {
+      // ...
+    },
+    "cve": {
+      // ...
+    },
+    "cwe": {
+      // ...
+    },
+    "scores": {
+      // ...
+    },
+    "discovery_date": {
+      // ...
+    },
+    "id": {
+      // ...
+    },
+    "involvements": {
+      // ...
+    },
+    "notes": {
+      // ...
+    },
+    "product_status": {
+      // ...
+    },
+    "references": {
+      // ...
+    },
+    "release_date": {
+      // ...
+    },
+    "remediations": {
+      // ...
+    },
+    "threats": {
+      // ...
+    },
+    "title": {
+      // ...
+    }
+
+##### Vulnerabilities Property - Vulnerability - Acknowledgments
+
+    "acknowledgments": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/acknowledgment_t"
+      }
+    },
+
+##### Vulnerabilities Property - Vulnerability - CVE
+
+    "cve": {
+      "type": "string",
+      "pattern": "^CVE-[0-9]{4}-[0-9]{4,}$"
+    },
+
+##### Vulnerabilities Property - Vulnerability - CWE
+
+    "cwe": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^CWE-[1-9]\\d{0,5}$"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+
+##### Vulnerabilities Property - Vulnerability - Scores
+
+    "scores": {
+      "type": "array",
+      "minItems": 1,
+      "items": [
+        {
+          "anyOf": [
+            {
+              "type": "array",
+              "minItems": 0,
+              "items": {
+                "$ref": "#/definitions/products_t",
+                "examples": [
+                  "CVRFID_123",
+                  "CSAFID_0815"
+                ],
+                "default": ""
+              }
+            },
+            {
+              "type": "object",
+              "properties": {
+                "cvss_v20": {
+                  "$ref": "https://www.first.org/cvss/cvss-v2.0.json"
+                }
+              }
+            },
+            {
+              "type": "object",
+              "properties": {
+                "cvss_v30": {
+                  "$ref": "https://www.first.org/cvss/cvss-v3.0.json"
+                }
+              }
+            },
+            {
+              "type": "object",
+              "properties": {
+                "cvss_v31": {
+                  "$ref": "https://www.first.org/cvss/cvss-v3.1.json"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+
+##### Vulnerabilities Property - Vulnerability - Discovery Date
+
+    "discovery_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+
+##### Vulnerabilities Property - Vulnerability - ID
+
+    "id": {
+      "type": "object",
+      "properties": {
+        "system_name": {
+          "title": "System name",
+          "description": "Indicates the name of the vulnerability tracking or numbering system.",
+          "type": "string",
+          "minLength": 1
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "system_name",
+        "text"
+      ]
+    },
+
+##### Vulnerabilities Property - Vulnerability - Involvements
+
+    "involvements": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "title": "Involvement",
+        "description": "Is a container, that allows the document producers to comment on their level of Involvement (or engagement) in the vulnerability identification, scoping, and remediation process.",
+        "type": "object",
+        "required": [
+          "party",
+          "status"
+        ],
+        "properties": {
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "party": {
+            "title": "Party type",
+            "description": "Defines the type of the involved party.",
+            "type": "string",
+            "enum": [
+              "coordinator",
+              "discoverer",
+              "other",
+              "user",
+              "vendor"
+            ]
+          },
+          "status": {
+            "title": "Party status",
+            "description": "Defines contact status of the involved party.",
+            "type": "string",
+            "enum": [
+              "completed",
+              "contact_accepted",
+              "disputed",
+              "in_progress",
+              "not_contacted",
+              "open"
+            ]
+          }
+        }
+      }
+    },
+
+##### Vulnerabilities Property - Vulnerability - Notes
+
+    "notes": {
+      "$ref": "#/definitions/notes_t"
+    },
+
+##### Vulnerabilities Property - Vulnerability - Product Status
+
+Product status. ontains different lists of product_ids which provide details on the status of the referenced product related to the current vulnerability. Value type object with 1 or more properties.
+
+    "product_status": {
+      "title": "Product status",
+      "description": "Contains different lists of product_ids which provide details on the status of the referenced product related to the current vulnerability. ",
+      "type": "object",
+      "minProperties": 1,
+      "properties": {
+        "fixed": {
+          "title": "Fixed",
+          "description": "These versions contain a fix for the vulnerability but may not be the recommended fixed versions.",
+          "$ref": "#/definitions/products_t"
+        },
+        "first_fixed": {
+          "title": "First fixed",
+          "description": "These versions contain the first fix for the vulnerability but may not be the recommended fixed versions.",
+          "$ref": "#/definitions/products_t"
+        },
+        "recommended": {
+          "title": "Recommended",
+          "description": "These versions have a fix for the vulnerability and are the vendor-recommended versions for fixing the vulnerability.",
+          "$ref": "#/definitions/products_t"
+        },
+        "known_affected": {
+          "title": "Known affected",
+          "description": "These versions are known to be affected by the vulnerability.",
+          "$ref": "#/definitions/products_t"
+        },
+        "first_affected": {
+          "title": "First affected",
+          "description": "These are the first versions of the releases known to be affected by the vulnerability.",
+          "$ref": "#/definitions/products_t"
+        },
+        "last_affected": {
+          "title": "Last affected",
+          "description": "These are the last versions in a release train known to be affected by the vulnerability. Subsequently released versions would contain a fix for the vulnerability.",
+          "$ref": "#/definitions/products_t"
+        },
+        "known_not_affected": {
+          "title": "Known not affected",
+          "description": "These versions are known not to be affected by the vulnerability.",
+          "$ref": "#/definitions/products_t"
+        },
+        "under_investigation": {
+          "title": "Under investigation",
+          "description": "It is not known yet whether this version is or is not affected by the vulnerability. However, it is still under investigation - the result will be provided in a later release of the document.",
+          "$ref": "#/definitions/products_t"
+        }
+      }
+    },
+
+##### Vulnerabilities Property - Vulnerability - References
+
+    "references": {
+      "$ref": "#/definitions/references_t"
+    },
+
+##### Vulnerabilities Property - Vulnerability - Release Date
+
+    "release_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+
+##### Vulnerabilities Property - Vulnerability - Remediations
+
+    "remediations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "title": "Remedation",
+        "description": "Specifies details on how to handle (and presumably, fix) a vulnerability.",
+        "type": "object",
+        "required": [
+          "description",
+          "type"
+        ],
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "description": {
+            "title": "Description of the remediation",
+            "description": "Contains a thorough human-readable discussion of the remediation.",
+            "type": "string",
+            "minLength": 1
+          },
+          "entitlements": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "title": "Entitlement of the remediation",
+              "description": "Contains any possible vendor-defined constraints for obtaining fixed software or hardware that fully resolves the vulnerability.",
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "group_ids": {
+            "$ref": "#/definitions/product_groups_t"
+          },
+          "product_ids": {
+            "$ref": "#/definitions/products_t"
+          },
+          "restart_required": {
+            "title": "Restart required by remediation",
+            "description": "Provides information on type of restart is required by this remediation to become effective.",
+            "type": "object",
+            "required": [
+              "type"
+            ],
+            "properties": {
+              "type": {
+                "title": "Type of restart",
+                "description": "Specifies what type of restart is required by this remediation to become effective.",
+                "type": "string",
+                "enum": [
+                  "none",
+                  "vulnerable_component",
+                  "service",
+                  "parent",
+                  "dependencies",
+                  "connected",
+                  "machine",
+                  "zone",
+                  "system"
+                ]
+              },
+              "description": {
+                "title": "Additional restart information",
+                "description": "Provides additional information for the restart. This can include details on procedures, scope or impact.",
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "type": {
+            "title": "Type of the remediation",
+            "description": "Specifies the type which this remediation belongs to.",
+            "type": "string",
+            "enum": [
+              "workaround",
+              "mitigation",
+              "vendor_fix",
+              "none_available",
+              "will_not_fix"
+            ]
+          },
+          "url": {
+            "title": "URL to the remediation",
+            "description": "Contains the URL where to obtain the remediation.",
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    },
+
+##### Vulnerabilities Property - Vulnerability - Threats
+
+    "threats": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "title": "Threat",
+        "description": "Contains the vulnerability kinetic information. This information can change as the vulnerability ages and new information becomes available.",
+        "type": "object",
+        "required": [
+          "description",
+          "type"
+        ],
+        "properties": {
+          "type": {
+            "title": "Type of the threat",
+            "description": "Categorizes the threat according to the rules of the specification.",
+            "type": "string",
+            "enum": [
+              "impact",
+              "exploit_status",
+              "target_set"
+            ]
+          },
+          "description": {
+            "title": "Description of the threat",
+            "description": "Represents a thorough human-readable discussion of the threat.",
+            "type": "string",
+            "minLength": 1
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "product_ids": {
+            "$ref": "#/definitions/products_t"
+          },
+          "group_ids": {
+            "$ref": "#/definitions/product_groups_t"
+          }
+        }
+      }
+    },
+
+##### Vulnerabilities Property - Vulnerability - Title
+
+    "title": {
+      "type": "string",
+      "minLength": 1
+    }
+
+
 # Appendix A. Acknowledgments
 
 (Note: A Work Product approved by the TC must include a list of people who participated in the development of the Work Product. This is generally done by collecting the list of names in this appendix. This list shall be initially compiled by the Chair, and any Member of the TC may add or remove their names from the list by request.  
