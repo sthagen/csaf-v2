@@ -1212,6 +1212,8 @@ Product Tree. Value type object with 1 or more properties. The properties are br
           }
         },
 
+#### Product Tree Property - Relationships
+
         "relationships": {
           "type": "array",
           "minItems": 1,
