@@ -1482,7 +1482,7 @@ Vulnerability. Is a container for the aggregation of all fields that are related
 
 ##### Vulnerabilities Property - Vulnerability - Product Status
 
-Product status. ontains different lists of product_ids which provide details on the status of the referenced product related to the current vulnerability. Value type object with 1 or more properties.
+Product status. Contains different lists of product_ids which provide details on the status of the referenced product related to the current vulnerability. Value type object with 1 or more properties.
 
     "product_status": {
       "title": "Product status",
