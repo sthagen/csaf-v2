@@ -688,7 +688,7 @@ Note contents. The contents of the note. Content varies depending on type. Value
 
     "version_t": {
       "title": "Version",
-      "description": "Sepcifies a version string with a simple hierarchical counter model to denote clearly the evolution of the content of the document. Format must be understood as 'major.minor.patch.build' version.",
+      "description": "Specifies a version string with a simple hierarchical counter model to denote clearly the evolution of the content of the document. Format must be understood as 'major.minor.patch.build' version.",
       "examples": [
         "1",
         "0.9",
