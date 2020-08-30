@@ -806,31 +806,29 @@ In addition, the document object may provide the 7 optional properties acknowled
 
 #### Document Property - Aggregate Severity
 
-Aggregate severity is a vehicle that is provided by the document producer to convey the urgency and criticality with which the one or more vulnerabilities reported should be addressed. It is a document-level metric and applied to the document as a whole — not any specific vulnerability. The range of values in this field is defined according to the document producer's policies and procedures. Value type is object.
+Aggregate severity is a vehicle that is provided by the document producer to convey the urgency and criticality with which the one or more vulnerabilities reported should be addressed. It is a document-level metric and applied to the document as a whole — not any specific vulnerability. The range of values in this field is defined according to the document producer's policies and procedures. Value type is object with 1 required property `text` and the optional property `namespace`.
 
     "aggregate_severity" : {
-      "title": "Aggregate severity",
-      "description": "Is a vehicle that is provided by the document producer to convey the urgency and criticality with which the one or more vulnerabilities reported should be addressed. It is a document-level metric and applied to the document as a whole — not any specific vulnerability. The range of values in this field is defined according to the document producer's policies and procedures.",
-      "type": "object",
+      // ...
       "properties": {
         "namespace": {
-          "title": "Namespace of aggregate severity",
-          "description": "Points to the namespace so referenced.",
-          "type": "string",
-          "format": "uri"
+          // ...
         },
         "text": {
-          "title": "Text of aggregate severity",
-          "description": "Provides a severity which s independent of - and in addition to - any other standard metric for determining the impact or severity of a given vulnerability (such as CVSS).",
-          "examples": ["Moderate", "Important", "Critical"],
-          "type": "string",
-          "minLength": 1
+          // ...
         }
       },
-      "required": [
-        "text"
-      ]
     },
+
+The Namespace of aggregate severity (`namespace`) points to the namespace so referenced. Value type is string with format `uri`.
+
+The Text of aggregate severity (`text`) provides a severity which is independent of - and in addition to - any other standard metric for determining the impact or severity of a given vulnerability (such as CVSS). Value type is string with 1 or more characters.
+
+Examples:
+
+    Moderate
+    Important
+    Critical
 
 #### Document Property - CSAF Version
 
