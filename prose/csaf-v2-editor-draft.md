@@ -134,7 +134,27 @@ Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words", BCP 14, 
 ###### [RFC3552]
 Rescorla, E. and B. Korver, "Guidelines for Writing RFC Text on Security Considerations", BCP 72, RFC 3552, DOI 10.17487/RFC3552, July 2003, https://www.rfc-editor.org/info/rfc3552.
 
-## 1.5 Some markdown usage examples
+## 1.5 Typographical Conventions
+Keywords defined by this specification use this `monospaced` font.
+```
+    Normative source code uses this paragraph style.
+```
+Text following the special symbol («) – an opening Guillemet (or French quotation mark) – within this specification identifies conformance statements. Every conformance statement is separated from the following text with the special end symbol (») – a closing Guillemet, and has been assigned a reference that follows that end symbol in the format [CSAF-section#-local#].
+
+Some sections of this specification are illustrated with non-normative examples introduced with "Example" or "Examples" like so:
+*Examples:*
+```
+    Non-normative examples use this paragraph style.
+```
+
+All examples in this document are non-normative and informative only.
+
+All other text is normative unless otherwise labeled e.g. like:
+
+Non-normative Comment:
+>This is a pure informative comment that may be present, because the information conveyed is deemed useful advice or common pitfalls learned from implementer or operator experience and often given including the rationale.
+
+## 1.6 Some markdown usage examples
 
 **Text.**
 
@@ -148,7 +168,7 @@ append two or more space characters (or space-backslash) to the end of the lines
 which will generate an HTML break tag instead of a new paragraph tag \
 (as demonstrated here).
 
-### 1.5.1 Figures and Captions
+### 1.6.1 Figures and Captions
 
 FIGURE EXAMPLE:
 <note caption is best placed ABOVE figure, so a hyperlink to it will actually display the figure, instead of rendering the figure off the screen above the caption. The same placement should be used for table captions>
@@ -160,9 +180,9 @@ FIGURE EXAMPLE:
 ![message exchange](images/image_1.png)
 
 
-### 1.5.2 Tables
+### 1.6.2 Tables
 
-#### 1.5.2.1 Basic Table
+#### 1.6.2.1 Basic Table
 **Table 1-1. Table Label**
 
 | Item | Description |
@@ -172,7 +192,7 @@ FIGURE EXAMPLE:
 | Item 3 | Something<br>(second line) |
 | Item 4 | text |
 
-#### 1.5.2.2 Table with Three Columns and Some Bold Text
+#### 1.6.2.2 Table with Three Columns and Some Bold Text
 text.
 
 | Title 1 | Title 2 | title 3 |
@@ -180,7 +200,7 @@ text.
 | something | something | something else that is a long string of text that **might** need to wrap around inside the table box and will just continue until the column divider is reached |
 | something | something | something |
 
-#### 1.5.2.3 Table with a caption which can be referenced
+#### 1.6.2.3 Table with a caption which can be referenced
 
 ###### Table 1-5. See reference label construction
 
@@ -192,7 +212,7 @@ Here is a reference to the table caption:
 Please see [Table 1-5 or other meaningful label](#table-1-5-see-reference-label-construction) 
 
 
-### 1.5.3 Lists
+### 1.6.3 Lists
 
 Bulleted list:
 * bullet item 1.
@@ -214,7 +234,7 @@ Numbered list:
 Left-justified list without bullets or numbers:
 To list multiple items without full paragraph breaks between items, add space-backslash after each item except the last.
 
-### 1.5.4 Reference Label Construction
+### 1.6.4 Reference Label Construction
 
 REFERENCES and ANCHORS
 - in markdown source, format the Reference tags as level 6 headings like: `###### [RFC2119]`
@@ -240,7 +260,7 @@ Bradner, S., "Key words ..."
 -- (in markdown: `"see [Section 1.3](#13-normative-references"`)  
 -- similar HTML anchors are also used in constructing the TOC
 
-### 1.5.5 Code Blocks
+### 1.6.5 Code Blocks
 
 Text to appear as an indented code block with grey background and monospace font - use three back-ticks before and after the code block).
 
@@ -261,7 +281,7 @@ Note the actual backticks will not appear in the HTML format. If it's necessary 
 Text to be highlighted as code can also be surrounded by a single "backtick" character: 
 `code text`
 
-## 1.6 Page Breaks
+## 1.7 Page Breaks
 Add horizontal rule lines where page breaks are desired in the PDF - before each major section
 - insert the line rules in markdown by inserting 3 or more hyphens on a line by themselves:  ---
 - place these before each main section in markdown (usually "#" - which generates the HTML `<h1>` tag)
@@ -330,7 +350,7 @@ Remove this note before submitting for publication.)
 
 -------
 
-# Schema Elements
+# 5 Schema Elements
 
 The CSAF schema describes how to represent security advisory information as a JSON document.
 
