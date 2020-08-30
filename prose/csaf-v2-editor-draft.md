@@ -409,7 +409,7 @@ The single mandatory property is the document. The optional two additional prope
 
 ### Acknowledgment Type
 
-Acknowledgement acknowledges contributions by describing those that contributed. The value type is object with 1 to 4 properties. The properties are: names, organizations, description, and urls.
+Acknowledgement (`acknowledgment_t`) type instances acknowledge contributions by describing those that contributed. The value type is object with 1 to 4 properties. The properties are: names, organizations, description, and urls.
 
     "acknowledgment_t": {
       "type": "object",
@@ -516,15 +516,15 @@ Type of the branch describes the characteristics of the labeled branch. Value ty
 
 #### Branch Type - Branches
 
-Branches have the value type array with 1 or more items of the Branch type (branch_branches_t). 
+Branches have the value type array with 1 or more items of the Branch type (`branch_branches_t`). 
 
 #### Branch Type - Product
 
-Product has the value type Full Product Name (full_product_name_t).
+Product has the value type Full Product Name (`full_product_name_t`).
 
 ### Full Product Name Type
 
-Full Product Name has value type object with 3 properties. The properties product_id and name are mandatory. In addition the object may contain a CPE identifier as value of the cpe property.
+Full Product Name (`full_product_name_t`) has value type object with 3 properties. The properties product_id and name are mandatory. In addition the object may contain a CPE identifier as value of the cpe property.
 
     "full_product_name_t": {
       // ...
@@ -580,7 +580,7 @@ Examples:
 
 ### Notes Type
 
-Notes type is array with 1 or more items of type Note. Value type of every such Note item is object with the mandatory properties type and text. A note may provide the additional properties audience and title.
+Notes type (`notes_t`) is array with 1 or more items of type Note. Value type of every such Note item is object with the mandatory properties type and text. A note may provide the additional properties audience and title.
 
     "notes_t": {
       // ..
@@ -667,7 +667,7 @@ List of Product IDs (`product_ids`) specifies a list of `product_ids` to give co
 
 ### Product Groups Type
 
-List of roduct Group ID (`product_group_ids`) specifies a list of `product_group_ids` to give context to the parent item. Value type is array with 1 or more unque items (set) of type Product Group ID (`product_group_id_t`)
+List of Product Group ID (`product_group_ids`) specifies a list of `product_group_ids` to give context to the parent item. Value type is array with 1 or more unque items (set) of type Product Group ID (`product_group_id_t`)
 
 ### Product Group ID Type
 
