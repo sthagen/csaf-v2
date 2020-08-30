@@ -1263,7 +1263,7 @@ Product Tree has value type object with 1 or more properties. The properties are
 
 ### Vulnerabilities Property
 
-Vulnerabilities have value type array with 1 or more objects representing vulnerabilities and providing 1 or more properties.
+Vulnerabilities represents a list of all relevant vulnerability information items. Value type is array with 1 or more objects representing vulnerabilities and providing 1 or more properties.
 
     "vulnerabilities": {
       "items": {
