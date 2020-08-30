@@ -690,7 +690,7 @@ Examples:
 
 ### References Type
 
-The References (`references_t`) type provides a list Reference objects. Value type is array with 1 or more items. 
+The References (`references_t`) type provides a list of Reference objects. Value type is array with 1 or more items. 
 
     "references_t": {
       // ...
