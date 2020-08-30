@@ -890,47 +890,51 @@ Notes associated with the whole document. Notes about this set of vulnerabilitie
 
 #### Document Property - Publisher
 
+Publisher (`publisher`) has value type object and provides information on the publishing entity. The single required property is `type`. The 3 other optional properties are: `contact_details`, `issuing_authority`, and `vendor_id`.
+
     "publisher": {
-      "type": "object",
-      "required": [
-        "type"
-      ],
+      // ...
       "properties": {
         "contact_details": {
-          "type": "string",
-          "title": "How to contact",
-          "description": "Information on how to contact the publisher, possibly including details such as web sites, email addresses, phone numbers, and postal mail addresses.",
-          "examples": [
-            "Example Company can be reached at contact_us@example.com, or via our website at https://www.example.com/contact."
-          ],
-          "minLength": 1
+          // ...
         },
         "issuing_authority": {
-          "title": "What authority",
-          "description": "The name of the issuing party and their authority to release the document, in particular, the party's constituency and responsibilities or other obligations.",
-          "type": "string",
-          "minLength": 1
+          // ...
         },
         "type": {
-          "title": "Type of publisher",
-          "description": "Provides information about the type of publisher releasing the document.",
-          "type": "string",
-          "enum": [
-            "coordinator",
-            "discoverer",
-            "other",
-            "user",
-            "vendor"
-          ]
+          // ...
         },
         "vendor_id": {
-          "title": "Vendor releasing the document",
-          "description": "Vendor ID is a unique identifier (OID) that a vendor uses as issued by FIRST under the auspices of IETF.",
-          "type": "string",
-          "minLength": 1
+          // ...
         }
       }
     },
+
+##### Document Property - Publisher - XXX
+
+How to contact (`contact_details`)? Information on how to contact the publisher, possibly including details such as web sites, email addresses, phone numbers, and postal mail addresses. Value type is string with 1 or more characters.
+
+Example:
+
+    Example Company can be reached at contact_us@example.com, or via our website at https://www.example.com/contact.
+
+##### Document Property - Publisher - Issuing Authority
+
+What authority (`issuing_authority`)? The name of the issuing party and their authority to release the document, in particular, the party's constituency and responsibilities or other obligations. Value type is string with 1 or more characters.
+
+##### Document Property - Publisher - Type
+
+The Type of publisher (`type`) provides information about the type of publisher releasing the document. Value type is string with fixed value set (enum). Thes values are:
+
+    coordinator
+    discoverer
+    other
+    user
+    vendor
+
+##### Document Property - Publisher - Vendor ID
+
+The Vendor releasing the document (`vendor_id`). The Vendor ID is a unique identifier (OID) that a vendor uses as issued by FIRST under the auspices of IETF. Value type is string with 1 or more characters.
 
 #### Document Property - References
 
