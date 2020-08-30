@@ -906,40 +906,23 @@ Examples:
 
 ##### Document Property - Distribution - TLP
 
-XXX.
+Traffic Light Protocol (TLP) (`tlp`) type provides details about the TLP classification of the document. Value type is object with the required property `label` and the optional property `url`.
 
-    "tlp": {
-      "title": "Traffic Light Protocol (TLP)",
-      "description": "Provides details about the TLP classification of the document.",
-      "type": "object",
-      "required": [
-        "label"
-      ],
-      "properties": {
-        "label": {
-          "title": "Label of TLP",
-          "description": "Provides the TLP label of the document.",
-          "type": "string",
-          "enum": [
-            "RED",
-            "AMBER",
-            "GREEN",
-            "WHITE"
-          ]
-        },
-        "url": {
-          "title": "URL of TLP version",
-          "description": "Provides a URL where to find the textual description of the TLP version which is used in this document. Default is the URL to the definition by FIRST.",
-          "default": "https://www.first.org/tlp/",
-          "examples": [
-            "https://www.us-cert.gov/tlp",
-            "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Kritis/Merkblatt_TLP.pdf"
-          ],
-          "type": "string",
-          "format": "uri"
-        }
-      }
-    }
+The Label of TLP (`label`) provides the TLP label of the document. Value type is string with value from the set (enum):
+
+    RED
+    AMBER
+    GREEN
+    WHITE
+
+The URL of TLP version (`url`) provides a URL where to find the textual description of the TLP version which is useed in this document. Value type is string with format `uri`. Default value is the URL to the definition by FIRST. The default value is:
+
+    https://www.first.org/tlp/
+
+Examples:
+
+    https://www.us-cert.gov/tlp
+    https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Kritis/Merkblatt_TLP.pdf
 
 #### Document Property - Language
 
