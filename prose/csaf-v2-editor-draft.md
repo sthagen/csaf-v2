@@ -843,53 +843,13 @@ CSAF version gives the version of the CSAF specification which the document was 
 Rules for sharing document describe any constraints on how this document might be shared. Value type is object with 1 or more properties.
 
     "distribution": {
-      "title": "Rules for sharing document",
-      "description": "Describe any constraints on how this document might be shared.",
-      "type": "object",
-      "minProperties": 1,
+      // ...
       "properties": {
         "text": {
-          "title": "Description",
-          "description": "Provides a textual description of additional constraints.",
-          "examples": [
-            "Share only on a need-to-know-basis only.",
-            "Distribute freely.",
-            "Copyright 2019, Example Company, All Rights Reserved."
-          ],
-          "type": "string",
-          "minLength": 1
+          // ...
         },
         "tlp": {
-          "title": "Traffic Light Protocol (TLP)",
-          "description": "Provides details about the TLP classification of the document.",
-          "type": "object",
-          "required": [
-            "label"
-          ],
-          "properties": {
-            "label": {
-              "title": "Label of TLP",
-              "description": "Provides the TLP label of the document.",
-              "type": "string",
-              "enum": [
-                "RED",
-                "AMBER",
-                "GREEN",
-                "WHITE"
-              ]
-            },
-            "url": {
-              "title": "URL of TLP version",
-              "description": "Provides a URL where to find the textual description of the TLP version which is used in this document. Default is the URL to the definition by FIRST.",
-              "default": "https://www.first.org/tlp/",
-              "examples": [
-                "https://www.us-cert.gov/tlp",
-                "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Kritis/Merkblatt_TLP.pdf"
-              ],
-              "type": "string",
-              "format": "uri"
-            }
-          }
+          // ...
         }
       }
     },
