@@ -910,7 +910,7 @@ Publisher (`publisher`) has value type object and provides information on the pu
       }
     },
 
-##### Document Property - Publisher - XXX
+##### Document Property - Publisher - Contact Details
 
 How to contact (`contact_details`)? Information on how to contact the publisher, possibly including details such as web sites, email addresses, phone numbers, and postal mail addresses. Value type is string with 1 or more characters.
 
