@@ -690,43 +690,40 @@ Examples:
 
 ### References Type
 
+The References (`references_t`) type provides a list Reference objects. Value type is array with 1 or more items. 
+
     "references_t": {
-      "type": "array",
-      "minItems": 1,
+      // ...
       "items": {
-        "title": "Reference",
-        "description": "Holds any reference to conferences, papers, advisories, and other resources that are related and considered related to either a surrounding part of or the entire document and to be of value to the document consumer.",
-        "type": "object",
+        // ...
         "properties": {
           "description": {
-            "title": "Description of reference",
-            "description": "What does this reference refer to?",
-            "type": "string",
-            "minLength": 1
+            // ...
           },
           "type": {
-            "title": "Type of reference",
-            "description": "Indicates whether the reference points to the same document or vulnerability in focus (depending on scope) or to an external resource.",
-            "default": "external",
-            "type": "string",
-            "enum": [
-              "self",
-              "external"
-            ]
+            // ...
           },
           "url": {
-            "title": "URL of reference",
-            "description": "Provides the URL for the reference.",
-            "type": "string",
-            "format": "uri"
+            // ...
           }
         },
-        "required": [
-          "url",
-          "description"
-        ]
       }
     },
+
+Any such item is a Reference that holds any reference to conferences, papers, advisories, and other resources that are related and considered related to either a surrounding part of or the entire document and to be of value to the document consumer. Value type is object with the 2 mandatory properties `url` and `description`. A third optional property `type` is available.
+
+The Description of reference (`description`) provides an anwser to the question: "What does this reference refer to?" and is of type string with 1 or more characters.
+
+The Type of reference (`type`) indicates whether the reference points to the same document or vulnerability in focus (depending on scope) or to an external resource. Value type is string with a fixed value set (enum). The value set of the `type` enum is:
+
+    self
+    external
+
+The default value for `type` is:
+
+    external
+
+The URL of reference (`url`) provides the URL for the reference. Value type is string with format `uri`.
 
 ### Version Type
 
