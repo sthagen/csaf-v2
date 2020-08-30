@@ -663,58 +663,30 @@ Note contents are the contents of the note. Content varies depending on type. Va
 
 ### Products Type
 
-
-    "products_t": {
-      "title": "List of product_ids",
-      "description": "Specifies a list of product_ids to give context to the parent item.",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "$ref": "#/definitions/product_id_t"
-      },
-      "uniqueItems": true
-    },
-
+List of Product IDs (`product_ids`) specifies a list of `product_ids` to give context to the parent item. Value type is array with 1 or more unque items (set) of type Product ID (`product_id_t`)
 
 ### Product Groups Type
 
-    "product_groups_t": {
-      "title": "List of product_group_ids",
-      "description": "Specifies a list of product_group_ids to give context to the parent item.",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "$ref": "#/definitions/product_group_id_t"
-      },
-      "uniqueItems": true
-    },
+List of roduct Group ID (`product_group_ids`) specifies a list of `product_group_ids` to give context to the parent item. Value type is array with 1 or more unque items (set) of type Product Group ID (`product_group_id_t`)
 
 ### Product Group ID Type
 
-    "product_group_id_t": {
-      "title": "Reference token for product group instance",
-      "description": "Token required to identify a group of products so that it can be referred to from other parts in the document. There is no predefined or required format for the product_group_id as long as it uniquely identifies a group in the context of the current document.",
-      "examples": [
-        "CSAFGID-0001",
-        "CSAFGID-0002",
-        "CSAFGID-0020"
-      ],
-      "type": "string",
-      "minLength": 1
-    },
+The Product Group ID Type (`product_group_id_t`) is a reference token for product group instances. Token required to identify a group of products so that it can be referred to from other parts in the document. There is no predefined or required format for the Product Group ID (`product_group_id`) as long as it uniquely identifies a group in the context of the current document. Value type is string with 1 or more characters.
+
+Examples:
+
+    CSAFGID-0001
+    CSAFGID-0002
+    CSAFGID-0020
 
 ### Product ID Type
 
-    "product_id_t": {
-      "title": "Reference token for product instance",
-      "description": "Token required to identify a full_product_name so that it can be referred to from other parts in the document. There is no predefined or required format for the product_id as long as it uniquely identifies a product in the context of the current document.",
-      "examples": [
-        "CVRFPID-0004",
-        "CVRFPID-0008"
-      ],
-      "type": "string",
-      "minLength": 1
-    },
+The Product ID Type (`product_id_t`) is a reference token for product instances. Token required to identify a `full_product_name` so that it can be referred to from other parts in the document. There is no predefined or required format for the Product Group ID (`product_id`) as long as it uniquely identifies a product in the context of the current document. Value type is string with 1 or more characters.
+
+Examples:
+
+    CVRFPID-0004
+    CVRFPID-0008
 
 ### References Type
 
