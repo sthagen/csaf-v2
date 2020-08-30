@@ -1318,20 +1318,13 @@ Vulnerability. Is a container for the aggregation of all fields that are related
 
 ##### Vulnerabilities Property - Vulnerability - Acknowledgments
 
-    "acknowledgments": {
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "$ref": "#/definitions/acknowledgment_t"
-      }
-    },
+Acknowledgments. Value type is array with 1 or more items of type Acknowledgement (acknowledgement_t).
 
 ##### Vulnerabilities Property - Vulnerability - CVE
 
-    "cve": {
-      "type": "string",
-      "pattern": "^CVE-[0-9]{4}-[0-9]{4,}$"
-    },
+CVE. Value type is a string matching the regular expression pattern:
+
+    ^CVE-[0-9]{4}-[0-9]{4,}$
 
 ##### Vulnerabilities Property - Vulnerability - CWE
 
@@ -1400,10 +1393,7 @@ Vulnerability. Is a container for the aggregation of all fields that are related
 
 ##### Vulnerabilities Property - Vulnerability - Discovery Date
 
-    "discovery_date": {
-      "type": "string",
-      "format": "date-time"
-    },
+Discovery Date. Value type is a string in the format date-time.
 
 ##### Vulnerabilities Property - Vulnerability - ID
 
@@ -1476,9 +1466,7 @@ Vulnerability. Is a container for the aggregation of all fields that are related
 
 ##### Vulnerabilities Property - Vulnerability - Notes
 
-    "notes": {
-      "$ref": "#/definitions/notes_t"
-    },
+Notes. Value type is Notes (notes_t).
 
 ##### Vulnerabilities Property - Vulnerability - Product Status
 
