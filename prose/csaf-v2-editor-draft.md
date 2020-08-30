@@ -308,8 +308,41 @@ The display of the elements representing Product Tree and Vulnerability informat
 
 As the JSON format is not primarily targeting human readers but more programs parsing, validating and transforming no example is given in this introduction but instead examples derived from several real-world security advisories are stated in the non-normative Appendix E Complete Examples.
 
-## 2.1 Level 2 Heading
-text.
+## 2.1 Construction Principles
+A Security Advisory defined as a CSAF document is the result of complex orchestration of many players and distinct and partially difficult to play schemas.
+
+The format chosen is [JSONSchema] which allows validation and delegation to sub schema providers. The latter aligns well with separation of concerns and shares the format family of information interchange utilized by the providers of product and vulnerability information which migrated from XML to JSON since the creation of CSAF CVRF version 1.2, the predecessor of this specification.
+
+The acronym CSAF, “Common Security Advisory Framework”, stands for the target of concerted mitigation and remediation accomplishment.
+
+Technically the use of JSON schema allows validation and proof of model conformance (through established schema based validation) of the declared information inside CSAF documents.
+
+The CSAF schema structures its derived documents into three main classes of the information conveyed:
+
+1. The frame, aggregation, and reference information of the document
+2. Product information considered relevant by the creator
+3. Vulnerability information and its relation to the products declared in 2.
+
+Wherever possible repetition of data has been replaced by linkage through ID elements. Consistency on the content level thus is in the responsibility of the producer of such documents, to link e.g. vulnerability information to the matching product.
+
+A dictionary like presentation of all defined schema elements is given in the section SCHEMASECTIONNUMBER Schema. Any expected relations to other elements (linkage) is described there. This linking relies on setting attribute values accordingly (mostly guided by industry best practice and conventions) and thus implies, that any deep validation on a semantic level is to be ensured by the producer and consumer of CSAF documents. It is out of scope for this specification.
+
+Proven and intended usage patterns from practice are given where possible. 
+
+Delegation to industry best practices technologies is used in referencing schemas for:
+
+* Platform Data:
+  * Common Platform Enumeration (CPE) Version 2.3 [CPE23_A]
+* Vulnerability Scoring:
+  * Common Vulnerability Scoring System (CVSS) Version 3.1 [CVSS3_1]
+    * JSON Schema Reference https://www.first.org/cvss/cvss-v3.1.json
+  * Common Vulnerability Scoring System (CVSS) Version 3.0 [CVSS3]
+    * JSON Schema Reference https://www.first.org/cvss/cvss-v3.0.json
+  * Common Vulnerability Scoring System (CVSS) Version 2.0 [CVSS2][1]
+    * JSON Schema Reference https://www.first.org/cvss/cvss-v2.0.json
+* Classfication for Document Distribution
+  * Traffic Light Protocol (TLP)
+    * Default Definition: https://www.first.org/tlp/ 
 
 ### 2.1.1 Level 3 Heading
 text.
