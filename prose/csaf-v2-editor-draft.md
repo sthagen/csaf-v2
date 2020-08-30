@@ -953,105 +953,38 @@ Examples:
 
 #### Document Property - Tracking
 
+Tracking (`tracking`) provides attributes for tracking the evolution of the security advisory revisions. Value type is object with the six mandatory properties: `current_release_date`, `id`, `initial_release_date`, `revision_history`, `status`, and `version`. The two optional additional properties are `aliases` and `generator`.
+
     "tracking": {
-      "type": "object",
-      "required": [
-        "current_release_date",
-        "id",
-        "initial_release_date",
-        "revision_history",
-        "status",
-        "version"
-      ],
+      // ...
       "properties": {
         "id": {
-          "title": "Unique identifier for the document",
-          "description": "The ID is a simple label that provides for a wide range of numbering values, types, and schemes. Its value SHOULD be assigned and maintained by the original document issuing authority.",
-          "examples": ["Example Company - 2019-YH3234", "RHBA-2019:0024", "cisco-sa-20190513-secureboot"],
-          "type": "string",
-          "minLength": 1
+          // ...
         },
         "aliases": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "type": "string",
-            "title": "Alternate name",
-            "description": "Alternate names for the same vulnerability.",
-            "examples": [
-              "CVE-2019-12345"
-            ],
-            "minLength": 1
-          }
+          // ...
         },
         "current_release_date": {
-          "title": "Current release date",
-          "description": "The date of the current revision of this document was released",
-          "type": "string",
-          "format": "date-time"
+          // ...
         },
         "generator": {
-          "type": "object",
-          "minProperties": 1,
-          "properties": {
-            "engine": {
-              "type": "string",
-              "minLength": 1
-            },
-            "date": {
-              "type": "string",
-              "format": "date-time"
-            }
-          }
+          // ...
         },
         "initial_release_date": {
-          "title": "Initial release date",
-          "description": "The date that this document was first published.",
-          "type": "string",
-          "format": "date-time"
+          // ...
         },
         "revision_history": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "type": "object",
-            "properties": {
-              "number": {
-                "$ref": "#/definitions/version_t"
-              },
-              "date": {
-                "title": "Date of the revision",
-                "description": "The date of the revision entry",
-                "type": "string",
-                "format": "date-time"
-              },
-              "description": {
-                "type": "string",
-                "minLength": 1
-              }
-            },
-            "required": [
-              "number",
-              "date",
-              "description"
-            ]
-          }
+          // ...
         },
         "status": {
-          "title": "Document status",
-          "description": "Defines the draft status of the document.",
-          "type": "string",
-          "enum": [
-            "draft",
-            "final",
-            "interim"
-          ]
+          // ...
         },
         "version": {
-          "$ref": "#/definitions/version_t"
+          // ...
         }
       }
     },
+
 
 ##### Document Property - Tracking - ID
 
@@ -1079,26 +1012,34 @@ Examples:
       }
     },
 
+
 ##### Document Property - Tracking - Current Release Date
 
 Current release date is the date of the current revision of this document was released. Value type is string of format date-time.
 
+
 ##### Document Property - Tracking - Generator
 
-    "generator": {
-      "type": "object",
-      "minProperties": 1,
-      "properties": {
-        "engine": {
-          "type": "string",
-          "minLength": 1
+The Generator (`generator`) describes the engine technically creating the security advisory. Value type is object with 1 or 2 properties. The properties are `engine` and `date`.
+
+        "generator": {
+          "type": "object",
+          "minProperties": 1,
+          "properties": {
+            "engine": {
+              "type": "string",
+              "minLength": 1
+            },
+            "date": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
         },
-        "date": {
-          "type": "string",
-          "format": "date-time"
-        }
-      }
-    },
+
+Engine (`engine`) is of type string with 1 or more characters.
+
+Date (`date`) is of type string with format `date-time`.
 
 ##### Document Property - Tracking - Initial Release Date
 
@@ -1106,37 +1047,35 @@ Initial release date is the date that this document was first published. Value t
 
 ##### Document Property - Tracking - Revision History
 
-    "revision_history": {
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "number": {
-            "$ref": "#/definitions/version_t"
-          },
-          "date": {
-            "title": "Date of the revision",
-            "description": "The date of the revision entry",
-            "type": "string",
-            "format": "date-time"
-          },
-          "description": {
-            "type": "string",
-            "minLength": 1
+The Revision History (`revision_history`) provides a list of information items on revisions of the security advisory. The value type is array of with 1 or more items. The items are of type object with the three mandatory properties: `number`, `date`, and `description`. 
+
+        "revision_history": {
+          // ...
+          "items": {
+            "type": "object",
+            "properties": {
+              "number": {
+                // ...
+              },
+              "date": {
+                // ...
+              },
+              "description": {
+                // ...
+              }
+            },
           }
         },
-        "required": [
-          "number",
-          "date",
-          "description"
-        ]
-      }
-    },
+
+The `number` is of value type Version (`version_t`). 
+
+The Date of the revision (`date`) states the date of the revision entry. Value type is strng with format `date-time`.
+
+The Description (`description`) is of type string with 1 or more characters.
 
 ##### Document Property - Tracking - Status
 
-Document status defines the draft status of the document. Value type is string enum. The valid values are:
+Document status (`status`) defines the draft status of the document. Value type is string with fixed value set (enum). The value MUST be one of the following:
 
     draft
     final
@@ -1144,9 +1083,7 @@ Document status defines the draft status of the document. Value type is string e
 
 ##### Document Property - Tracking - Version
 
-    "version": {
-      "$ref": "#/definitions/version_t"
-    }
+Version has the value type Version (`version_t`).
 
 #### Document Property - Type
 
