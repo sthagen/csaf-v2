@@ -730,6 +730,8 @@ Examples:
 
 ### Version Type
 
+The Version (`version_t`) type specifies a version string with a simple hierarchical counter model to denote clearly the evolution of the content of the document. Format must be understood as 'major.minor.patch.build' version.
+
     "version_t": {
       "title": "Version",
       "description": "Specifies a version string with a simple hierarchical counter model to denote clearly the evolution of the content of the document. Format must be understood as 'major.minor.patch.build' version.",
@@ -891,6 +893,53 @@ Rules for sharing document describe any constraints on how this document might b
         }
       }
     },
+
+##### Document Property - Distribution - Text
+
+The Text member (`text`) value represents a description that provides a textual description of additional constraints. Value type is string with 1 or more characters.
+
+Examples:
+
+    Share only on a need-to-know-basis only.
+    Distribute freely.
+    Copyright 2019, Example Company, All Rights Reserved.
+
+##### Document Property - Distribution - TLP
+
+XXX.
+
+    "tlp": {
+      "title": "Traffic Light Protocol (TLP)",
+      "description": "Provides details about the TLP classification of the document.",
+      "type": "object",
+      "required": [
+        "label"
+      ],
+      "properties": {
+        "label": {
+          "title": "Label of TLP",
+          "description": "Provides the TLP label of the document.",
+          "type": "string",
+          "enum": [
+            "RED",
+            "AMBER",
+            "GREEN",
+            "WHITE"
+          ]
+        },
+        "url": {
+          "title": "URL of TLP version",
+          "description": "Provides a URL where to find the textual description of the TLP version which is used in this document. Default is the URL to the definition by FIRST.",
+          "default": "https://www.first.org/tlp/",
+          "examples": [
+            "https://www.us-cert.gov/tlp",
+            "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Kritis/Merkblatt_TLP.pdf"
+          ],
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    }
 
 #### Document Property - Language
 
