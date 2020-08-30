@@ -268,8 +268,24 @@ Add horizontal rule lines where page breaks are desired in the PDF - before each
 
 -------
 
-# 2 Section Heading
-text.
+# 2 Design Considerations
+The Common Security Advisory Framework (CSAF) is a language to exchange Security Advisories formulated in JSON.
+
+Non-normative comment:
+
+>The term Security Advisory as used in this document describes any notification of security issues in products of and by providers. Anyone providing a product is considered in this document as a vendor, i.e. developers or maintainers of information system products or services. This includes all authoritative product vendors, Product Security Incident Response Teams (PSIRTs), and product resellers and distributors, including authoritative vendor partners.
+A security issue is not necessarily constraint to a problem statement, the focus of the term is on the security aspect impacting (or not impacting) specific product-platform-version combinations. Information on presence or absence of work-arounds is also considered part of the security issue.
+This document is the definitive reference for the language elements of CSAF version 2.0. The encompassing JSON schema file noted in the Additional Artifacts section of the title page shall be taken as normative in the case a gap or an inconsistency in this explanatory document becomes evident.
+The following presentation in this section is grouped by topical area, and is not simply derivative documentation from the schema document itself. The information contained aims to be more descriptive and complete. Where applicable, common conventions are stated and known common issues in usage are pointed out informatively to support implementers of document producers and consumers alike. The section SCHEMA_SECTION_NUMBER Schema derives from the JSON schema itself as a service for the reader.
+
+« From a high-level perspective, any Security Advisory purported by a CSAF version 2.0 adhering JSON text document MUST provide the document with at least the following five properties defined: `csaf_version`, `title`, `publisher`, `type`, and `tracking`. » [CSAF-2-1]
+
+This minimal required set does not provide any useful information on products, vulnerabilities, or security advisories, thus any real-world Security Advisory will carry additional information as specified in SCHEMA_SECTION_NUMBER section Schema.
+
+Care has been taken, to design the containers for product and vulnerability information to support fine-grained mapping of security advisories onto product and vulnerability and minimize data duplication through referencing.
+The display of the elements representing Product Tree and Vulnerability information has been placed in the sections named accordingly.
+
+As the JSON format is not primarily targeting human readers but more programs parsing, validating and transforming no example is given in this introduction but instead examples derived from several real-world security advisories are stated in the non-normative Appendix E Complete Examples.
 
 ## 2.1 Level 2 Heading
 text.
