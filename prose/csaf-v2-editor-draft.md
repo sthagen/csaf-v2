@@ -339,6 +339,8 @@ The single mandatory property is the document. The optional two additional prope
 
 ### Acknowledgment Type
 
+Acknowledgement acknowledges contributions by describing those that contributed. The value type is object with 1 to 4 properties. The properties are: names, organizations, description, and urls.
+
     "acknowledgment_t": {
       "type": "object",
       "minProperties": 1,
