@@ -142,9 +142,10 @@ Keywords defined by this specification use this `monospaced` font.
 Text following the special symbol («) – an opening Guillemet (or French quotation mark) – within this specification identifies conformance statements. Every conformance statement is separated from the following text with the special end symbol (») – a closing Guillemet, and has been assigned a reference that follows that end symbol in the format [CSAF-section#-local#].
 
 Some sections of this specification are illustrated with non-normative examples introduced with "Example" or "Examples" like so:
+
 *Examples:*
 ```
-    Non-normative examples use this paragraph style.
+    Non-normative examples also use this paragraph style but preceded by the text "Example(s).
 ```
 
 All examples in this document are non-normative and informative only.
