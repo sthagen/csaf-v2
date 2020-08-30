@@ -360,7 +360,7 @@ The single mandatory property is the document. The optional two additional prope
 
 #### Acknowledgment Type - Names
 
-Names of entities being recognized. Typically the name of a person belonging to an organization. Value type is string with 1 or more characters.
+Names of entities being recognized is typically the name of a person belonging to an organization. Value type is string with 1 or more characters.
 
 Examples:
 
@@ -379,7 +379,7 @@ Examples:
 
 #### Acknowledgment Type - Description
 
-Description of the acknowledgment. SHOULD represent any contextual details the document producers wish to make known about the acknowledgment or acknowledged parties. Value type is string with 1 or more characters.
+Description of the acknowledgment SHOULD represent any contextual details the document producers wish to make known about the acknowledgment or acknowledged parties. Value type is string with 1 or more characters.
 
 Example:
 
@@ -387,11 +387,11 @@ Example:
 
 #### Acknowledgment Type - URLs
 
-URL of acknowledgment. Contains the URL or location of the reference to be acknowledged. Value type is string with format URI.
+URL of acknowledgment contains the URL or location of the reference to be acknowledged. Value type is string with format URI.
 
 ### Branch Type
 
-Branch. Is a part of the hierarchical structure of the product tree. Value type is object with 3 Properties. The properties name and type are mandatory. In addition the object contains either a branches or a product. 
+Branch is a part of the hierarchical structure of the product tree. Value type is object with 3 Properties. The properties name and type are mandatory. In addition the object contains either a branches or a product. 
 
     "branch_branches_t": {
       // ...
@@ -413,7 +413,7 @@ Branch. Is a part of the hierarchical structure of the product tree. Value type 
 
 #### Branch Type - Name
 
-Name of the branch. Contains the canonical descriptor or 'friendly name' of the branch. Value type string with 1 character or more.
+Name of the branch contains the canonical descriptor or 'friendly name' of the branch. Value type string with 1 character or more.
 
 Examples:
 
@@ -428,7 +428,7 @@ Examples:
 
 #### Branch Type - Type
 
-Type of the branch. Describes the characteristics of the labeled branch. Value type is string enum. Valid values are:
+Type of the branch describes the characteristics of the labeled branch. Value type is string enum. Valid values are:
 
     architecture
     host_name
@@ -452,7 +452,7 @@ Product has the value type Full Product Name (full_product_name_t).
 
 ### Full Product Name Type
 
-Full Product Name. Value type is object with 3 Properties. The properties product_id and name are mandatory. In addition the object may contain a CPE identifier as value of the cpe property.
+Full Product Name has value type object with 3 properties. The properties product_id and name are mandatory. In addition the object may contain a CPE identifier as value of the cpe property.
 
     "full_product_name_t": {
       // ...
@@ -490,7 +490,7 @@ Common Platform Enumeration representation. The Common Platform Enumeration (CPE
 
 ### Language Type
 
-Language type. Identifies a language, corresponding to IETF BCP 47 / RFC 5646. 
+Language type identifies a language, corresponding to IETF BCP 47 / RFC 5646. 
 
 See IETF language registry: [https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry](https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry)
 
@@ -534,7 +534,7 @@ Notes type is array with 1 or more items of type Note. Value type of every such 
 
 #### Notes Type - Note
 
-Note. Is a place to put all manner of text blobs related to the current context. Value type is object with the 2 mandatory properties type and text as well as the 2 optional properties audience and title. 
+Note is a place to put all manner of text blobs related to the current context. Value type is object with the 2 mandatory properties type and text as well as the 2 optional properties audience and title. 
 
     "properties": {
       "audience": {
@@ -553,7 +553,7 @@ Note. Is a place to put all manner of text blobs related to the current context.
 
 ##### Notes Type - Note - Audience
 
-Audience of note. Indicate who is intended to read it. Value type is string with 1 or more characters.
+Audience of note indicates who is intended to read it. Value type is string with 1 or more characters.
 
 Examples:
 
@@ -564,7 +564,7 @@ Examples:
 
 ##### Notes Type - Note - Title
 
-Title of note. Provides a concise description of what is contained in the text of the note. Value type is string with 1 or more characters.
+Title of note provides a concise description of what is contained in the text of the note. Value type is string with 1 or more characters.
 
 Examples:
 
@@ -587,7 +587,7 @@ Note type. Choice of what kind of note this is. Value type is string enum. Valid
 
 ##### Notes Type - Note - Text
 
-Note contents. The contents of the note. Content varies depending on type. Value type is string with 1 or more characters.
+Note contents are the contents of the note. Content varies depending on type. Value type is string with 1 or more characters.
 
 ### Products Type
 
@@ -703,7 +703,7 @@ Note contents. The contents of the note. Content varies depending on type. Value
 
 ### Document Property
 
-Document level meta-data. Captures the meta-data about this document describing a particular set of security advisories. Value type is object with the 5 mandatory properties csaf_version, title, publisher, type, and tracking. 
+Document level meta-data captures the meta-data about this document describing a particular set of security advisories. Value type is object with the 5 mandatory properties csaf_version, title, publisher, type, and tracking. 
 In addition, the document object may provide the 7 optional properties acknowledgments, aggregate_severity, distribution, lang, source_lang, notes, and references. 
 
     "document": {
@@ -760,7 +760,7 @@ In addition, the document object may provide the 7 optional properties acknowled
 
 #### Document Property - Aggregate Severity
 
-Aggregate severity. Is a vehicle that is provided by the document producer to convey the urgency and criticality with which the one or more vulnerabilities reported should be addressed. It is a document-level metric and applied to the document as a whole — not any specific vulnerability. The range of values in this field is defined according to the document producer's policies and procedures. Value type is object.
+Aggregate severity is a vehicle that is provided by the document producer to convey the urgency and criticality with which the one or more vulnerabilities reported should be addressed. It is a document-level metric and applied to the document as a whole — not any specific vulnerability. The range of values in this field is defined according to the document producer's policies and procedures. Value type is object.
 
     "aggregate_severity" : {
       "title": "Aggregate severity",
@@ -788,13 +788,13 @@ Aggregate severity. Is a vehicle that is provided by the document producer to co
 
 #### Document Property - CSAF Version
 
-CSAF version. Gives the version of the CSAF specification which the document was generated for. Value type is string enum. For this edition of the specification the single valid value is:
+CSAF version gives the version of the CSAF specification which the document was generated for. Value type is string enum. For this edition of the specification the single valid value is:
 
     2.0
 
 #### Document Property - Distribution
 
-Rules for sharing document. Describe any constraints on how this document might be shared. Value type is object with 1 or more properties.
+Rules for sharing document describe any constraints on how this document might be shared. Value type is object with 1 or more properties.
 
     "distribution": {
       "title": "Rules for sharing document",
@@ -850,7 +850,7 @@ Rules for sharing document. Describe any constraints on how this document might 
 
 #### Document Property - Language
 
-Document language. Identifies the language used by this document, corresponding to IETF BCP 47 / RFC 5646. Value type is the Language Type (lang_t).
+Document language identifies the language used by this document, corresponding to IETF BCP 47 / RFC 5646. Value type is the Language Type (lang_t).
 
 #### Document Property - Source Language
 
@@ -912,7 +912,7 @@ Notes associated with the whole document. Notes about this set of vulnerabilitie
 
 #### Document Property - Title
 
-Title of this document. This SHOULD be a canonical name for the document, and sufficiently unique to distinguish it from similar documents. Value type is string with 1 or more characters.
+Title of this document SHOULD be a canonical name for the document, and sufficiently unique to distinguish it from similar documents. Value type is string with 1 or more characters.
 
 Examples:
 
@@ -1049,7 +1049,7 @@ Examples:
 
 ##### Document Property - Tracking - Current Release Date
 
-Current release date. he date of the current revision of this document was released. Value type is string of format date-time.
+Current release date is the date of the current revision of this document was released. Value type is string of format date-time.
 
 ##### Document Property - Tracking - Generator
 
@@ -1070,7 +1070,7 @@ Current release date. he date of the current revision of this document was relea
 
 ##### Document Property - Tracking - Initial Release Date
 
-Initial release date. The date that this document was first published. Value type is string of format date-time.
+Initial release date is the date that this document was first published. Value type is string of format date-time.
 
 ##### Document Property - Tracking - Revision History
 
@@ -1104,7 +1104,7 @@ Initial release date. The date that this document was first published. Value typ
 
 ##### Document Property - Tracking - Status
 
-Document status. Defines the draft status of the document. Value type is string enum. The valid values are:
+Document status defines the draft status of the document. Value type is string enum. The valid values are:
 
     draft
     final
@@ -1125,7 +1125,7 @@ Document status. Defines the draft status of the document. Value type is string 
 
 ### Product Tree Property
 
-Product Tree. Value type object with 1 or more properties. The properties are branches, full_product_names, product_groups, and relationships.
+Product Tree has value type object with 1 or more properties. The properties are branches, full_product_names, product_groups, and relationships.
 
     "product_tree": {
       // ...
@@ -1261,7 +1261,7 @@ Product Tree. Value type object with 1 or more properties. The properties are br
 
 ### Vulnerabilities Property
 
-Vulnerabilities. Value type is array. with 1 or more objects representing vulnerabilities and providing 1 or more properties.
+Vulnerabilities have value type array with 1 or more objects representing vulnerabilities and providing 1 or more properties.
 
     "vulnerabilities": {
       "items": {
@@ -1271,7 +1271,7 @@ Vulnerabilities. Value type is array. with 1 or more objects representing vulner
 
 #### Vulnerabilities Property - Vulnerability
 
-Vulnerability. Is a container for the aggregation of all fields that are related to a single vulnerability in the document. Value type is object with 1 or more properties. Any vulnerability may provide the optional properties acknowledgments, cve, cwe, scores, discovery_date, id, involvements, notes, product_status, references, release_date, remediations, and title. 
+Vulnerability is a container for the aggregation of all fields that are related to a single vulnerability in the document. Value type is object with 1 or more properties. Any vulnerability may provide the optional properties acknowledgments, cve, cwe, scores, discovery_date, id, involvements, notes, product_status, references, release_date, remediations, and title. 
 
     "acknowledgments": {
       // ...
@@ -1318,11 +1318,11 @@ Vulnerability. Is a container for the aggregation of all fields that are related
 
 ##### Vulnerabilities Property - Vulnerability - Acknowledgments
 
-Acknowledgments. Value type is array with 1 or more items of type Acknowledgement (acknowledgement_t).
+Acknowledgments have value type array with 1 or more items of type Acknowledgement (acknowledgement_t).
 
 ##### Vulnerabilities Property - Vulnerability - CVE
 
-CVE. Value type is a string matching the regular expression pattern:
+CVE has value type string matching the regular expression pattern:
 
     ^CVE-[0-9]{4}-[0-9]{4,}$
 
@@ -1393,7 +1393,7 @@ CVE. Value type is a string matching the regular expression pattern:
 
 ##### Vulnerabilities Property - Vulnerability - Discovery Date
 
-Discovery Date. Value type is a string in the format date-time.
+Discovery Date has value type string with format date-time.
 
 ##### Vulnerabilities Property - Vulnerability - ID
 
@@ -1466,11 +1466,11 @@ Discovery Date. Value type is a string in the format date-time.
 
 ##### Vulnerabilities Property - Vulnerability - Notes
 
-Notes. Value type is Notes (notes_t).
+Notes have value type Notes (notes_t).
 
 ##### Vulnerabilities Property - Vulnerability - Product Status
 
-Product status. Contains different lists of product_ids which provide details on the status of the referenced product related to the current vulnerability. Value type object with 1 or more properties.
+Product status contains different lists of product_ids which provide details on the status of the referenced product related to the current vulnerability. Value type object with 1 or more properties.
 
     "product_status": {
       "title": "Product status",
@@ -1523,11 +1523,11 @@ Product status. Contains different lists of product_ids which provide details on
 
 ##### Vulnerabilities Property - Vulnerability - References
 
-References. Value type is References (references_t).
+References have value type References (references_t).
 
 ##### Vulnerabilities Property - Vulnerability - Release Date
 
-Release Date. Value type is string of format date-time.
+Release Date has value type string of format date-time.
 
 ##### Vulnerabilities Property - Vulnerability - Remediations
 
@@ -1676,7 +1676,7 @@ Title has value type string with 1 or more characters.
 (Note: A Work Product approved by the TC must include a list of people who participated in the development of the Work Product. This is generally done by collecting the list of names in this appendix. This list shall be initially compiled by the Chair, and any Member of the TC may add or remove their names from the list by request.  
 Remove this note before submitting for publication.)
 
-The following individuals have participated in the creation of this specification and are gratefully acknowledged:
+The following individuals were members of the OASIS CSAF Technical Committee during the creation of this specification and their contributions are gratefully acknowledged:
 
 **CSAF TC Members:**
 
