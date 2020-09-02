@@ -6,7 +6,7 @@
 
 ## Committee Specification Draft 01 /<br>Public Review Draft 01
 
-## 00 Month 2020
+## 02 September 2020
 
 #### Technical Committee:
 [OASIS Common Security Advisory Framework (CSAF) TC](https://www.oasis-open.org/committees/csaf/)
@@ -17,6 +17,8 @@ Omar Santos (osantos@cisco.com), [Cisco](https://cisco.com/)
 #### Editors:
 Langley Rock (lrock@redhat.com), [Red Hat](https://redhat.com/) \
 Stefan Hagen (stefan@hagen.link), [Individual](https://stefan-hagen.website/)
+
+In Memory of Eric Johnson, TIBCO Software inc., an active member of the OASIS CSAF Committee.
 
 #### Additional artifacts:
 This prose specification is one component of a Work Product that also includes:
