@@ -166,24 +166,14 @@
           "audience": {
             "title": "Audience of note",
             "description": "Indicate who is intended to read it.",
-            "examples": [
-              "all",
-              "executives",
-              "operational management and system administrators",
-              "safety engineers"
-            ],
+            "examples": ["all", "executives", "operational management and system administrators", "safety engineers"],
             "type": "string",
             "minLength": 1
           },
           "title": {
             "title": "Title of note",
             "description": "Provides a concise description of what is contained in the text of the note.",
-            "examples": [
-              "Details",
-              "Executive summary",
-              "Technical summary",
-              "Impact on safety systems"
-            ],
+            "examples": ["Details", "Executive summary", "Technical summary", "Impact on safety systems"],
             "type": "string",
             "minLength": 1
           },
@@ -256,6 +246,8 @@
       "minLength": 1
     },
     "references_t": {
+      "title": "List of references",
+      "description": "Holds a list of references.",
       "type": "array",
       "minItems": 1,
       "items": {
@@ -275,8 +267,8 @@
             "default": "external",
             "type": "string",
             "enum": [
-              "self",
-              "external"
+              "external",
+              "self"
             ]
           },
           "url": {
@@ -294,7 +286,7 @@
     },
     "version_t": {
       "title": "Version",
-      "description": "Sepcifies a version string with a simple hierarchical counter model to denote clearly the evolution of the content of the document. Format must be understood as 'major.minor.patch.build' version.",
+      "description": "Specifies a version string with a simple hierarchical counter model to denote clearly the evolution of the content of the document. Format must be understood as 'major[.minor[.patch[.build]]]' version.",
       "examples": [
         "1",
         "0.9",
@@ -328,10 +320,13 @@
             "$ref": "#/definitions/acknowledgment_t"
           }
         },
-        "aggregate_severity": {
+        "aggregate_severity" : {
           "title": "Aggregate severity",
           "description": "Is a vehicle that is provided by the document producer to convey the urgency and criticality with which the one or more vulnerabilities reported should be addressed. It is a document-level metric and applied to the document as a whole — not any specific vulnerability. The range of values in this field is defined according to the document producer's policies and procedures.",
           "type": "object",
+          "required": [
+            "text"
+          ],
           "properties": {
             "namespace": {
               "title": "Namespace of aggregate severity",
@@ -341,19 +336,12 @@
             },
             "text": {
               "title": "Text of aggregate severity",
-              "description": "Provides a severity which s independent of - and in addition to - any other standard metric for determining the impact or severity of a given vulnerability (such as CVSS).",
-              "examples": [
-                "Moderate",
-                "Important",
-                "Critical"
-              ],
+              "description": "Provides a severity which is independent of - and in addition to - any other standard metric for determining the impact or severity of a given vulnerability (such as CVSS).",
+              "examples": ["Moderate", "Important", "Critical"],
               "type": "string",
               "minLength": 1
             }
-          },
-          "required": [
-            "text"
-          ]
+          }
         },
         "csaf_version": {
           "title": "CSAF version",
@@ -430,6 +418,8 @@
           "description": "Notes about this set of vulnerabilities should be added here."
         },
         "publisher": {
+          "title": "Publisher",
+          "description": "Provides information about the publisher of the document.",
           "type": "object",
           "required": [
             "type"
@@ -437,7 +427,7 @@
           "properties": {
             "contact_details": {
               "type": "string",
-              "title": "How to contact",
+              "title": "Contact details",
               "description": "Information on how to contact the publisher, possibly including details such as web sites, email addresses, phone numbers, and postal mail addresses.",
               "examples": [
                 "Example Company can be reached at contact_us@example.com, or via our website at https://www.example.com/contact."
@@ -445,7 +435,7 @@
               "minLength": 1
             },
             "issuing_authority": {
-              "title": "What authority",
+              "title": "Issuing authority",
               "description": "The name of the issuing party and their authority to release the document, in particular, the party's constituency and responsibilities or other obligations.",
               "type": "string",
               "minLength": 1
@@ -497,11 +487,7 @@
             "id": {
               "title": "Unique identifier for the document",
               "description": "The ID is a simple label that provides for a wide range of numbering values, types, and schemes. Its value SHOULD be assigned and maintained by the original document issuing authority.",
-              "examples": [
-                "Example Company - 2019-YH3234",
-                "RHBA-2019:0024",
-                "cisco-sa-20190513-secureboot"
-              ],
+              "examples": ["Example Company - 2019-YH3234", "RHBA-2019:0024", "cisco-sa-20190513-secureboot"],
               "type": "string",
               "minLength": 1
             },
@@ -525,14 +511,27 @@
               "format": "date-time"
             },
             "generator": {
+              "title": "Document generator",
+              "description": "It is a container to hold all elements related to the generation of the document. These items will reference when the document was actually created, including the date it was generated and the entity that generated it.",
               "type": "object",
-              "minProperties": 1,
+              "required": [
+                "engine"
+              ],
               "properties": {
                 "engine": {
+                  "title": "Engine of document generation",
+                  "description": "This string SHOULD represent the name of the engine that generated the CSAF document, and MAY additionally refer to its version.",
                   "type": "string",
-                  "minLength": 1
+                  "minLength": 1,
+                  "examples": [
+                    "TVCE",
+                    "Red Hat rhsa-to-cvrf 2.1",
+                    "CMPFA Core Converter CVRF->CSAF Version 0.6"
+                  ]
                 },
                 "date": {
+                  "title": "Date of document generation",
+                  "description": "This SHOULD be the current date that the document was generated. Because documents are often generated internally by a document producer and exist for a nonzero amount of time before being released, this field MAY be different from the Initial Release Date and Current Release Date.",
                   "type": "string",
                   "format": "date-time"
                 }
@@ -841,27 +840,44 @@
             "$ref": "#/definitions/notes_t"
           },
           "product_status": {
+            "title": "Product status",
+            "description": "Contains different lists of product_ids which provide details on the status of the referenced product related to the current vulnerability. ",
             "type": "object",
+            "minProperties": 1,
             "properties": {
               "fixed": {
-                "$ref": "#/definitions/products_t"
-              },
-              "first_affected": {
-                "$ref": "#/definitions/products_t"
-              },
-              "known_affected": {
-                "$ref": "#/definitions/products_t"
-              },
-              "known_not_affected": {
+                "title": "Fixed",
+                "description": "These versions contain a fix for the vulnerability but may not be the recommended fixed versions.",
                 "$ref": "#/definitions/products_t"
               },
               "first_fixed": {
+                "title": "First fixed",
+                "description": "These versions contain the first fix for the vulnerability but may not be the recommended fixed versions.",
                 "$ref": "#/definitions/products_t"
               },
               "recommended": {
+                "title": "Recommended",
+                "description": "These versions have a fix for the vulnerability and are the vendor-recommended versions for fixing the vulnerability.",
+                "$ref": "#/definitions/products_t"
+              },
+              "known_affected": {
+                "title": "Known affected",
+                "description": "These versions are known to be affected by the vulnerability.",
+                "$ref": "#/definitions/products_t"
+              },
+              "first_affected": {
+                "title": "First affected",
+                "description": "These are the first versions of the releases known to be affected by the vulnerability.",
                 "$ref": "#/definitions/products_t"
               },
               "last_affected": {
+                "title": "Last affected",
+                "description": "These are the last versions in a release train known to be affected by the vulnerability. Subsequently released versions would contain a fix for the vulnerability.",
+                "$ref": "#/definitions/products_t"
+              },
+              "known_not_affected": {
+                "title": "Known not affected",
+                "description": "These versions are known not to be affected by the vulnerability.",
                 "$ref": "#/definitions/products_t"
               },
               "under_investigation": {
@@ -957,7 +973,7 @@
                     "mitigation",
                     "vendor_fix",
                     "none_available",
-                    "will_not_fix"
+                    "no_fix_planned"
                   ]
                 },
                 "url": {
