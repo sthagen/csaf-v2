@@ -32,7 +32,7 @@ def main(argv=None, embedded=False):
     schema = json.loads(argv[0]) if embedded else load(argv[0])
     document = json.loads(argv[1]) if embedded else load(argv[1])
 
-    return 0 if validate(document, schema) else 1
+    return 0 if validate(document, schema) is None else 1
 
 
 if __name__ == "__main__":
