@@ -1037,7 +1037,8 @@ Examples:
 
 #### 3.2.1.11 Document Property - Tracking
 
-Tracking (`tracking`) provides attributes for tracking the evolution of the security advisory revisions. Value type is object with the six mandatory properties: `current_release_date`, `id`, `initial_release_date`, `revision_history`, `status`, and `version`. The two optional additional properties are `aliases` and `generator`.
+Tracking (`tracking`) of value type `object` with the six mandatory properties: Current Release Date (`current_release_date`), Identifier (`id`), Initial Release Date (`initial_release_date`), Revision History (`revision_history`), Status (`status`), and Version (`version`) is a container designated to hold all management attributes necessary to track a CSAF document as a whole.
+The two optional additional properties are Aliases (`aliases`) and Generator (`generator`).
 
     "tracking": {
       // ...
