@@ -736,19 +736,12 @@ Examples:
     CSAFGID-0020
 
 ### 3.1.9 Product ID Type
+The Product ID Type (`product_id_t`) of value type `string` with 1 or more characters is a reference token for product instances. 
+The value is a token required to identify a `full_product_name` so that it can be referred to from other parts in the document. There is no predefined or required format for the Product Group ID (`product_id`) as long as it uniquely identifies a product in the context of the current document.
 
     "product_id_t": {
-      "title": "Reference token for product instance",
-      "description": "Token required to identify a full_product_name so that it can be referred to from other parts in the document. There is no predefined or required format for the product_id as long as it uniquely identifies a product in the context of the current document.",
-      "type": "string",
-      "minLength": 1,
-      "examples": [
-        "CVRFPID-0004",
-        "CVRFPID-0008"
-      ]
+      // ...
     },
-
-The Product ID Type (`product_id_t`) is a reference token for product instances. Token required to identify a `full_product_name` so that it can be referred to from other parts in the document. There is no predefined or required format for the Product Group ID (`product_id`) as long as it uniquely identifies a product in the context of the current document. Value type is string with 1 or more characters.
 
 Examples:
 
