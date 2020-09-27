@@ -888,13 +888,13 @@ Examples:
     Important
     Critical
 
-#### 3.1.2.3 Document Property - CSAF Version
+#### 3.2.1.3 Document Property - CSAF Version
 
 CSAF version gives the version of the CSAF specification which the document was generated for. Value type is string enum. For this edition of the specification the single valid value is:
 
     2.0
 
-#### 3.1.2.4 Document Property - Distribution
+#### 3.2.1.4 Document Property - Distribution
 
 Rules for sharing document describe any constraints on how this document might be shared. Value type is object with 1 or more properties.
 
@@ -910,7 +910,7 @@ Rules for sharing document describe any constraints on how this document might b
       }
     },
 
-##### 3.1.2.4.1 Document Property - Distribution - Text
+##### 3.2.1.4.1 Document Property - Distribution - Text
 
 The Text member (`text`) value represents a description that provides a textual description of additional constraints. Value type is string with 1 or more characters.
 
@@ -920,7 +920,7 @@ Examples:
     Distribute freely.
     Copyright 2019, Example Company, All Rights Reserved.
 
-##### 3.1.2.4.2 Document Property - Distribution - TLP
+##### 3.2.1.4.2 Document Property - Distribution - TLP
 
 Traffic Light Protocol (TLP) (`tlp`) type provides details about the TLP classification of the document. Value type is object with the required property `label` and the optional property `url`.
 
@@ -940,19 +940,19 @@ Examples:
     https://www.us-cert.gov/tlp
     https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Kritis/Merkblatt_TLP.pdf
 
-#### 3.1.2.5 Document Property - Language
+#### 3.2.1.5 Document Property - Language
 
 Document language identifies the language used by this document, corresponding to IETF BCP 47 / RFC 5646. Value type is the Language Type (lang_t).
 
-#### 3.1.2.6 Document Property - Source Language
+#### 3.2.1.6 Document Property - Source Language
 
 Original translation. If this copy of the document is a translation, from which language was this document translated? Value type is the Language Type (lang_t).
 
-#### 3.1.2.7 Document Property - Notes
+#### 3.2.1.7 Document Property - Notes
 
 Notes associated with the whole document. Notes about this set of vulnerabilities should be added here. Value type is the Notes Type (notes_t).
 
-#### 3.1.2.8 Document Property - Publisher
+#### 3.2.1.8 Document Property - Publisher
 
 Publisher (`publisher`) has value type object and provides information on the publishing entity. The single required property is `type`. The 3 other optional properties are: `contact_details`, `issuing_authority`, and `vendor_id`.
 
@@ -974,7 +974,7 @@ Publisher (`publisher`) has value type object and provides information on the pu
       }
     },
 
-##### 3.1.2.8.1 Document Property - Publisher - Contact Details
+##### 3.2.1.8.1 Document Property - Publisher - Contact Details
 
 How to contact (`contact_details`)? Information on how to contact the publisher, possibly including details such as web sites, email addresses, phone numbers, and postal mail addresses. Value type is string with 1 or more characters.
 
@@ -982,11 +982,11 @@ Example:
 
     Example Company can be reached at contact_us@example.com, or via our website at https://www.example.com/contact.
 
-##### 3.1.2.8.2 Document Property - Publisher - Issuing Authority
+##### 3.2.1.8.2 Document Property - Publisher - Issuing Authority
 
 What authority (`issuing_authority`)? The name of the issuing party and their authority to release the document, in particular, the party's constituency and responsibilities or other obligations. Value type is string with 1 or more characters.
 
-##### 3.1.2.8.3 Document Property - Publisher - Type
+##### 3.2.1.8.3 Document Property - Publisher - Type
 
 The Type of publisher (`type`) provides information about the type of publisher releasing the document. Value type is string with fixed value set (enum). Thes values are:
 
@@ -996,17 +996,17 @@ The Type of publisher (`type`) provides information about the type of publisher 
     user
     vendor
 
-##### 3.1.2.8.4 Document Property - Publisher - Vendor ID
+##### 3.2.1.8.4 Document Property - Publisher - Vendor ID
 
 The Vendor releasing the document (`vendor_id`). The Vendor ID is a unique identifier (OID) that a vendor uses as issued by FIRST under the auspices of IETF. Value type is string with 1 or more characters.
 
-#### 3.1.2.9 Document Property - References
+#### 3.2.1.9 Document Property - References
 
     "references": {
       "$ref": "#/definitions/references_t"
     },
 
-#### 3.1.2.10 Document Property - Title
+#### 3.2.1.10 Document Property - Title
 
 Title of this document SHOULD be a canonical name for the document, and sufficiently unique to distinguish it from similar documents. Value type is string with 1 or more characters.
 
@@ -1015,7 +1015,7 @@ Examples:
     Example Company Cross-Site-Scripting Vulnerability in Example Generator
     Cisco IPv6 Crafted Packet Denial of Service Vulnerability
 
-#### 3.1.2.11 Document Property - Tracking
+#### 3.2.1.11 Document Property - Tracking
 
 Tracking (`tracking`) provides attributes for tracking the evolution of the security advisory revisions. Value type is object with the six mandatory properties: `current_release_date`, `id`, `initial_release_date`, `revision_history`, `status`, and `version`. The two optional additional properties are `aliases` and `generator`.
 
@@ -1050,7 +1050,7 @@ Tracking (`tracking`) provides attributes for tracking the evolution of the secu
     },
 
 
-##### 3.1.2.11.1 Document Property - Tracking - ID
+##### 3.2.1.11.1 Document Property - Tracking - ID
 
 Unique identifier for the document. The ID is a simple label that provides for a wide range of numbering values, types, and schemes. Its value SHOULD be assigned and maintained by the original document issuing authority. Value type is string with 1 or more characters.
 
@@ -1060,7 +1060,7 @@ Examples:
     RHBA-2019:0024
     cisco-sa-20190513-secureboot
 
-##### 3.1.2.11.2 Document Property - Tracking - Aliases
+##### 3.2.1.11.2 Document Property - Tracking - Aliases
 
     "aliases": {
       "type": "array",
@@ -1077,12 +1077,12 @@ Examples:
     },
 
 
-##### 3.1.2.11.3 Document Property - Tracking - Current Release Date
+##### 3.2.1.11.3 Document Property - Tracking - Current Release Date
 
 Current release date is the date of the current revision of this document was released. Value type is string of format date-time.
 
 
-##### 3.1.2.11.4 Document Property - Tracking - Generator
+##### 3.2.1.11.4 Document Property - Tracking - Generator
 
 The Generator (`generator`) describes the engine technically creating the security advisory. Value type is object with 1 or 2 properties. The properties are `engine` and `date`.
 
@@ -1105,11 +1105,11 @@ Engine (`engine`) is of type string with 1 or more characters.
 
 Date (`date`) is of type string with format `date-time`.
 
-##### 3.1.2.11.5 Document Property - Tracking - Initial Release Date
+##### 3.2.1.11.5 Document Property - Tracking - Initial Release Date
 
 Initial release date is the date that this document was first published. Value type is string of format date-time.
 
-##### 3.1.2.11.6 Document Property - Tracking - Revision History
+##### 3.2.1.11.6 Document Property - Tracking - Revision History
 
 The Revision History (`revision_history`) provides a list of information items on revisions of the security advisory. The value type is array of with 1 or more items. The items are of type object with the three mandatory properties: `number`, `date`, and `description`. 
 
@@ -1137,7 +1137,7 @@ The Date of the revision (`date`) states the date of the revision entry. Value t
 
 The Description (`description`) is of type string with 1 or more characters.
 
-##### 3.1.2.11.7 Document Property - Tracking - Status
+##### 3.2.1.11.7 Document Property - Tracking - Status
 
 Document status (`status`) defines the draft status of the document. Value type is string with fixed value set (enum). The value MUST be one of the following:
 
@@ -1145,11 +1145,11 @@ Document status (`status`) defines the draft status of the document. Value type 
     final
     interim
 
-##### 3.1.2.11.8 Document Property - Tracking - Version
+##### 3.2.1.11.8 Document Property - Tracking - Version
 
 Version has the value type Version (`version_t`).
 
-#### 3.1.2.12 Document Property - Type
+#### 3.2.1.12 Document Property - Type
 
     "type": {
       "type": "string",
