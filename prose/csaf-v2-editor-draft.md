@@ -994,7 +994,7 @@ The 3 other optional properties are: `contact_details`, `issuing_authority`, and
 
 ##### 3.2.1.8.1 Document Property - Publisher - Contact Details
 
-Contact details (`contact_details`) of value type `string`with 1 or more characters provides information on how to contact the publisher, possibly including details such as web sites, email addresses, phone numbers, and postal mail addresses.
+Contact details (`contact_details`) of value type `string` with 1 or more characters provides information on how to contact the publisher, possibly including details such as web sites, email addresses, phone numbers, and postal mail addresses.
 
 Example:
 
@@ -1017,7 +1017,7 @@ The valid values are:
 
 ##### 3.2.1.8.4 Document Property - Publisher - Vendor ID
 
-The Vendor releasing the document (`vendor_id`). The Vendor ID is a unique identifier (OID) that a vendor uses as issued by FIRST under the auspices of IETF. Value type is string with 1 or more characters.
+The Vendor releasing the document (`vendor_id`) of value type `string` with 1 or more characters provides the Vendor ID which is a unique identifier (OID) that a vendor uses as issued by FIRST under the auspices of IETF.
 
 #### 3.2.1.9 Document Property - References
 References (`references`) of References type (`references_t`).
