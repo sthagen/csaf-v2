@@ -1073,7 +1073,9 @@ The two optional additional properties are Aliases (`aliases`) and Generator (`g
 
 ##### 3.2.1.11.1 Document Property - Tracking - ID
 
-Unique identifier for the document. The ID is a simple label that provides for a wide range of numbering values, types, and schemes. Its value SHOULD be assigned and maintained by the original document issuing authority. Value type is string with 1 or more characters.
+Unique identifier for the document (`id`) of value type `string` with 1 or more characters holds the Identifier.
+The ID is a simple label that provides for a wide range of numbering values, types, and schemes. 
+Its value SHOULD be assigned and maintained by the original document issuing authority.
 
 Examples:
 
