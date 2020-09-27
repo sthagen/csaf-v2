@@ -1168,11 +1168,17 @@ Document status (`status`) defines the draft status of the document. Value type 
 Version has the value type Version (`version_t`).
 
 #### 3.2.1.12 Document Property - Type
+Document type (`type`) with value type `string` of 1 or more characters defines a short canonical name, chosen by the document producer, which will inform the end user as to the type of document.
 
     "type": {
-      "type": "string",
-      "minLength": 1
+      // ...
     }
+
+Examples:
+
+    Security Advisory
+    Security Notice
+    Vulnerability Report
 
 ### 3.2.2 Product Tree Property
 
