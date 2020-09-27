@@ -417,7 +417,8 @@ The further documentation of the schema is organized via Definitions and Propert
 
 Types and properties together provide the vocabulary for the domain specific language supporting security advisories. 
 
-The single mandatory property is the document. The optional two additional properties are product_tree and vulnerabilities.
+The single mandatory property is `document`. 
+The optional two additional properties are `product_tree` and `vulnerabilities`.
 
 ## 3.1 Definitions
 The definitions (`$defs`) introduce the following domain specific types into the CSAF language: 
