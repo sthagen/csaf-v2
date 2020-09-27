@@ -1949,5 +1949,5 @@ Zach | Turk | Microsoft
 # Appendix B. Revision History
 | Revision | Date | Editor | Changes Made |
 | :--- | :--- | :--- | :--- |
-| specname-v1.0-wd01 | yyyy-mm-dd | Editor Name | Initial working draft |
+| csaf-v2.0-wd20200927 | 2020-09-27 | Stefan Hagen | Initial working draft |
 
