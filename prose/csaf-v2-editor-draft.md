@@ -711,19 +711,14 @@ List of Product IDs (`products_t`) of value type `array` with 1 or more unique i
     },
 
 ### 3.1.7 Product Groups Type
+List of Product Group ID (`product_groups_t`) of value type `array` with 1 or more unique items (a `set`) of type Product Group ID (`product_group_id_t`) specifies a list of `product_group_ids` to give context to the parent item. 
 
     "product_groups_t": {
-      "title": "List of product_group_ids",
-      "description": "Specifies a list of product_group_ids to give context to the parent item.",
-      "type": "array",
-      "minItems": 1,
-      "uniqueItems": true,
+      // ...
       "items": {
         "$ref": "#/definitions/product_group_id_t"
       }
     },
-
-List of Product Group ID (`product_group_ids`) specifies a list of `product_group_ids` to give context to the parent item. Value type is array with 1 or more unque items (set) of type Product Group ID (`product_group_id_t`)
 
 ### 3.1.8 Product Group ID Type
 
