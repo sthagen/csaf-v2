@@ -581,39 +581,8 @@ List of branches (`branches`) has the value type `array` providing 1 or more ite
 Product has the value type Full Product Name (`full_product_name_t`).
 
 ### 3.1.3 Full Product Name Type
-
-    "full_product_name_t": {
-      "type": "object",
-      "required": [
-        "product_id",
-        "name"
-      ],
-      "properties": {
-        "product_id": {
-          "$ref": "#/definitions/product_id_t"
-        },
-        "name": {
-          "title": "Textual description of the product",
-          "description": "The value of a Full Product Name element should be the product’s full canonical name, including version number and other attributes, as it would be used in a human-friendly document.",
-          "type": "string",
-          "minLength": 1,
-          "examples": [
-            "Microsoft Host Integration Server 2006 Service Pack 1",
-            "Cisco AnyConnect Secure Mobility Client 2.3.185"
-          ]
-        },
-        "cpe": {
-          "$comment": "TODO: This should have a full regular expression to enforce CPE syntax.",
-          "title": "Common Platform Enumeration representation",
-          "description": "The Common Platform Enumeration (CPE) attribute refers to a method for naming platforms external to this specification.",
-          "type": "string",
-          "pattern": "^(?i)cpe:(/|\\d+\\.\\d+)[^:]*:?[^:]*:?[^:]*:?[^:]*:?[^:]*:?[^:]*:?[^:]*$",
-          "minLength": 1
-        }
-      }
-    },
-
-Full Product Name (`full_product_name_t`) has value type object with 3 properties. The properties product_id and name are mandatory. In addition the object may contain a CPE identifier as value of the cpe property.
+Full Product Name (`full_product_name_t`) with value type `object` specifies information about the product and assigns the product_id.
+The properties `product_id` and `name` are required. The property `cpe` is optional.
 
     "full_product_name_t": {
       // ...
@@ -630,13 +599,15 @@ Full Product Name (`full_product_name_t`) has value type object with 3 propertie
       }
     },
 
+
 #### Full Product Name Type - Product ID
 
-Product ID has the value type Product ID (product_id_t).
+Product ID (`product_id`) holds a value of type Product ID (`product_id_t`).
 
 #### Full Product Name Type - Name
 
-Textual description of the product. The value of a Full Product Name element should be the product’s full canonical name, including version number and other attributes, as it would be used in a human-friendly document. Value type is string with 1 or more characters.
+Textual description of the product (`name`) has value type `string` with 1 or more characters.
+The value should be the product's full canonical name, including version number and other attributes, as it would be used in a human-friendly document.
 
 Examples:
 
@@ -645,9 +616,11 @@ Examples:
 
 #### Full Product Name Type - CPE
 
-Common Platform Enumeration representation. The Common Platform Enumeration (CPE) attribute refers to a method for naming platforms external to this specification. Value type is string with 1 or more characters matching the regular expression pattern:
+Common Platform Enumeration representation (`cpe`) of value type `string` with `pattern` (regular expression):
 
     ^(?i)cpe:(/|\\d+\\.\\d+)[^:]*:?[^:]*:?[^:]*:?[^:]*:?[^:]*:?[^:]*:?[^:]*$
+
+The Common Platform Enumeration (CPE) attribute refers to a method for naming platforms external to this specification.
 
 ### 3.1.4 Language Type
 
