@@ -805,6 +805,8 @@ Examples:
 
 ## 3.2 Properties
 
+These fnal three subsections document the three propertes of a CSAF document. The single mandatory property `document`, as well as the optional properties `product_tree` and `vulnerabilities` in that order.
+
 ### 3.2.1 Document Property
 
 Document level meta-data captures the meta-data about this document describing a particular set of security advisories. Value type is object with the 5 mandatory properties csaf_version, title, publisher, type, and tracking. 
