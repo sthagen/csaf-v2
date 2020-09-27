@@ -959,7 +959,7 @@ Examples:
 
 #### 3.2.1.5 Document Property - Language
 
-Document language identifies the language used by this document, corresponding to IETF BCP 47 / RFC 5646. Value type is the Language Type (lang_t).
+Document language identifies the language used by this document, corresponding to IETF BCP 47 / RFC 5646. Value type is the Language Type (`lang_t`).
 
 #### 3.2.1.6 Document Property - Source Language
 
