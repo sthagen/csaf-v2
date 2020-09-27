@@ -866,7 +866,7 @@ List of acknowledgements (`acknowledgemtns`) of value type `array` with 1 or mor
 
 #### 3.2.1.2 Document Property - Aggregate Severity
 
-Aggregate severity is a vehicle that is provided by the document producer to convey the urgency and criticality with which the one or more vulnerabilities reported should be addressed. It is a document-level metric and applied to the document as a whole — not any specific vulnerability. The range of values in this field is defined according to the document producer's policies and procedures. Value type is object with 1 required property `text` and the optional property `namespace`.
+Aggregate severity (`aggregate_severity`) of value type `object` with the mandatory property `text` and the optional property `namespace` is a vehicle that is provided by the document producer to convey the urgency and criticality with which the one or more vulnerabilities reported should be addressed. It is a document-level metric and applied to the document as a whole — not any specific vulnerability. The range of values in this field is defined according to the document producer's policies and procedures. 
 
     "aggregate_severity" : {
       // ...
@@ -875,14 +875,22 @@ Aggregate severity is a vehicle that is provided by the document producer to con
           // ...
         },
         "text": {
-          // ...
+          "title": "Text of aggregate severity",
+          "description": "Provides a severity which is independent of - and in addition to - any other standard metric for determining the impact or severity of a given vulnerability (such as CVSS).",
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "Moderate",
+            "Important",
+            "Critical"
+          ]
         }
-      },
+      }
     },
 
-The Namespace of aggregate severity (`namespace`) points to the namespace so referenced. Value type is string with format `uri`.
+The Namespace of aggregate severity (`namespace`) of value type `string` and format `uri` points to the namespace so referenced.
 
-The Text of aggregate severity (`text`) provides a severity which is independent of - and in addition to - any other standard metric for determining the impact or severity of a given vulnerability (such as CVSS). Value type is string with 1 or more characters.
+The Text of aggregate severity (`text`) of value type `string` with 1 or more characters provides a severity which is independent of - and in addition to - any other standard metric for determining the impact or severity of a given vulnerability (such as CVSS).
 
 Examples:
 
