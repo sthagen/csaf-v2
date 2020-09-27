@@ -899,7 +899,7 @@ The single valid value for this `enum` is:
 
 #### 3.2.1.4 Document Property - Distribution
 
-Rules for sharing document describe any constraints on how this document might be shared. Value type is object with 1 or more properties.
+Rules for sharing document ( `distribution`) of value type `object` with at least 1 of the 2 properties Text (`text`) and Traffic Light Protocol TLP (`tlp`) describes any constraints on how this document might be shared.
 
     "distribution": {
       // ...
@@ -915,7 +915,7 @@ Rules for sharing document describe any constraints on how this document might b
 
 ##### 3.2.1.4.1 Document Property - Distribution - Text
 
-The Text member (`text`) value represents a description that provides a textual description of additional constraints. Value type is string with 1 or more characters.
+The Textual description (`text`) of value type `string` with 1 or more characters provides a textual description of additional constraints.
 
 Examples:
 
