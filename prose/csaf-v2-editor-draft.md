@@ -1138,7 +1138,7 @@ Initial release date (`initial_release_date`) with value type `string` and forma
 
 ##### 3.2.1.11.6 Document Property - Tracking - Revision History
 
-The Revision History (`revision_history`) provides a list of information items on revisions of the security advisory. The value type is array of with 1 or more items. The items are of type object with the three mandatory properties: `number`, `date`, and `description`. 
+The Revision History (`revision_history`) with value type `array` of 1 or more Revision History Entries contains all the information elements required to track the evolution of a CSAF document. 
 
         "revision_history": {
           // ...
@@ -1154,15 +1154,17 @@ The Revision History (`revision_history`) provides a list of information items o
               "description": {
                 // ...
               }
-            },
+            }
           }
         },
 
-The `number` is of value type Version (`version_t`). 
+Revision History Entry items are of type object with the three mandatory properties: Number (`number`), Date (`date`), and Description (`description`). 
 
-The Date of the revision (`date`) states the date of the revision entry. Value type is strng with format `date-time`.
+The Number (`number`) has value type Version (`version_t`). 
 
-The Description (`description`) is of type string with 1 or more characters.
+The Date of the revision (`date`) of value type `string` with format `date-time` states the date of the revision entry.
+
+The Description  of the revision (`description`) of value type `string` with 1 or more characters holds a single non-empty string representing a short description of the changes.
 
 ##### 3.2.1.11.7 Document Property - Tracking - Status
 
