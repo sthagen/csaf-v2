@@ -623,28 +623,12 @@ Common Platform Enumeration representation (`cpe`) of value type `string` with `
 The Common Platform Enumeration (CPE) attribute refers to a method for naming platforms external to this specification.
 
 ### 3.1.4 Language Type
-
-    "lang_t": {
-      "title": "Language type",
-      "description": "Identifies a language, corresponding to IETF BCP 47 / RFC 5646. See IETF language registry: https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry",
-      "type": "string",
-      "pattern": "^[a-zA-Z]{2,3}(-.+)?$",
-      "examples": [
-        "de",
-        "en",
-        "fr",
-        "frc",
-        "jp"
-      ]
-    },
-
-Language type identifies a language, corresponding to IETF BCP 47 / RFC 5646. 
-
-See IETF language registry: [https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry](https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry)
-
-Value type is string with 2 or 3 characters matching the regular expression pattern:
+Language type (`lang_t`) has value type `string` with `pattern` (regular expression):
 
     ^[a-zA-Z]{2,3}(-.+)?$
+
+The value identifies a language, corresponding to IETF BCP 47 / RFC 5646.
+See IETF language registry: [https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry](https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry)
 
 Examples:
 
