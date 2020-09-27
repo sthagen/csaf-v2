@@ -574,7 +574,7 @@ Valid `enum` values are:
 
 #### Branch Type - Branches
 
-Branches have the value type array with 1 or more items of the Branch type (`branch_branches_t`). 
+List of branches (`branches`) have the value type `array` with 1 or more items of the Branch type (`branch_branches_t`). 
 
 #### Branch Type - Product
 
