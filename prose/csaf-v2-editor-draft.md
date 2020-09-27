@@ -495,7 +495,7 @@ Examples:
 #### 3.1.1.2 Acknowledgment Type - Organizations
 
 List of contributing organizations has value type `array` with 1 or more items holds the names of contributing organizations being recognized.
-Every such item of value type string with 1 or more characters represents the name of a single.
+Every such item of value type string with 1 or more characters represents the name of a single organization.
 
 Examples:
 
