@@ -971,7 +971,8 @@ Notes (`notes`) associated with the whole document of Notes Type (`notes_t`) hol
 
 #### 3.2.1.8 Document Property - Publisher
 
-Publisher (`publisher`) has value type object and provides information on the publishing entity. The single required property is `type`. The 3 other optional properties are: `contact_details`, `issuing_authority`, and `vendor_id`.
+Publisher (`publisher`) has value type `object` with the mandatory property Type (`type`) and provides information on the publishing entity. 
+The 3 other optional properties are: `contact_details`, `issuing_authority`, and `vendor_id`.
 
     "publisher": {
       // ...
@@ -993,7 +994,7 @@ Publisher (`publisher`) has value type object and provides information on the pu
 
 ##### 3.2.1.8.1 Document Property - Publisher - Contact Details
 
-How to contact (`contact_details`)? Information on how to contact the publisher, possibly including details such as web sites, email addresses, phone numbers, and postal mail addresses. Value type is string with 1 or more characters.
+Contact details (`contact_details`) ofvalue type `string`with 1 or more characters proides information on how to contact the publisher, possibly including details such as web sites, email addresses, phone numbers, and postal mail addresses.
 
 Example:
 
