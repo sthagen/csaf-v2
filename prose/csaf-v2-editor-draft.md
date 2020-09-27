@@ -1129,7 +1129,7 @@ Date (`date`) is of type string with format `date-time`.
 
 ##### 3.2.1.11.5 Document Property - Tracking - Initial Release Date
 
-Initial release date is the date that this document was first published. Value type is string of format date-time.
+Initial release date (`initial_release_date`) with value type `string` and format `date-time` holds the date when this document was first published.
 
 ##### 3.2.1.11.6 Document Property - Tracking - Revision History
 

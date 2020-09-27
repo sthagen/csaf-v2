@@ -582,7 +582,7 @@
             },
             "initial_release_date": {
               "title": "Initial release date",
-              "description": "The date that this document was first published.",
+              "description": "The date when this document was first published.",
               "type": "string",
               "format": "date-time"
             },
