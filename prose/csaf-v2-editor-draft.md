@@ -557,7 +557,8 @@ Examples:
 
 #### 3.1.2.2 Branch Type - Type
 
-Type of the branch describes the characteristics of the labeled branch. Value type is string enum. Valid values are:
+Type of the branch (`type`) of value type `string` as `enum` describes the characteristics of the labeled branch. 
+Valid `enum` values are:
 
     architecture
     host_name
