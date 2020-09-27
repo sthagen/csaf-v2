@@ -1084,21 +1084,20 @@ Examples:
     cisco-sa-20190513-secureboot
 
 ##### 3.2.1.11.2 Document Property - Tracking - Aliases
+Aliases (`aliases`) of value type `array` with 1 or more unique items (a `set`) representing Alternate Names contains a list of alternate names for the same document.
 
     "aliases": {
-      "type": "array",
-      "minItems": 1,
+      // ...
       "items": {
-        "type": "string",
-        "title": "Alternate name",
-        "description": "Alternate names for the same vulnerability.",
-        "examples": [
-          "CVE-2019-12345"
-        ],
-        "minLength": 1
+        // ...
       }
     },
 
+Every such Alternate Name of value type `string` with 1 or more characters specifies a non-empty string that represents a distinct optional alternative ID used to refer to the document.
+
+Example:
+
+    CVE-2019-12345
 
 ##### 3.2.1.11.3 Document Property - Tracking - Current Release Date
 
