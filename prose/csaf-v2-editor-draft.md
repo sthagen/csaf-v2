@@ -1168,7 +1168,8 @@ The Description  of the revision (`description`) of value type `string` with 1 o
 
 ##### 3.2.1.11.7 Document Property - Tracking - Status
 
-Document status (`status`) defines the draft status of the document. Value type is string with fixed value set (enum). The value MUST be one of the following:
+Document status (`status`) of value type `string` and `enum` defines the draft status of the document.
+The value MUST be one of the following:
 
     draft
     final
