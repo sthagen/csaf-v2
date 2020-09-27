@@ -925,16 +925,30 @@ Examples:
 
 ##### 3.2.1.4.2 Document Property - Distribution - TLP
 
-Traffic Light Protocol (TLP) (`tlp`) type provides details about the TLP classification of the document. Value type is object with the required property `label` and the optional property `url`.
+Traffic Light Protocol (TLP) (`tlp`) of value type `object` with the mandatory property Label (`label`) and the optional property URL (`url`) provides details about the TLP classification of the document.
 
-The Label of TLP (`label`) provides the TLP label of the document. Value type is string with value from the set (enum):
+    "tlp": {
+      // ...
+      "properties": {
+        "label": {
+          // ...
+        },
+        "url": {
+          // ...
+        }
+      }
+    }
+
+The Label of TLP (`label`) with value type `string` and `enum` provides the TLP label of the document. 
+Valid values of the `enum` are:
 
     RED
     AMBER
     GREEN
     WHITE
 
-The URL of TLP version (`url`) provides a URL where to find the textual description of the TLP version which is useed in this document. Value type is string with format `uri`. Default value is the URL to the definition by FIRST. The default value is:
+The URL of TLP version (`url`) with value type `string` and format `uri` provides a URL where to find the textual description of the TLP version which is used in this document. Default value is the URL to the definition by FIRST. 
+The default value is:
 
     https://www.first.org/tlp/
 
