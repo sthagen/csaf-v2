@@ -855,12 +855,12 @@ In addition, the `document` object may provide the 7 optional properties Acknowl
     },
 
 #### 3.2.1.1 Document Property - Acknowledgements
-
+List of acknowledgements (`acknowledgemtns`) of value type `array` with 1 or more items of type Acknowledgement (`acknowledgment_t`) contains a list of acknowledgement elements.
+ 
     "acknowledgments": {
-      "type": "array",
-      "minItems": 1,
+      // ...
       "items": {
-        "$ref": "#/definitions/acknowledgment_t"
+        // ...
       }
     },
 
