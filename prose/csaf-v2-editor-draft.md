@@ -420,6 +420,9 @@ Types and properties together provide the vocabulary for the domain specific lan
 The single mandatory property is the document. The optional two additional properties are product_tree and vulnerabilities.
 
 ## 3.1 Definitions
+The definitions (`$defs`) introduce the following domain specific parts into the CSAF language: 
+Acknowledgement (`acknowledgement_t`), Branch Branches (`branch_branches_t`), Full Product Name (`full_product_name_t`), Language (`lang_t`), Notes (`notes_t`), Products (`products_t`), Product Groups (`product_groups_t`), Product Group ID (`product_group_id_t`), Product ID (`product_id_t`), References (`references_t`), and Version (`version_t`).  
+
     "$defs": {
         "acknowledgment_t": {
             // ...
