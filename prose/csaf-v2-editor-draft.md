@@ -460,13 +460,12 @@ Acknowledgement (`acknowledgement_t`), Branch Branches (`branch_branches_t`), Fu
     },
 
 ### 3.1.1 Acknowledgment Type
-
-
-Acknowledgement (`acknowledgment_t`) type instances acknowledge contributions by describing those that contributed. The value type is object with 1 to 4 properties. The properties are: names, organizations, description, and urls.
+Acknowledgement (`acknowledgment_t`) type instances acknowledge contributions by describing those that contributed. 
+The value type is object with 1 to 4 properties. 
+The properties are: names, organizations, description, and urls.
 
     "acknowledgment_t": {
-      "type": "object",
-      "minProperties": 1,
+      // ...
       "properties": {
         "names": {
             // ...
@@ -485,7 +484,8 @@ Acknowledgement (`acknowledgment_t`) type instances acknowledge contributions by
 
 #### 3.1.1.1 Acknowledgment Type - Names
 
-Names of entities being recognized is typically the name of a person belonging to an organization. Value type is string with 1 or more characters.
+List of acknowledged has value type `array` with 1 or more items holds the names of entities being recognized.
+Every such item of value type string with 1 or more characters represents the name of entity being recognized and contains the name of a single person. 
 
 Examples:
 
@@ -494,7 +494,8 @@ Examples:
 
 #### 3.1.1.2 Acknowledgment Type - Organizations
 
-List of contributing organizations. The list of contributing organizations. Value type is string with 1 or more characters.
+List of contributing organizations has value type `array` with 1 or more items holds the names of contributing organizations being recognized.
+Every such item of value type string with 1 or more characters represents the name of a single.
 
 Examples:
 
@@ -504,7 +505,7 @@ Examples:
 
 #### 3.1.1.3 Acknowledgment Type - Description
 
-Description of the acknowledgment SHOULD represent any contextual details the document producers wish to make known about the acknowledgment or acknowledged parties. Value type is string with 1 or more characters.
+Description of the acknowledgment of value type string with 1 or more characters SHOULD represent any contextual details the document producers wish to make known about the acknowledgment or acknowledged parties. 
 
 Example:
 
@@ -512,9 +513,9 @@ Example:
 
 #### 3.1.1.4 Acknowledgment Type - URLs
 
-URLs (`urls`) of acknowledgement is a container (value tpe array) for 1 or more strings of type URL.
-
-Any URL of acknowledgment contains the URL or location of the reference to be acknowledged. Value type is string with format URI.
+List of URLs (`urls`) of acknowledgement is a container (value tpe array) for 1 or more strings of type URL that specifies a list of URLs or location of the reference to be acknowledged.
+Any URL of acknowledgment contains the URL or location of the reference to be acknowledged. 
+Value type is string with format URI.
 
 ### 3.1.2 Branch Type
 
