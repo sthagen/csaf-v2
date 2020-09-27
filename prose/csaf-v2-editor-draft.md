@@ -1026,7 +1026,7 @@ References (`references`) of References type (`references_t`).
 
 #### 3.2.1.10 Document Property - Title
 
-Title of this document SHOULD be a canonical name for the document, and sufficiently unique to distinguish it from similar documents. Value type is string with 1 or more characters.
+Title of this document (`title`) of value type `string` with 1 or more characters SHOULD be a canonical name for the document, and sufficiently unique to distinguish it from similar documents.
 
 Examples:
 
