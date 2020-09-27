@@ -1106,26 +1106,31 @@ Current release date (`current_release_date`) with value type `string` and forma
 
 ##### 3.2.1.11.4 Document Property - Tracking - Generator
 
-The Generator (`generator`) describes the engine technically creating the security advisory. Value type is object with 1 or 2 properties. The properties are `engine` and `date`.
+Document Generator (`generator`) of value type `object` with mandatory property Engine (`engine`) and optional property Date (`date`) s a container to hold all elements related to the generation of the document. These items will reference when the document was actually created, including the date it was generated and the entity that generated it.. 
 
         "generator": {
-          "type": "object",
-          "minProperties": 1,
+          // ...
           "properties": {
             "engine": {
-              "type": "string",
-              "minLength": 1
+              // ...
             },
             "date": {
-              "type": "string",
-              "format": "date-time"
+              // ...
             }
           }
         },
 
-Engine (`engine`) is of type string with 1 or more characters.
+Engine of document generation (`engine`) of value type `string` with 1 or more characters SHOULD represent the name of the engine that generated the CSAF document, and MAY additionally refer to its version.
 
-Date (`date`) is of type string with format `date-time`.
+Examples:
+
+    TVCE
+    Red Hat rhsa-to-cvrf 2.1
+    CMPFA Core Converter CVRF->CSAF Version 0.6
+
+
+Date of document generation (`date`) of value type `string` with format `date-time` SHOULD be the current date that the document was generated. 
+Because documents are often generated internally by a document producer and exist for a nonzero amount of time before being released, this field MAY be different from the Initial Release Date and Current Release Date.
 
 ##### 3.2.1.11.5 Document Property - Tracking - Initial Release Date
 
