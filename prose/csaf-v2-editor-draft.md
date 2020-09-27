@@ -1018,9 +1018,10 @@ The Type of publisher (`type`) provides information about the type of publisher 
 The Vendor releasing the document (`vendor_id`). The Vendor ID is a unique identifier (OID) that a vendor uses as issued by FIRST under the auspices of IETF. Value type is string with 1 or more characters.
 
 #### 3.2.1.9 Document Property - References
+References (`references`) of References type (`references_t`).
 
     "references": {
-      "$ref": "#/definitions/references_t"
+      // ...
     },
 
 #### 3.2.1.10 Document Property - Title
