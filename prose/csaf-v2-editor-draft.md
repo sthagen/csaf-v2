@@ -639,94 +639,20 @@ Examples:
     jp
 
 ### 3.1.5 Notes Type
-
-    "notes_t": {
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "title": "Note",
-        "description": "Is a place to put all manner of text blobs related to the current context.",
-        "type": "object",
-        "required": [
-          "type",
-          "text"
-        ],
-        "properties": {
-          "audience": {
-            "title": "Audience of note",
-            "description": "Indicate who is intended to read it.",
-            "type": "string",
-            "minLength": 1,
-            "examples": [
-              "all",
-              "executives",
-              "operational management and system administrators",
-              "safety engineers"
-            ]
-          },
-          "title": {
-            "title": "Title of note",
-            "description": "Provides a concise description of what is contained in the text of the note.",
-            "type": "string",
-            "minLength": 1,
-            "examples": [
-              "Details",
-              "Executive summary",
-              "Technical summary",
-              "Impact on safety systems"
-            ]
-          },
-          "type": {
-            "title": "Note type",
-            "description": "Choice of what kind of note this is.",
-            "type": "string",
-            "enum": [
-              "description",
-              "details",
-              "faq",
-              "general",
-              "legal_disclaimer",
-              "other",
-              "summary"
-            ]
-          },
-          "text": {
-            "title": "Note contents",
-            "description": "The contents of the note. Content varies depending on type.",
-            "type": "string",
-            "minLength": 1
-          }
-        }
-      }
-    },
-
-Notes type (`notes_t`) is array with 1 or more items of type Note. Value type of every such Note item is object with the mandatory properties type and text. A note may provide the additional properties audience and title.
+List of notes (`notes_t`) of value type `array` with 1 or more items of type Note contains notes which are specific to the current context. 
 
     "notes_t": {
       // ..
       "items": {
         // ...
         "properties": {
-          "audience": {
-            // ...
-          },
-          "title": {
-            // ...
-          },
-          "type": {
-            // ...
-          },
-          "text": {
-            // ...
-          }
-        },
-        // ...
+          // ...
+        }
       }
     },
 
-#### 3.1.5.1 Notes Type - Note
-
-Note is a place to put all manner of text blobs related to the current context. Value type is object with the 2 mandatory properties type and text as well as the 2 optional properties audience and title. 
+Value type of every such Note item is `object` with the mandatory properties `type` and `text` providing a place to put all manner of text blobs related to the current context. 
+A note `object` may provide the additional properties audience and title.
 
     "properties": {
       "audience": {
@@ -741,11 +667,9 @@ Note is a place to put all manner of text blobs related to the current context. 
       "text": {
         // ...
       }
-    },
+    }
 
-##### 3.1.5.1.1 Notes Type - Note - Audience
-
-Audience of note indicates who is intended to read it. Value type is string with 1 or more characters.
+Audience of note (`audience`) of value type `string` with 1 or more characters indicates who is intended to read it.
 
 Examples:
 
@@ -754,9 +678,7 @@ Examples:
     operational management and system administrators
     safety engineers
 
-##### 3.1.5.1.2 Notes Type - Note - Title
-
-Title of note provides a concise description of what is contained in the text of the note. Value type is string with 1 or more characters.
+Title of note (`title`) of value type `string` with 1 or more characters provides a concise description of what is contained in the text of the note.
 
 Examples:
 
@@ -765,9 +687,8 @@ Examples:
     Technical summary
     Impact on safety systems
 
-##### 3.1.5.1.3 Notes Type - Note - Type
-
-Note type. Choice of what kind of note this is. Value type is string enum. Valid values are:
+Note type (`type`) of value type `string` as `enum` indicates the choice of what kind of note this is. 
+Valid `enum` values are:
 
     description
     details
@@ -777,9 +698,7 @@ Note type. Choice of what kind of note this is. Value type is string enum. Valid
     other
     summary
 
-##### 3.1.5.1.4 Notes Type - Note - Text
-
-Note contents are the contents of the note. Content varies depending on type. Value type is string with 1 or more characters.
+Note contents (`text`) of value type `string` 1 or more characters holds the contents of the note. Content varies depending on type.
 
 ### 3.1.6 Products Type
 
