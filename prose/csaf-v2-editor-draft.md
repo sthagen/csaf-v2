@@ -805,7 +805,7 @@ Examples:
 
 ## 3.2 Properties
 
-These fnal three subsections document the three propertes of a CSAF document. The single mandatory property `document`, as well as the optional properties `product_tree` and `vulnerabilities` in that order.
+These final three subsections document the three properties of a CSAF document. The single mandatory property `document`, as well as the optional properties `product_tree` and `vulnerabilities` in that order.
 
 ### 3.2.1 Document Property
 
