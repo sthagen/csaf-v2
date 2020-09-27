@@ -875,15 +875,7 @@ Aggregate severity (`aggregate_severity`) of value type `object` with the mandat
           // ...
         },
         "text": {
-          "title": "Text of aggregate severity",
-          "description": "Provides a severity which is independent of - and in addition to - any other standard metric for determining the impact or severity of a given vulnerability (such as CVSS).",
-          "type": "string",
-          "minLength": 1,
-          "examples": [
-            "Moderate",
-            "Important",
-            "Critical"
-          ]
+          // ...
         }
       }
     },
