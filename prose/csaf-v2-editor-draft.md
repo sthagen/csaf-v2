@@ -1006,7 +1006,8 @@ Issuing authority (`issuing_authority`) of value type `string`with 1 or more cha
 
 ##### 3.2.1.8.3 Document Property - Publisher - Type
 
-The Type of publisher (`type`) provides information about the type of publisher releasing the document. Value type is string with fixed value set (enum). Thes values are:
+The Type of publisher (`type`) of type `string`and `enum` provides information about the type of publisher releasing the document. 
+The valid values are:
 
     coordinator
     discoverer
