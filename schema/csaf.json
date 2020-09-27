@@ -442,8 +442,8 @@
           "$ref": "#/definitions/lang_t"
         },
         "source_lang": {
-          "title": "Original translation",
-          "description": "If this copy of the document is a translation, from which language was this document translated?",
+          "title": "Source language",
+          "description": "If this copy of the document is a translation then the value of this property describes from which language this document was translated.",
           "$ref": "#/definitions/lang_t"
         },
         "notes": {

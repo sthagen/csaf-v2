@@ -959,11 +959,11 @@ Examples:
 
 #### 3.2.1.5 Document Property - Language
 
-Document language identifies the language used by this document, corresponding to IETF BCP 47 / RFC 5646. Value type is the Language Type (`lang_t`).
+Document language (`lang`) of Language Type (`lang_t`) identifies the language used by this document, corresponding to IETF BCP 47 / RFC 5646.
 
 #### 3.2.1.6 Document Property - Source Language
 
-Original translation. If this copy of the document is a translation, from which language was this document translated? Value type is the Language Type (lang_t).
+Source language (`source_lang`) of Language Type (`lang_t`) identifies if this copy of the document is a translation then the value of this property describes from which language this document was translated.
 
 #### 3.2.1.7 Document Property - Notes
 
