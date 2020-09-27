@@ -994,7 +994,7 @@ The 3 other optional properties are: `contact_details`, `issuing_authority`, and
 
 ##### 3.2.1.8.1 Document Property - Publisher - Contact Details
 
-Contact details (`contact_details`) ofvalue type `string`with 1 or more characters proides information on how to contact the publisher, possibly including details such as web sites, email addresses, phone numbers, and postal mail addresses.
+Contact details (`contact_details`) of value type `string`with 1 or more characters proides information on how to contact the publisher, possibly including details such as web sites, email addresses, phone numbers, and postal mail addresses.
 
 Example:
 
