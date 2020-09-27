@@ -1101,7 +1101,7 @@ Example:
 
 ##### 3.2.1.11.3 Document Property - Tracking - Current Release Date
 
-Current release date is the date of the current revision of this document was released. Value type is string of format date-time.
+Current release date (`current_release_date`) with value type `string` and format `date-time` holds the date when the current revision of this document was released.
 
 
 ##### 3.2.1.11.4 Document Property - Tracking - Generator

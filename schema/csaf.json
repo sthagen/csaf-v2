@@ -549,7 +549,7 @@
             },
             "current_release_date": {
               "title": "Current release date",
-              "description": "The date of the current revision of this document was released",
+              "description": "The date when the current revision of this document was released",
               "type": "string",
               "format": "date-time"
             },
