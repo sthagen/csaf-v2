@@ -994,7 +994,7 @@ The 3 other optional properties are: `contact_details`, `issuing_authority`, and
 
 ##### 3.2.1.8.1 Document Property - Publisher - Contact Details
 
-Contact details (`contact_details`) of value type `string`with 1 or more characters proides information on how to contact the publisher, possibly including details such as web sites, email addresses, phone numbers, and postal mail addresses.
+Contact details (`contact_details`) of value type `string`with 1 or more characters provides information on how to contact the publisher, possibly including details such as web sites, email addresses, phone numbers, and postal mail addresses.
 
 Example:
 
@@ -1002,7 +1002,7 @@ Example:
 
 ##### 3.2.1.8.2 Document Property - Publisher - Issuing Authority
 
-What authority (`issuing_authority`)? The name of the issuing party and their authority to release the document, in particular, the party's constituency and responsibilities or other obligations. Value type is string with 1 or more characters.
+Issuing authority (`issuing_authority`)? The name of the issuing party and their authority to release the document, in particular, the party's constituency and responsibilities or other obligations. Value type is string with 1 or more characters.
 
 ##### 3.2.1.8.3 Document Property - Publisher - Type
 
