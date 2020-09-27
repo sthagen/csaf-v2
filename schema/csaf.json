@@ -448,7 +448,7 @@
         },
         "notes": {
           "title": "Notes associated with the whole document.",
-          "description": "Notes about this set of vulnerabilities should be added here.",
+          "description": "Holds notes about this set of vulnerabilities.",
           "$ref": "#/definitions/notes_t"
         },
         "publisher": {

@@ -967,7 +967,7 @@ Source language (`source_lang`) of Language Type (`lang_t`) identifies if this c
 
 #### 3.2.1.7 Document Property - Notes
 
-Notes associated with the whole document. Notes about this set of vulnerabilities should be added here. Value type is the Notes Type (notes_t).
+Notes (`notes`) associated with the whole document of Notes Type (`notes_t`) holds notes about this set of vulnerabilities.
 
 #### 3.2.1.8 Document Property - Publisher
 
