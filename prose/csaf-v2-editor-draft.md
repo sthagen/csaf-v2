@@ -114,6 +114,18 @@ This specification is provided under the [Non-Assertion](https://www.oasis-open.
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in BCP 14 [[RFC2119](#rfc2119)] and [[RFC8174](#rfc8174)] when, and only when, they appear in all capitals, as shown here.
 
 ## 1.3 Normative References
+###### [JSON-Schema-Core]
+_JSON Schema: A Media Type for Describing JSON Documents_, draft-handrews-json-schema-02, September 2019, https://json-schema.org/draft/2019-09/json-schema-core.html.
+###### [JSON-Schema-Validation]
+_JSON Schema Validation: A Vocabulary for Structural Validation of JSON_, draft-handrews-json-schema-validation-02, September 2019, https://json-schema.org/draft/2019-09/json-schema-validation.html.
+###### [JSON-Hyper-Schema]
+_JSON Hyper-Schema: A Vocabulary for Hypermedia Annotation of JSON_, draft-handrews-json-schema-hyperschema-02, September 2019, https://json-schema.org/draft/2019-09/json-schema-hypermedia.html.
+###### [Relative-JSON-Pointers]
+_Relative JSON Pointers_, draft-handrews-relative-json-pointer-02, September 2019, https://json-schema.org/draft/2019-09/relative-json-pointer.html.
+###### [RFC2119]
+Bradner, S., “Key words for use in RFCs to Indicate Requirement Levels”, BCP 14, RFC 2119, March 1997. http://www.ietf.org/rfc/rfc2119.txt.
+###### [RFC8174]
+Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174, May 2017, http://www.rfc-editor.org/info/rfc8174.
 
 (Reference sources:
 For references to IETF RFCs, use the approved citation formats at:  
@@ -121,10 +133,6 @@ http://docs.oasis-open.org/templates/ietf-rfc-list/ietf-rfc-list.html.
 For references to W3C Recommendations, use the approved citation formats at:  
 http://docs.oasis-open.org/templates/w3c-recommendations-list/w3c-recommendations-list.html.  
 Remove this note before submitting for publication.)
-###### [RFC2119]
-Bradner, S., “Key words for use in RFCs to Indicate Requirement Levels”, BCP 14, RFC 2119, March 1997. http://www.ietf.org/rfc/rfc2119.txt.
-###### [RFC8174]
-Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174, May 2017, http://www.rfc-editor.org/info/rfc8174.
 
 ## 1.4 Non-Normative References
 
@@ -165,14 +173,6 @@ _Data elements and interchange formats — Information interchange — Represent
 ###### [ISO29147]
 _Information technology — Security techniques — Vulnerability disclosure_, International Standard, ISO 29147:2014(E), February 15, 2014,
 https://www.iso.org/standard/45170.html.
-###### [JSON-Schema-Core]
-_JSON Schema: A Media Type for Describing JSON Documents_, draft-handrews-json-schema-02, September 2019, https://json-schema.org/draft/2019-09/json-schema-core.html.
-###### [JSON-Schema-Validation]
-_JSON Schema Validation: A Vocabulary for Structural Validation of JSON_, draft-handrews-json-schema-validation-02, September 2019, https://json-schema.org/draft/2019-09/json-schema-validation.html.
-###### [JSON-Hyper-Schema]
-_JSON Hyper-Schema: A Vocabulary for Hypermedia Annotation of JSON_, draft-handrews-json-schema-hyperschema-02, September 2019, https://json-schema.org/draft/2019-09/json-schema-hypermedia.html.
-###### [Relative-JSON-Pointers]
-_Relative JSON Pointers_, draft-handrews-relative-json-pointer-02, September 2019, https://json-schema.org/draft/2019-09/relative-json-pointer.html.
 ###### [RFC3552]
 Rescorla, E. and B. Korver, "Guidelines for Writing RFC Text on Security Considerations", BCP 72, RFC 3552, DOI 10.17487/RFC3552, July 2003, https://www.rfc-editor.org/info/rfc3552.
 ###### [SCAP12]
@@ -634,7 +634,7 @@ Notes type (`notes_t`) is array with 1 or more items of type Note. Value type of
       }
     },
 
-#### Notes Type - Note
+#### 3.1.5.1 Notes Type - Note
 
 Note is a place to put all manner of text blobs related to the current context. Value type is object with the 2 mandatory properties type and text as well as the 2 optional properties audience and title. 
 
@@ -653,7 +653,7 @@ Note is a place to put all manner of text blobs related to the current context. 
       }
     },
 
-##### Notes Type - Note - Audience
+##### 3.1.5.1.1 Notes Type - Note - Audience
 
 Audience of note indicates who is intended to read it. Value type is string with 1 or more characters.
 
@@ -664,7 +664,7 @@ Examples:
     operational management and system administrators
     safety engineers
 
-##### Notes Type - Note - Title
+##### 3.1.5.1.2 Notes Type - Note - Title
 
 Title of note provides a concise description of what is contained in the text of the note. Value type is string with 1 or more characters.
 
@@ -675,7 +675,7 @@ Examples:
     Technical summary
     Impact on safety systems
 
-##### Notes Type - Note - Type
+##### 3.1.5.1.3 Notes Type - Note - Type
 
 Note type. Choice of what kind of note this is. Value type is string enum. Valid values are:
 
@@ -687,7 +687,7 @@ Note type. Choice of what kind of note this is. Value type is string enum. Valid
     other
     summary
 
-##### Notes Type - Note - Text
+##### 3.1.5.1.4 Notes Type - Note - Text
 
 Note contents are the contents of the note. Content varies depending on type. Value type is string with 1 or more characters.
 
@@ -916,7 +916,7 @@ In addition, the document object may provide the 7 optional properties acknowled
       }
     },
 
-#### Document Property - Acknowledgements
+#### 3.2.1.1 Document Property - Acknowledgements
 
     "acknowledgments": {
       "type": "array",
@@ -926,7 +926,7 @@ In addition, the document object may provide the 7 optional properties acknowled
       }
     },
 
-#### Document Property - Aggregate Severity
+#### 3.2.1.2 Document Property - Aggregate Severity
 
 Aggregate severity is a vehicle that is provided by the document producer to convey the urgency and criticality with which the one or more vulnerabilities reported should be addressed. It is a document-level metric and applied to the document as a whole — not any specific vulnerability. The range of values in this field is defined according to the document producer's policies and procedures. Value type is object with 1 required property `text` and the optional property `namespace`.
 
@@ -952,13 +952,13 @@ Examples:
     Important
     Critical
 
-#### Document Property - CSAF Version
+#### 3.1.2.3 Document Property - CSAF Version
 
 CSAF version gives the version of the CSAF specification which the document was generated for. Value type is string enum. For this edition of the specification the single valid value is:
 
     2.0
 
-#### Document Property - Distribution
+#### 3.1.2.4 Document Property - Distribution
 
 Rules for sharing document describe any constraints on how this document might be shared. Value type is object with 1 or more properties.
 
@@ -974,7 +974,7 @@ Rules for sharing document describe any constraints on how this document might b
       }
     },
 
-##### Document Property - Distribution - Text
+##### 3.1.2.4.1 Document Property - Distribution - Text
 
 The Text member (`text`) value represents a description that provides a textual description of additional constraints. Value type is string with 1 or more characters.
 
@@ -984,7 +984,7 @@ Examples:
     Distribute freely.
     Copyright 2019, Example Company, All Rights Reserved.
 
-##### Document Property - Distribution - TLP
+##### 3.1.2.4.2 Document Property - Distribution - TLP
 
 Traffic Light Protocol (TLP) (`tlp`) type provides details about the TLP classification of the document. Value type is object with the required property `label` and the optional property `url`.
 
@@ -1004,19 +1004,19 @@ Examples:
     https://www.us-cert.gov/tlp
     https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Kritis/Merkblatt_TLP.pdf
 
-#### Document Property - Language
+#### 3.1.2.5 Document Property - Language
 
 Document language identifies the language used by this document, corresponding to IETF BCP 47 / RFC 5646. Value type is the Language Type (lang_t).
 
-#### Document Property - Source Language
+#### 3.1.2.6 Document Property - Source Language
 
 Original translation. If this copy of the document is a translation, from which language was this document translated? Value type is the Language Type (lang_t).
 
-#### Document Property - Notes
+#### 3.1.2.7 Document Property - Notes
 
 Notes associated with the whole document. Notes about this set of vulnerabilities should be added here. Value type is the Notes Type (notes_t).
 
-#### Document Property - Publisher
+#### 3.1.2.8 Document Property - Publisher
 
 Publisher (`publisher`) has value type object and provides information on the publishing entity. The single required property is `type`. The 3 other optional properties are: `contact_details`, `issuing_authority`, and `vendor_id`.
 
@@ -1038,7 +1038,7 @@ Publisher (`publisher`) has value type object and provides information on the pu
       }
     },
 
-##### Document Property - Publisher - Contact Details
+##### 3.1.2.8.1 Document Property - Publisher - Contact Details
 
 How to contact (`contact_details`)? Information on how to contact the publisher, possibly including details such as web sites, email addresses, phone numbers, and postal mail addresses. Value type is string with 1 or more characters.
 
@@ -1046,11 +1046,11 @@ Example:
 
     Example Company can be reached at contact_us@example.com, or via our website at https://www.example.com/contact.
 
-##### Document Property - Publisher - Issuing Authority
+##### 3.1.2.8.2 Document Property - Publisher - Issuing Authority
 
 What authority (`issuing_authority`)? The name of the issuing party and their authority to release the document, in particular, the party's constituency and responsibilities or other obligations. Value type is string with 1 or more characters.
 
-##### Document Property - Publisher - Type
+##### 3.1.2.8.3 Document Property - Publisher - Type
 
 The Type of publisher (`type`) provides information about the type of publisher releasing the document. Value type is string with fixed value set (enum). Thes values are:
 
@@ -1060,17 +1060,17 @@ The Type of publisher (`type`) provides information about the type of publisher 
     user
     vendor
 
-##### Document Property - Publisher - Vendor ID
+##### 3.1.2.8.4 Document Property - Publisher - Vendor ID
 
 The Vendor releasing the document (`vendor_id`). The Vendor ID is a unique identifier (OID) that a vendor uses as issued by FIRST under the auspices of IETF. Value type is string with 1 or more characters.
 
-#### Document Property - References
+#### 3.1.2.9 Document Property - References
 
     "references": {
       "$ref": "#/definitions/references_t"
     },
 
-#### Document Property - Title
+#### 3.1.2.10 Document Property - Title
 
 Title of this document SHOULD be a canonical name for the document, and sufficiently unique to distinguish it from similar documents. Value type is string with 1 or more characters.
 
@@ -1079,7 +1079,7 @@ Examples:
     Example Company Cross-Site-Scripting Vulnerability in Example Generator
     Cisco IPv6 Crafted Packet Denial of Service Vulnerability
 
-#### Document Property - Tracking
+#### 3.1.2.11 Document Property - Tracking
 
 Tracking (`tracking`) provides attributes for tracking the evolution of the security advisory revisions. Value type is object with the six mandatory properties: `current_release_date`, `id`, `initial_release_date`, `revision_history`, `status`, and `version`. The two optional additional properties are `aliases` and `generator`.
 
@@ -1114,7 +1114,7 @@ Tracking (`tracking`) provides attributes for tracking the evolution of the secu
     },
 
 
-##### Document Property - Tracking - ID
+##### 3.1.2.11.1 Document Property - Tracking - ID
 
 Unique identifier for the document. The ID is a simple label that provides for a wide range of numbering values, types, and schemes. Its value SHOULD be assigned and maintained by the original document issuing authority. Value type is string with 1 or more characters.
 
@@ -1124,7 +1124,7 @@ Examples:
     RHBA-2019:0024
     cisco-sa-20190513-secureboot
 
-##### Document Property - Tracking - Aliases
+##### 3.1.2.11.2 Document Property - Tracking - Aliases
 
     "aliases": {
       "type": "array",
@@ -1141,12 +1141,12 @@ Examples:
     },
 
 
-##### Document Property - Tracking - Current Release Date
+##### 3.1.2.11.3 Document Property - Tracking - Current Release Date
 
 Current release date is the date of the current revision of this document was released. Value type is string of format date-time.
 
 
-##### Document Property - Tracking - Generator
+##### 3.1.2.11.4 Document Property - Tracking - Generator
 
 The Generator (`generator`) describes the engine technically creating the security advisory. Value type is object with 1 or 2 properties. The properties are `engine` and `date`.
 
@@ -1169,11 +1169,11 @@ Engine (`engine`) is of type string with 1 or more characters.
 
 Date (`date`) is of type string with format `date-time`.
 
-##### Document Property - Tracking - Initial Release Date
+##### 3.1.2.11.5 Document Property - Tracking - Initial Release Date
 
 Initial release date is the date that this document was first published. Value type is string of format date-time.
 
-##### Document Property - Tracking - Revision History
+##### 3.1.2.11.6 Document Property - Tracking - Revision History
 
 The Revision History (`revision_history`) provides a list of information items on revisions of the security advisory. The value type is array of with 1 or more items. The items are of type object with the three mandatory properties: `number`, `date`, and `description`. 
 
@@ -1201,7 +1201,7 @@ The Date of the revision (`date`) states the date of the revision entry. Value t
 
 The Description (`description`) is of type string with 1 or more characters.
 
-##### Document Property - Tracking - Status
+##### 3.1.2.11.7 Document Property - Tracking - Status
 
 Document status (`status`) defines the draft status of the document. Value type is string with fixed value set (enum). The value MUST be one of the following:
 
@@ -1209,11 +1209,11 @@ Document status (`status`) defines the draft status of the document. Value type 
     final
     interim
 
-##### Document Property - Tracking - Version
+##### 3.1.2.11.8 Document Property - Tracking - Version
 
 Version has the value type Version (`version_t`).
 
-#### Document Property - Type
+#### 3.1.2.12 Document Property - Type
 
     "type": {
       "type": "string",
@@ -1241,7 +1241,7 @@ Product Tree has value type object with 1 or more properties. The properties are
       }
     },
 
-#### Product Tree Property - Product Tree
+#### 3.2.2.1 Product Tree Property - Product Tree
 
     "product_tree": {
       "$comment": "Currently only supports branch_t and full_product_name_t children of product_tree",
@@ -1249,7 +1249,7 @@ Product Tree has value type object with 1 or more properties. The properties are
       "minProperties": 1,
       "properties": {
 
-#### Product Tree Property - Branches
+#### 3.2.2.2 Product Tree Property - Branches
 
         "branches": {
           "type": "array",
@@ -1259,7 +1259,7 @@ Product Tree has value type object with 1 or more properties. The properties are
           }
         },
 
-#### Product Tree Property - Full Product Names
+#### 3.2.2.3 Product Tree Property - Full Product Names
 
         "full_product_names": {
           "type": "array",
@@ -1269,7 +1269,7 @@ Product Tree has value type object with 1 or more properties. The properties are
           }
         },
 
-#### Product Tree Property - Product Groups
+#### 3.2.2.4 Product Tree Property - Product Groups
 
         "product_groups": {
           "type": "array",
@@ -1309,7 +1309,7 @@ Product Tree has value type object with 1 or more properties. The properties are
           }
         },
 
-#### Product Tree Property - Relationships
+#### 3.2.2.5 Product Tree Property - Relationships
 
         "relationships": {
           "type": "array",
@@ -1366,7 +1366,7 @@ Vulnerabilities represents a list of all relevant vulnerability information item
       }
     }
 
-#### Vulnerabilities Property - Vulnerability
+#### 3.2.3.1 Vulnerabilities Property - Vulnerability
 
 Vulnerability is a container for the aggregation of all fields that are related to a single vulnerability in the document. Value type is object with 1 or more properties. Any vulnerability may provide the optional properties acknowledgments, cve, cwe, scores, discovery_date, id, involvements, notes, product_status, references, release_date, remediations, and title. 
 
@@ -1413,17 +1413,17 @@ Vulnerability is a container for the aggregation of all fields that are related 
       // ...
     }
 
-##### Vulnerabilities Property - Vulnerability - Acknowledgments
+##### 3.2.3.1.1 Vulnerabilities Property - Vulnerability - Acknowledgments
 
 Acknowledgments have value type array with 1 or more items of type Acknowledgement (acknowledgement_t).
 
-##### Vulnerabilities Property - Vulnerability - CVE
+##### 3.2.3.1.2 Vulnerabilities Property - Vulnerability - CVE
 
 CVE has value type string matching the regular expression pattern:
 
     ^CVE-[0-9]{4}-[0-9]{4,}$
 
-##### Vulnerabilities Property - Vulnerability - CWE
+##### 3.2.3.1.3 Vulnerabilities Property - Vulnerability - CWE
 
     "cwe": {
       "type": "object",
@@ -1439,7 +1439,7 @@ CVE has value type string matching the regular expression pattern:
       }
     },
 
-##### Vulnerabilities Property - Vulnerability - Scores
+##### 3.2.3.1.4 Vulnerabilities Property - Vulnerability - Scores
 
     "scores": {
       "type": "array",
@@ -1488,11 +1488,11 @@ CVE has value type string matching the regular expression pattern:
       ]
     },
 
-##### Vulnerabilities Property - Vulnerability - Discovery Date
+##### 3.2.3.1.5 Vulnerabilities Property - Vulnerability - Discovery Date
 
 Discovery Date has value type string with format date-time.
 
-##### Vulnerabilities Property - Vulnerability - ID
+##### 3.2.3.1.6 Vulnerabilities Property - Vulnerability - ID
 
     "id": {
       "type": "object",
@@ -1514,7 +1514,7 @@ Discovery Date has value type string with format date-time.
       ]
     },
 
-##### Vulnerabilities Property - Vulnerability - Involvements
+##### 3.2.3.1.7 Vulnerabilities Property - Vulnerability - Involvements
 
     "involvements": {
       "type": "array",
@@ -1561,11 +1561,11 @@ Discovery Date has value type string with format date-time.
       }
     },
 
-##### Vulnerabilities Property - Vulnerability - Notes
+##### 3.2.3.1.8 Vulnerabilities Property - Vulnerability - Notes
 
 Notes have value type Notes (notes_t).
 
-##### Vulnerabilities Property - Vulnerability - Product Status
+##### 3.2.3.1.9 Vulnerabilities Property - Vulnerability - Product Status
 
 Product status contains different lists of product_ids which provide details on the status of the referenced product related to the current vulnerability. Value type object with 1 or more properties.
 
@@ -1618,15 +1618,15 @@ Product status contains different lists of product_ids which provide details on 
       }
     },
 
-##### Vulnerabilities Property - Vulnerability - References
+##### 3.2.3.1.10 Vulnerabilities Property - Vulnerability - References
 
 References have value type References (references_t).
 
-##### Vulnerabilities Property - Vulnerability - Release Date
+##### 3.2.3.1.11 Vulnerabilities Property - Vulnerability - Release Date
 
 Release Date has value type string of format date-time.
 
-##### Vulnerabilities Property - Vulnerability - Remediations
+##### 3.2.3.1.12 Vulnerabilities Property - Vulnerability - Remediations
 
     "remediations": {
       "type": "array",
@@ -1720,7 +1720,7 @@ Release Date has value type string of format date-time.
       }
     },
 
-##### Vulnerabilities Property - Vulnerability - Threats
+##### 3.2.3.1.13 Vulnerabilities Property - Vulnerability - Threats
 
     "threats": {
       "type": "array",
@@ -1764,11 +1764,11 @@ Release Date has value type string of format date-time.
       }
     },
 
-##### Vulnerabilities Property - Vulnerability - Title
+##### 3.2.3.1.14 Vulnerabilities Property - Vulnerability - Title
 
 Title has value type string with 1 or more characters.
 
-# 3 Safety, Security, and Data Protection Considerations
+# 4 Safety, Security, and Data Protection Considerations
 For security reasons, CSAF producers and consumers SHALL adhere to the following:
 * CSAF producers SHALL NOT emit messages that contain HTML, even though all variants of Markdown permit it.
 * Deeply nested markup can cause a stack overflow in the Markdown processor [GFMENG]. To reduce this risk, CSAF consumers SHALL use a Markdown processor that is hardened against such attacks.
@@ -1789,8 +1789,8 @@ Remove this note before submitting for publication.)
 
 -------
 
-# 4 Conformance
-## 4.1 Conformance Targets
+# 5 Conformance
+## 5.1 Conformance Targets
 This document defines requirements for the CSAF file format and for certain software components that interact with it. The entities ("conformance targets") for which this document defines requirements are:
 * **CSAF document**: A security advisory text document in the format defined by this document.
 * **CSAF producer**: A program which emits output in the CSAF format.
@@ -1803,49 +1803,49 @@ This document defines requirements for the CSAF file format and for certain soft
 * **Engineering system**: A software development environment within which analysis tools execute. It might include a build system, a source control system, a result management system, a bug tracking system, a test execution system, and so on.
 The normative content in this document defines requirements for CSAF documents, except for those normative requirements that are explicitly designated as defining the behavior of another conformance target.
 
-## 4.2 Conformance Clause 1: CSAF document
+## 5.2 Conformance Clause 1: CSAF document
 A text file satisfies the "CSAF document"”" conformance profile if:
 * It conforms to the syntax and semantics defined in section 3.
 
-## 4.3 Conformance Clause 2: CSAF producer
+## 5.3 Conformance Clause 2: CSAF producer
 A program satisfies the "CSAF producer" conformance profile if:
 * It produces output in the CSAF format, according to the semantics defined in section 3.
 * It satisfies those normative requirements in section 3 that are designated as applying to CSAF producers.
 
-## 4.4 Conformance Clause 3: Direct producer
+## 5.4 Conformance Clause 3: Direct producer
 An analysis tool satisfies the "Direct producer" conformance profile if:
 * It satisfies the "CSAF producer" conformance profile.
 * It additionally satisfies those normative requirements in section 3 that are designated as applying to "direct producers" or to "analysis tools".
 * It does not emit any objects, properties, or values which, according to section 3, are intended to be produced only by converters.
 
-## 4.5 Conformance Clause 4: Converter
+## 5.5 Conformance Clause 4: Converter
 A converter satisfies the “Converter” conformance profile if:
 * It satisfies the "CSAF producer" conformance profile.
 * It additionally satisfies those normative requirements in section 3 that are designated as applying to converters.
 * It does not emit any objects, properties, or values which, according to section 3, are intended to be produced only by direct producers.
 
-## 4.6 Conformance Clause 5: CSAF post-processor
+## 5.6 Conformance Clause 5: CSAF post-processor
 A CSAF post-processor satisfies the "CSAF post-processor" conformance profile if:
 * It satisfies the "CSAF consumer" conformance profile.
 * It satisfies the "CSAF producer" conformance profile.
 * It additionally satisfies those normative requirements in section 3 that are designated as applying to post-processors.
 
-## 4.7 Conformance Clause 6: CSAF consumer
+## 5.7 Conformance Clause 6: CSAF consumer
 A consumer satisfies the "CSAF consumer" conformance profile if:
 * It reads CSAF documents and interprets them according to the semantics defined in section 3.
 * It satisfies those normative requirements in section 3 that are designated as applying to CSAF consumers.
 
-## 4.8 Conformance Clause 7: Viewer
+## 5.8 Conformance Clause 7: Viewer
 A viewer satisfies the "viewer" conformance profile if:
 * It satisfies the "CSAF consumer" conformance profile.
 * It additionally satisfies the normative requirements in section 3 that are designated as applying to viewers.
 
-## 4.9 Conformance Clause 8: Result management system
+## 5.9 Conformance Clause 8: Result management system
 A result management system satisfies the "result management system" conformance profile if:
 * It satisfies the "CSAF consumer" conformance profile.
 * It additionally satisfies the normative requirements in section 3 and Appendix B ("Use of fingerprints by result management systems") that are designated as applying to result management systems.
 
-## 4.10 Conformance Clause 9: Engineering system
+## 5.10 Conformance Clause 9: Engineering system
 An engineering system satisfies the "engineering system" conformance profile if:
 * It satisfies the normative requirements in section 3 that are designated as applying to engineering systems.
 
