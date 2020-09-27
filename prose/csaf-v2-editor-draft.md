@@ -1002,7 +1002,7 @@ Example:
 
 ##### 3.2.1.8.2 Document Property - Publisher - Issuing Authority
 
-Issuing authority (`issuing_authority`)? The name of the issuing party and their authority to release the document, in particular, the party's constituency and responsibilities or other obligations. Value type is string with 1 or more characters.
+Issuing authority (`issuing_authority`) of value type `string`with 1 or more characters provides the name of the issuing party and their authority to release the document, in particular, the party's constituency and responsibilities or other obligations.
 
 ##### 3.2.1.8.3 Document Property - Publisher - Type
 
