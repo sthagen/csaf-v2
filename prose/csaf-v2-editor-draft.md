@@ -721,20 +721,13 @@ List of Product Group ID (`product_groups_t`) of value type `array` with 1 or mo
     },
 
 ### 3.1.8 Product Group ID Type
+The Product Group ID Type (`product_group_id_t`) of value type `string` with 1 or more characters is a reference token for product group instances. 
+The value is a token required to identify a group of products so that it can be referred to from other parts in the document.
+There is no predefined or required format for the Product Group ID (`product_group_id`) as long as it uniquely identifies a group in the context of the current document. 
 
     "product_group_id_t": {
-      "title": "Reference token for product group instance",
-      "description": "Token required to identify a group of products so that it can be referred to from other parts in the document. There is no predefined or required format for the product_group_id as long as it uniquely identifies a group in the context of the current document.",
-      "type": "string",
-      "minLength": 1,
-      "examples": [
-        "CSAFGID-0001",
-        "CSAFGID-0002",
-        "CSAFGID-0020"
-      ]
+      // ...
     },
-
-The Product Group ID Type (`product_group_id_t`) is a reference token for product group instances. Token required to identify a group of products so that it can be referred to from other parts in the document. There is no predefined or required format for the Product Group ID (`product_group_id`) as long as it uniquely identifies a group in the context of the current document. Value type is string with 1 or more characters.
 
 Examples:
 
