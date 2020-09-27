@@ -519,7 +519,8 @@ Value type is string with format URI (`uri`).
 
 ### 3.1.2 Branch Type
 
-Branch is a part of the hierarchical structure of the product tree. Value type is object with 3 Properties. The properties `name` and `type` are mandatory. In addition, the object contains either a `branches` or a `product` property. 
+Branch (`branch_branches_t`) with value type `object` with exactly 3 properties is a part of the hierarchical structure of the product tree. 
+The properties `name` and `type` are mandatory. In addition, the object contains either a `branches` or a `product` property. 
 
     "branch_branches_t": {
       // ...
