@@ -809,8 +809,8 @@ These final three subsections document the three properties of a CSAF document. 
 
 ### 3.2.1 Document Property
 
-Document level meta-data captures the meta-data about this document describing a particular set of security advisories. Value type is object with the 5 mandatory properties csaf_version, title, publisher, type, and tracking. 
-In addition, the document object may provide the 7 optional properties acknowledgments, aggregate_severity, distribution, lang, source_lang, notes, and references. 
+Document level meta-data (`document`) of value type `object` with the 5 mandatory properties CSAF Version (`csaf_version`), Title (`title`), Publisher (`publisher`), Type (`type`), and Tracking (`tracking`) captures the meta-data about this document describing a particular set of security advisories. 
+In addition, the `document` object may provide the 7 optional properties Acknowledgments (`acknowledgments`), Aggregate Severity (`aggregate_severity`), Distribution (`distribution`), Language (`lang`), Source Language (`source_lang`), Notes (`notes`), and References (`references`). 
 
     "document": {
       // ...
