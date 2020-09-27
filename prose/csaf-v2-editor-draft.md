@@ -892,7 +892,8 @@ Examples:
 
 #### 3.2.1.3 Document Property - CSAF Version
 
-CSAF version gives the version of the CSAF specification which the document was generated for. Value type is string enum. For this edition of the specification the single valid value is:
+CSAF version (`csaf_version`) of value type `string` and `enum` gives the version of the CSAF specification which the document was generated for. 
+The single valid value for this `enum` is:
 
     2.0
 
