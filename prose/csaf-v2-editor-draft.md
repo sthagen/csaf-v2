@@ -121,20 +121,74 @@ http://docs.oasis-open.org/templates/ietf-rfc-list/ietf-rfc-list.html.
 For references to W3C Recommendations, use the approved citation formats at:  
 http://docs.oasis-open.org/templates/w3c-recommendations-list/w3c-recommendations-list.html.  
 Remove this note before submitting for publication.)
-
-###### [OpenC2-HTTPS-v1.0]
-_Specification for Transfer of OpenC2 Messages via HTTPS Version 1.0_. Edited by David Lemire. Latest version: http://docs.oasis-open.org/openc2/open-impl-https/v1.0/open-impl-https-v1.0.html
-###### [OpenC2-SLPF-v1.0]
-_Open Command and Control (OpenC2) Profile for Stateless Packet Filtering Version 1.0_. Edited by Joe Brule, Duncan Sparrell, and Alex Everett. Latest version: http://docs.oasis-open.org/openc2/oc2slpf/v1.0/oc2slpf-v1.0.html
 ###### [RFC2119]
-Bradner, S., "Key words for use in RFCs to Indicate Requirement Levels", BCP 14, RFC 2119, DOI 10.17487/RFC2119, March 1997, http://www.rfc-editor.org/info/rfc2119.
+Bradner, S., “Key words for use in RFCs to Indicate Requirement Levels”, BCP 14, RFC 2119, March 1997. http://www.ietf.org/rfc/rfc2119.txt.
 ###### [RFC8174]
 Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174, May 2017, http://www.rfc-editor.org/info/rfc8174.
 
 ## 1.4 Non-Normative References
 
+###### [CPE23-N]
+_Common Platform Enumeration: Naming Specification Version 2.3, B. Cheikes, D. Waltermire, K. Scarfone, Editors, NIST Interagency Report 7695, August 2011, http://dx.doi.org/10.6028/NIST.IR.7695.
+###### [CPE23-M]
+_Common Platform Enumeration: Naming Matching Specification Version 2.3, M. Parmelee, H. Booth, D. Waltermire, K. Scarfone, Editors, NIST Interagency Report 7696, August 2011,http://dx.doi.org/10.6028/NIST.IR.7696.
+###### [CPE23-D]
+_Common Platform Enumeration: Dictionary Specification Version 2.3, P. Cichonski, D. Waltermire, K. Scarfone, Editors, NIST Interagency Report 7697, August 2011, http://dx.doi.org/10.6028/NIST.IR.7697.
+###### [CPE23-A]
+_Common Platform Enumeration: Applicability Language Specification Version 2.3 (NISTIR 7698), D. Waltermire, P. Cichonski, K. Scarfone, Editors, NIST Interagency Report 7698, August 2011, http://dx.doi.org/10.6028/NIST.IR.7698.
+###### [CVE]
+_Common Vulnerability and Exposures (CVE) – The Standard for Information Security Vulnerability Names, MITRE, 1999, https://cve.mitre.org/about/.
+###### [CVE-NF]
+_Common Vulnerability and Exposures (CVE) – The Standard for Information Security Vulnerability Names - CVE ID Syntax Change, MITRE, January 01, 2014, https://cve.mitre.org/cve/identifiers/syntaxchange.html.
+###### [CVRF-1-1]
+_The Common Vulnerability Reporting Framework (CVRF) Version 1.1_, M. Schiffman, Editor, May 2012, Internet Consortium for Advancement of Security on the Internet (ICASI), 
+http://www.icasi.org/the-common-vulnerability-reporting-framework-cvrf-v1-1/.
+###### [CVRF-v1.2]
+_CSAF Common Vulnerability Reporting Framework (CVRF) Version 1.2_. Edited by Stefan Hagen. 13 September 2017. OASIS Committee Specification 01. http://docs.oasis-open.org/csaf/csaf-cvrf/v1.2/cs01/csaf-cvrf-v1.2-cs01.html. Latest version: http://docs.oasis-open.org/csaf/csaf-cvrf/v1.2/csaf-cvrf-v1.2.html.
+###### [CVSS2]
+_A Complete Guide to the Common Vulnerability Scoring System Version 2.0_, P. Mell, K. Scarfone, S. Romanosky, Editors, First.org, Inc., June 2007, https://www.first.org/cvss/cvss-v2-guide.pdf.
+###### [CVSS30]
+_Common Vulnerability Scoring System v3.0: Specification Document_, FIRST.Org, Inc., June 2019, https://www.first.org/cvss/v3.0/cvss-v30-specification_v1.9.pdf.
+###### [CVSS31]
+_Common Vulnerability Scoring System v3.1: Specification Document_, FIRST.Org, Inc., June 2019, https://www.first.org/cvss/v3-1/cvss-v31-specification_r1.pdf.
+###### [CWE]
+_Common Weakness Enumeration (CWE) – A Community-Developed List of Software Weakness Types_, MITRE, 2005, http://cwe.mitre.org/about/.
+###### [DCMI11]
+_DCMI Metadata Terms v1.1_, Dublin Core Metadata Initiative, DCMI Rec., June 14, 2012, http://dublincore.org/documents/2012/06/14/dcmi-terms/.
+Latest version available at http://dublincore.org/documents/dcmi-terms/.
+###### [GFMCMARK]
+_GitHub's fork of cmark, a CommonMark parsing and rendering library and program in C_, https://github.com/github/cmark.
+###### [GFMENG]
+_GitHub Engineering: A formal spec for GitHub Flavored Markdown_, https://githubengineering.com/a-formal-spec-for-github-markdown/.
+###### [ISO8601]
+_Data elements and interchange formats — Information interchange — Representation of dates and times_, International Standard, ISO 8601:2004(E), December 1, 2004, https://www.iso.org/standard/40874.html.
+###### [ISO29147]
+_Information technology — Security techniques — Vulnerability disclosure_, International Standard, ISO 29147:2014(E), February 15, 2014,
+https://www.iso.org/standard/45170.html.
+###### [JSON-Schema-Core]
+_JSON Schema: A Media Type for Describing JSON Documents_, draft-handrews-json-schema-02, September 2019, https://json-schema.org/draft/2019-09/json-schema-core.html.
+###### [JSON-Schema-Validation]
+_JSON Schema Validation: A Vocabulary for Structural Validation of JSON_, draft-handrews-json-schema-validation-02, September 2019, https://json-schema.org/draft/2019-09/json-schema-validation.html.
+###### [JSON-Hyper-Schema]
+_JSON Hyper-Schema: A Vocabulary for Hypermedia Annotation of JSON_, draft-handrews-json-schema-hyperschema-02, September 2019, https://json-schema.org/draft/2019-09/json-schema-hypermedia.html.
+###### [Relative-JSON-Pointers]
+_Relative JSON Pointers_, draft-handrews-relative-json-pointer-02, September 2019, https://json-schema.org/draft/2019-09/relative-json-pointer.html.
 ###### [RFC3552]
 Rescorla, E. and B. Korver, "Guidelines for Writing RFC Text on Security Considerations", BCP 72, RFC 3552, DOI 10.17487/RFC3552, July 2003, https://www.rfc-editor.org/info/rfc3552.
+###### [SCAP12]
+_The Technical Specification for the Security Content Automation Protocol (SCAP): SCAP Version 1.2_, D. Waltermire, S. Quinn, K. Scarfone, A. Halbardier, Editors, NIST Spec. Publ. 800‑126 rev. 2, September 2011, 
+http://dx.doi.org/10.6028/NIST.SP.800-126r2.
+###### [XML]
+_Extensible Markup Language (XML) 1.0 (Fifth Edition)_, T. Bray, J. Paoli, M. Sperberg-McQueen, E. Maler, F. Yergeau, Editors, W3C Recommendation, November 26, 2008, http://www.w3.org/TR/2008/REC-xml-20081126/. 
+Latest version available at http://www.w3.org/TR/xml.
+###### [XML-Schema-1]
+_W3C XML Schema Definition Language (XSD) 1.1 Part 1: Structures_, S. Gao, M. Sperberg-McQueen, H. Thompson, N. Mendelsohn, D. Beech, M. Maloney, Editors, W3C Recommendation, April 5, 2012, 
+http://www.w3.org/TR/2012/REC-xmlschema11-1-20120405/. 
+Latest version available at http://www.w3.org/TR/xmlschema11-1/.
+###### [XML-Schema-2]
+_W3C XML Schema Definition Language (XSD) 1.1 Part 2_: Datatypes W3C XML Schema Definition Language (XSD) 1.1 Part 2: Datatypes, D. Peterson, S. Gao, A. Malhotra, M. Sperberg-McQueen, H. Thompson, Paul V. Biron, Editors, W3C Recommendation, April 5, 2012, 
+http://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/. 
+Latest version available at http://www.w3.org/TR/xmlschema11-2/.
 
 ## 1.5 Typographical Conventions
 Keywords defined by this specification use this `monospaced` font.
@@ -204,11 +258,11 @@ Delegation to industry best practices technologies is used in referencing schema
 * Platform Data:
   * Common Platform Enumeration (CPE) Version 2.3 [CPE23_A]
 * Vulnerability Scoring:
-  * Common Vulnerability Scoring System (CVSS) Version 3.1 [CVSS3_1]
+  * Common Vulnerability Scoring System (CVSS) Version 3.1 [CVSS31]
     * JSON Schema Reference https://www.first.org/cvss/cvss-v3.1.json
-  * Common Vulnerability Scoring System (CVSS) Version 3.0 [CVSS3]
+  * Common Vulnerability Scoring System (CVSS) Version 3.0 [CVSS30]
     * JSON Schema Reference https://www.first.org/cvss/cvss-v3.0.json
-  * Common Vulnerability Scoring System (CVSS) Version 2.0 [CVSS2][1]
+  * Common Vulnerability Scoring System (CVSS) Version 2.0 [CVSS2]
     * JSON Schema Reference https://www.first.org/cvss/cvss-v2.0.json
 * Classfication for Document Distribution
   * Traffic Light Protocol (TLP)
@@ -220,9 +274,9 @@ Delegation to industry best practices technologies is used in referencing schema
 
 The CSAF schema describes how to represent security advisory information as a JSON document.
 
-The CSAF schema Version 2.0 builds on the JSON Schema draft 07 rules.
+The CSAF schema Version 2.0 builds on the JSON Schema draft 2019-09 rules.
 
-    "$schema": "http://json-schema.org/draft-07/schema#"
+    "$schema": "https://json-schema.org/draft/2019-09/schema"
 
 The schema identifier is (before publication):
 
@@ -239,7 +293,44 @@ The single mandatory property is the document. The optional two additional prope
 
 ## 3.1 Definitions
 
+    "$defs": {
+        "acknowledgment_t": {
+            // ...
+        },
+        "branch_branches_t": {
+            // ...
+        },
+        "full_product_name_t": {
+            // ...
+        },
+        "lang_t": {
+            // ...
+        },
+        "notes_t": {
+            // ...
+        },
+        "products_t": {
+            // ...
+        },
+        "product_groups_t": {
+             // ...
+        },
+        "product_group_id_t": {
+            // ...
+        },
+        "product_id_t": {
+            // ...
+        },
+        "references_t": {
+            // ...
+        },
+        "version_t": {
+            // ...
+        }
+    },
+
 ### 3.1.1 Acknowledgment Type
+
 
 Acknowledgement (`acknowledgment_t`) type instances acknowledge contributions by describing those that contributed. The value type is object with 1 to 4 properties. The properties are: names, organizations, description, and urls.
 
@@ -248,16 +339,16 @@ Acknowledgement (`acknowledgment_t`) type instances acknowledge contributions by
       "minProperties": 1,
       "properties": {
         "names": {
-          // ...
+            // ...
         },
         "organizations": {
-          // ...
+            // ...
         },
         "description": {
-          // ...
+            // ...
         },
         "urls": {
-          // ...
+            // ...
         }
       }
     },
@@ -291,11 +382,13 @@ Example:
 
 #### 3.1.1.4 Acknowledgment Type - URLs
 
-URL of acknowledgment contains the URL or location of the reference to be acknowledged. Value type is string with format URI.
+URLs (`urls`) of acknowledgement is a container (value tpe array) for 1 or more strings of type URL.
+
+Any URL of acknowledgment contains the URL or location of the reference to be acknowledged. Value type is string with format URI.
 
 ### 3.1.2 Branch Type
 
-Branch is a part of the hierarchical structure of the product tree. Value type is object with 3 Properties. The properties name and type are mandatory. In addition the object contains either a branches or a product. 
+Branch is a part of the hierarchical structure of the product tree. Value type is object with 3 Properties. The properties `name` and `type` are mandatory. In addition, the object contains either a `branches` or a `product` property. 
 
     "branch_branches_t": {
       // ...
@@ -356,6 +449,37 @@ Product has the value type Full Product Name (`full_product_name_t`).
 
 ### 3.1.3 Full Product Name Type
 
+    "full_product_name_t": {
+      "type": "object",
+      "required": [
+        "product_id",
+        "name"
+      ],
+      "properties": {
+        "product_id": {
+          "$ref": "#/definitions/product_id_t"
+        },
+        "name": {
+          "title": "Textual description of the product",
+          "description": "The value of a Full Product Name element should be the product’s full canonical name, including version number and other attributes, as it would be used in a human-friendly document.",
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "Microsoft Host Integration Server 2006 Service Pack 1",
+            "Cisco AnyConnect Secure Mobility Client 2.3.185"
+          ]
+        },
+        "cpe": {
+          "$comment": "TODO: This should have a full regular expression to enforce CPE syntax.",
+          "title": "Common Platform Enumeration representation",
+          "description": "The Common Platform Enumeration (CPE) attribute refers to a method for naming platforms external to this specification.",
+          "type": "string",
+          "pattern": "^(?i)cpe:(/|\\d+\\.\\d+)[^:]*:?[^:]*:?[^:]*:?[^:]*:?[^:]*:?[^:]*:?[^:]*$",
+          "minLength": 1
+        }
+      }
+    },
+
 Full Product Name (`full_product_name_t`) has value type object with 3 properties. The properties product_id and name are mandatory. In addition the object may contain a CPE identifier as value of the cpe property.
 
     "full_product_name_t": {
@@ -394,6 +518,20 @@ Common Platform Enumeration representation. The Common Platform Enumeration (CPE
 
 ### 3.1.4 Language Type
 
+    "lang_t": {
+      "title": "Language type",
+      "description": "Identifies a language, corresponding to IETF BCP 47 / RFC 5646. See IETF language registry: https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry",
+      "type": "string",
+      "pattern": "^[a-zA-Z]{2,3}(-.+)?$",
+      "examples": [
+        "de",
+        "en",
+        "fr",
+        "frc",
+        "jp"
+      ]
+    },
+
 Language type identifies a language, corresponding to IETF BCP 47 / RFC 5646. 
 
 See IETF language registry: [https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry](https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry)
@@ -411,6 +549,66 @@ Examples:
     jp
 
 ### 3.1.5 Notes Type
+
+    "notes_t": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "title": "Note",
+        "description": "Is a place to put all manner of text blobs related to the current context.",
+        "type": "object",
+        "required": [
+          "type",
+          "text"
+        ],
+        "properties": {
+          "audience": {
+            "title": "Audience of note",
+            "description": "Indicate who is intended to read it.",
+            "type": "string",
+            "minLength": 1,
+            "examples": [
+              "all",
+              "executives",
+              "operational management and system administrators",
+              "safety engineers"
+            ]
+          },
+          "title": {
+            "title": "Title of note",
+            "description": "Provides a concise description of what is contained in the text of the note.",
+            "type": "string",
+            "minLength": 1,
+            "examples": [
+              "Details",
+              "Executive summary",
+              "Technical summary",
+              "Impact on safety systems"
+            ]
+          },
+          "type": {
+            "title": "Note type",
+            "description": "Choice of what kind of note this is.",
+            "type": "string",
+            "enum": [
+              "description",
+              "details",
+              "faq",
+              "general",
+              "legal_disclaimer",
+              "other",
+              "summary"
+            ]
+          },
+          "text": {
+            "title": "Note contents",
+            "description": "The contents of the note. Content varies depending on type.",
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
 
 Notes type (`notes_t`) is array with 1 or more items of type Note. Value type of every such Note item is object with the mandatory properties type and text. A note may provide the additional properties audience and title.
 
@@ -495,13 +693,47 @@ Note contents are the contents of the note. Content varies depending on type. Va
 
 ### 3.1.6 Products Type
 
+    "products_t": {
+      "title": "List of product_ids",
+      "description": "Specifies a list of product_ids to give context to the parent item.",
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/definitions/product_id_t"
+      }      
+    },
+
 List of Product IDs (`product_ids`) specifies a list of `product_ids` to give context to the parent item. Value type is array with 1 or more unque items (set) of type Product ID (`product_id_t`)
 
 ### 3.1.7 Product Groups Type
 
+    "product_groups_t": {
+      "title": "List of product_group_ids",
+      "description": "Specifies a list of product_group_ids to give context to the parent item.",
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/definitions/product_group_id_t"
+      }
+    },
+
 List of Product Group ID (`product_group_ids`) specifies a list of `product_group_ids` to give context to the parent item. Value type is array with 1 or more unque items (set) of type Product Group ID (`product_group_id_t`)
 
 ### 3.1.8 Product Group ID Type
+
+    "product_group_id_t": {
+      "title": "Reference token for product group instance",
+      "description": "Token required to identify a group of products so that it can be referred to from other parts in the document. There is no predefined or required format for the product_group_id as long as it uniquely identifies a group in the context of the current document.",
+      "type": "string",
+      "minLength": 1,
+      "examples": [
+        "CSAFGID-0001",
+        "CSAFGID-0002",
+        "CSAFGID-0020"
+      ]
+    },
 
 The Product Group ID Type (`product_group_id_t`) is a reference token for product group instances. Token required to identify a group of products so that it can be referred to from other parts in the document. There is no predefined or required format for the Product Group ID (`product_group_id`) as long as it uniquely identifies a group in the context of the current document. Value type is string with 1 or more characters.
 
@@ -513,6 +745,17 @@ Examples:
 
 ### 3.1.9 Product ID Type
 
+    "product_id_t": {
+      "title": "Reference token for product instance",
+      "description": "Token required to identify a full_product_name so that it can be referred to from other parts in the document. There is no predefined or required format for the product_id as long as it uniquely identifies a product in the context of the current document.",
+      "type": "string",
+      "minLength": 1,
+      "examples": [
+        "CVRFPID-0004",
+        "CVRFPID-0008"
+      ]
+    },
+
 The Product ID Type (`product_id_t`) is a reference token for product instances. Token required to identify a `full_product_name` so that it can be referred to from other parts in the document. There is no predefined or required format for the Product Group ID (`product_id`) as long as it uniquely identifies a product in the context of the current document. Value type is string with 1 or more characters.
 
 Examples:
@@ -521,6 +764,46 @@ Examples:
     CVRFPID-0008
 
 ### 3.1.10 References Type
+
+    "references_t": {
+      "title": "List of references",
+      "description": "Holds a list of references.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "title": "Reference",
+        "description": "Holds any reference to conferences, papers, advisories, and other resources that are related and considered related to either a surrounding part of or the entire document and to be of value to the document consumer.",
+        "type": "object",
+        "required": [
+          "url",
+          "description"
+        ],
+        "properties": {
+          "description": {
+            "title": "Description of reference",
+            "description": "What does this reference refer to?",
+            "type": "string",
+            "minLength": 1
+          },
+          "type": {
+            "title": "Type of reference",
+            "description": "Indicates whether the reference points to the same document or vulnerability in focus (depending on scope) or to an external resource.",
+            "type": "string",
+            "default": "external",
+            "enum": [
+              "external",
+              "self"
+            ]
+          },
+          "url": {
+            "title": "URL of reference",
+            "description": "Provides the URL for the reference.",
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    },
 
 The References (`references_t`) type provides a list of Reference objects. Value type is array with 1 or more items. 
 
@@ -558,6 +841,19 @@ The default value for `type` is:
 The URL of reference (`url`) provides the URL for the reference. Value type is string with format `uri`.
 
 ### 3.1.11 Version Type
+
+    "version_t": {
+      "title": "Version",
+      "description": "Specifies a version string with a simple hierarchical counter model to denote clearly the evolution of the content of the document. Format must be understood as 'major[.minor[.patch[.build]]]' version.",
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)(\\.(0|[1-9][0-9]*)){0,3}$",
+      "examples": [
+        "1",
+        "0.9",
+        "1.4.3",
+        "2.40.0.320002"
+      ]
+    }
 
 The Version (`version_t`) type specifies a version string with a simple hierarchical counter model to denote clearly the evolution of the content of the document. Format must be understood as 'major.minor.patch.build' version. Value type is string matching the regular expression pattern:
 
@@ -1473,6 +1769,14 @@ Release Date has value type string of format date-time.
 Title has value type string with 1 or more characters.
 
 # 3 Safety, Security, and Data Protection Considerations
+For security reasons, CSAF producers and consumers SHALL adhere to the following:
+* CSAF producers SHALL NOT emit messages that contain HTML, even though all variants of Markdown permit it.
+* Deeply nested markup can cause a stack overflow in the Markdown processor [GFMENG]. To reduce this risk, CSAF consumers SHALL use a Markdown processor that is hardened against such attacks.
+  **Note**: One example is the GitHub fork of the cmark Markdown processor [GFMCMARK].
+* To reduce the risk posed by possibly malicious CSAF files that do contain arbitrary HTML (including, for example, javascript: links), CSAF consumers SHALL either disable HTML processing (for example, by using an option such as the --safe option in the cmark Markdown processor) or run the resulting HTML through an HTML sanitizer.
+CSAF consumers that are not prepared to deal with the security implications of formatted messages SHALL NOT attempt to render them and SHALL instead fall back to the corresponding plain text messages.
+
+
 (Note: OASIS strongly recommends that Technical Committees consider issues that might affect safety, security, privacy, and/or data protection in implementations of their specification and document them for implementers and adopters. For some purposes, you may find it required, e.g. if you apply for IANA registration.
 
 While it may not be immediately obvious how your specification might make systems vulnerable to attack, most specifications, because they involve communications between systems, message formats, or system settings, open potential channels for exploit. For example, IETF [[RFC3552](#rfc3552)] lists “eavesdropping, replay, message insertion, deletion, modification, and man-in-the-middle” as well as potential denial of service attacks as threats that must be considered and, if appropriate, addressed in IETF RFCs.
@@ -1486,6 +1790,65 @@ Remove this note before submitting for publication.)
 -------
 
 # 4 Conformance
+## 4.1 Conformance Targets
+This document defines requirements for the CSAF file format and for certain software components that interact with it. The entities ("conformance targets") for which this document defines requirements are:
+* **CSAF document**: A security advisory text document in the format defined by this document.
+* **CSAF producer**: A program which emits output in the CSAF format.
+* **Direct producer**: An analysis tool which acts as a CSAF producer.
+* **Converter**: A CSAF producer that transforms the output of an analysis tool from its native output format into the CSAF format.
+* **CSAF post-processor**: A CSAF producer that transforms an existing CSAF document into a new CSAF document, for example, by removing or redacting security-sensitive elements.
+* **CSAF consumer**: A program that reads and interprets a CSAF document.
+* **Viewer**: A CSAF consumer that reads a CSAF document, displays a list of the results it contains, and allows an end user to view each result in the context of the artifact in which it occurs.
+* **Result management system**: A software system that consumes the documents produced by analysis tools, produces reports that enable engineering teams to assess the quality of their software artifacts at a point in time and to observe trends in the quality over time, and performs functions such as filing bugs and displaying information about individual results.
+* **Engineering system**: A software development environment within which analysis tools execute. It might include a build system, a source control system, a result management system, a bug tracking system, a test execution system, and so on.
+The normative content in this document defines requirements for CSAF documents, except for those normative requirements that are explicitly designated as defining the behavior of another conformance target.
+
+## 4.2 Conformance Clause 1: CSAF document
+A text file satisfies the "CSAF document"”" conformance profile if:
+* It conforms to the syntax and semantics defined in section 3.
+
+## 4.3 Conformance Clause 2: CSAF producer
+A program satisfies the "CSAF producer" conformance profile if:
+* It produces output in the CSAF format, according to the semantics defined in section 3.
+* It satisfies those normative requirements in section 3 that are designated as applying to CSAF producers.
+
+## 4.4 Conformance Clause 3: Direct producer
+An analysis tool satisfies the "Direct producer" conformance profile if:
+* It satisfies the "CSAF producer" conformance profile.
+* It additionally satisfies those normative requirements in section 3 that are designated as applying to "direct producers" or to "analysis tools".
+* It does not emit any objects, properties, or values which, according to section 3, are intended to be produced only by converters.
+
+## 4.5 Conformance Clause 4: Converter
+A converter satisfies the “Converter” conformance profile if:
+* It satisfies the "CSAF producer" conformance profile.
+* It additionally satisfies those normative requirements in section 3 that are designated as applying to converters.
+* It does not emit any objects, properties, or values which, according to section 3, are intended to be produced only by direct producers.
+
+## 4.6 Conformance Clause 5: CSAF post-processor
+A CSAF post-processor satisfies the "CSAF post-processor" conformance profile if:
+* It satisfies the "CSAF consumer" conformance profile.
+* It satisfies the "CSAF producer" conformance profile.
+* It additionally satisfies those normative requirements in section 3 that are designated as applying to post-processors.
+
+## 4.7 Conformance Clause 6: CSAF consumer
+A consumer satisfies the "CSAF consumer" conformance profile if:
+* It reads CSAF documents and interprets them according to the semantics defined in section 3.
+* It satisfies those normative requirements in section 3 that are designated as applying to CSAF consumers.
+
+## 4.8 Conformance Clause 7: Viewer
+A viewer satisfies the "viewer" conformance profile if:
+* It satisfies the "CSAF consumer" conformance profile.
+* It additionally satisfies the normative requirements in section 3 that are designated as applying to viewers.
+
+## 4.9 Conformance Clause 8: Result management system
+A result management system satisfies the "result management system" conformance profile if:
+* It satisfies the "CSAF consumer" conformance profile.
+* It additionally satisfies the normative requirements in section 3 and Appendix B ("Use of fingerprints by result management systems") that are designated as applying to result management systems.
+
+## 4.10 Conformance Clause 9: Engineering system
+An engineering system satisfies the "engineering system" conformance profile if:
+* It satisfies the normative requirements in section 3 that are designated as applying to engineering systems.
+
 (Note: The [OASIS TC Process](https://www.oasis-open.org/policies-guidelines/tc-process#wpComponentsConfClause) requires that a specification approved by the TC at the Committee Specification Public Review Draft, Committee Specification or OASIS Standard level must include a separate section, listing a set of numbered conformance clauses, to which any implementation of the specification must adhere in order to claim conformance to the specification (or any optional portion thereof). This is done by listing the conformance clauses here.
 For the definition of "conformance clause," see [OASIS Defined Terms](https://www.oasis-open.org/policies-guidelines/oasis-defined-terms-2017-05-26#dConformanceClause).
 
