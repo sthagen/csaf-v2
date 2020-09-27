@@ -58,9 +58,9 @@ https://docs.oasis-open.org/tc-name/wp-abbrev-xxxxx/v1.0/wp-abbrev-xxxxx-v1.0.ht
 #### Citation format:
 When referencing this specification the following citation format should be used:
 
-**[short-title-v1.0]**
+**[csaf-v2.0]**
 
-_Specification Title Version 1.0_. Edited by Dany Page and Stefan Hagen. 00 Month 2020. OASIS Committee Specification Draft 01 / Public Review Draft 01. this-version.html. Latest version: latest-version.html.
+_CSAF Common Vulnerability Reporting Framework Version 2.00_. Edited by Langly Rock and Stefan Hagen. 00 Month 2020. OASIS Committee Specification Draft 01 / Public Review Draft 01. this-version.html. Latest version: latest-version.html.
 
 -------
 
