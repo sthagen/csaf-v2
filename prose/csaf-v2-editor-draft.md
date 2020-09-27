@@ -749,81 +749,44 @@ Examples:
     CVRFPID-0008
 
 ### 3.1.10 References Type
-
-    "references_t": {
-      "title": "List of references",
-      "description": "Holds a list of references.",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "title": "Reference",
-        "description": "Holds any reference to conferences, papers, advisories, and other resources that are related and considered related to either a surrounding part of or the entire document and to be of value to the document consumer.",
-        "type": "object",
-        "required": [
-          "url",
-          "description"
-        ],
-        "properties": {
-          "description": {
-            "title": "Description of reference",
-            "description": "What does this reference refer to?",
-            "type": "string",
-            "minLength": 1
-          },
-          "type": {
-            "title": "Type of reference",
-            "description": "Indicates whether the reference points to the same document or vulnerability in focus (depending on scope) or to an external resource.",
-            "type": "string",
-            "default": "external",
-            "enum": [
-              "external",
-              "self"
-            ]
-          },
-          "url": {
-            "title": "URL of reference",
-            "description": "Provides the URL for the reference.",
-            "type": "string",
-            "format": "uri"
-          }
-        }
-      }
-    },
-
-The References (`references_t`) type provides a list of Reference objects. Value type is array with 1 or more items. 
+List of references (`references_t`) of value type `array` with 1 or more items of type Reference holds a list of Reference objects. 
 
     "references_t": {
       // ...
       "items": {
         // ...
         "properties": {
-          "description": {
-            // ...
-          },
-          "type": {
-            // ...
-          },
-          "url": {
-            // ...
-          }
-        },
+          // ...
+        }
       }
     },
 
-Any such item is a Reference that holds any reference to conferences, papers, advisories, and other resources that are related and considered related to either a surrounding part of or the entire document and to be of value to the document consumer. Value type is object with the 2 mandatory properties `url` and `description`. A third optional property `type` is available.
+Value type of every such Reference item is `object` with the mandatory properties `url` and `description` holding any reference to conferences, papers, advisories, and other resources that are related and considered related to either a surrounding part of or the entire document and to be of value to the document consumer. 
+A reference `object` may provide the additional property `type`.
 
-The Description of reference (`description`) provides an anwser to the question: "What does this reference refer to?" and is of type string with 1 or more characters.
+    "properties": {
+      "description": {
+        // ...
+      },
+      "type": {
+        // ...
+      },
+      "url": {
+        // ...
+      }
+    }
 
-The Type of reference (`type`) indicates whether the reference points to the same document or vulnerability in focus (depending on scope) or to an external resource. Value type is string with a fixed value set (enum). The value set of the `type` enum is:
+Description of reference (`description`) of value type `string` with 1 or more characters indicates what this reference refers to.
 
+Type of reference (`type`) of value type `string` as `enum` indicates whether the reference points to the same document or vulnerability in focus (depending on scope) or to an external resource.
+Valid `enum` values are:
+
+    external
     self
-    external
 
-The default value for `type` is:
+The default value for `type` is `external`.
 
-    external
-
-The URL of reference (`url`) provides the URL for the reference. Value type is string with format `uri`.
+URL of reference (`url`) of value type `string` and format `uri` provides the URL for the reference.
 
 ### 3.1.11 Version Type
 

@@ -289,7 +289,7 @@
         "properties": {
           "description": {
             "title": "Description of reference",
-            "description": "What does this reference refer to?",
+            "description": "Indicates what this reference refers to.",
             "type": "string",
             "minLength": 1
           },
