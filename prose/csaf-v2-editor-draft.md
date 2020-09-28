@@ -1106,7 +1106,7 @@ Current release date (`current_release_date`) with value type `string` and forma
 
 ##### 3.2.1.11.4 Document Property - Tracking - Generator
 
-Document Generator (`generator`) of value type `object` with mandatory property Engine (`engine`) and optional property Date (`date`) s a container to hold all elements related to the generation of the document. These items will reference when the document was actually created, including the date it was generated and the entity that generated it.. 
+Document Generator (`generator`) of value type `object` with mandatory property Engine (`engine`) and optional property Date (`date`) is a container to hold all elements related to the generation of the document. These items will reference when the document was actually created, including the date it was generated and the entity that generated it.. 
 
         "generator": {
           // ...
@@ -1158,7 +1158,7 @@ The Revision History (`revision_history`) with value type `array` of 1 or more R
           }
         },
 
-Revision History Entry items are of type object with the three mandatory properties: Number (`number`), Date (`date`), and Description (`description`). 
+Revision History Entry items are of type `object` with the three mandatory properties: Number (`number`), Date (`date`), and Description (`description`). 
 
 The Number (`number`) has value type Version (`version_t`). 
 
@@ -1194,7 +1194,7 @@ Examples:
 
 ### 3.2.2 Product Tree Property
 
-Product Tree has value type object with 1 or more properties. The properties are branches, full_product_names, product_groups, and relationships.
+Product Tree has value type `object` with 1 or more properties. The properties are branches, full_product_names, product_groups, and relationships.
 
     "product_tree": {
       // ...
@@ -1340,7 +1340,7 @@ Vulnerabilities represents a list of all relevant vulnerability information item
 
 #### 3.2.3.1 Vulnerabilities Property - Vulnerability
 
-Vulnerability is a container for the aggregation of all fields that are related to a single vulnerability in the document. Value type is object with 1 or more properties. Any vulnerability may provide the optional properties acknowledgments, cve, cwe, scores, discovery_date, id, involvements, notes, product_status, references, release_date, remediations, and title. 
+Vulnerability is a container for the aggregation of all fields that are related to a single vulnerability in the document. Value type is `object` with 1 or more properties. Any vulnerability may provide the optional properties acknowledgments, cve, cwe, scores, discovery_date, id, involvements, notes, product_status, references, release_date, remediations, and title. 
 
     "acknowledgments": {
       // ...
@@ -1539,7 +1539,7 @@ Notes have value type Notes (notes_t).
 
 ##### 3.2.3.1.9 Vulnerabilities Property - Vulnerability - Product Status
 
-Product status contains different lists of product_ids which provide details on the status of the referenced product related to the current vulnerability. Value type object with 1 or more properties.
+Product status contains different lists of product_ids which provide details on the status of the referenced product related to the current vulnerability. Value type `object` with 1 or more properties.
 
     "product_status": {
       "title": "Product status",
