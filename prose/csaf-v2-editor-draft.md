@@ -1573,12 +1573,10 @@ Known not affected (`known_not_affected`) of value type Products (`products_t`) 
 Under investigation (`under_investigation`) of value type Products (`products_t`) represents that it is not known yet whether this version is or is not affected by the vulnerability. However, it is still under investigation - the result will be provided in a later release of the document.
 
 ##### 3.2.3.1.10 Vulnerabilities Property - Vulnerability - References
-
-References have value type References (references_t).
+References (`references`) have value type References (`references_t`).
 
 ##### 3.2.3.1.11 Vulnerabilities Property - Vulnerability - Release Date
-
-Release Date has value type string of format date-time.
+Release date (`release_date`) with value type `string` of format `date-time` holds the date and time the vulnerability was originally released into the wild.
 
 ##### 3.2.3.1.12 Vulnerabilities Property - Vulnerability - Remediations
 
