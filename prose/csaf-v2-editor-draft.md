@@ -1388,46 +1388,40 @@ The ID (`id`) has value type `string` with `pattern` (regular expression):
 The Description (`description`) has value type `string` with 1 or more characters.
 
 ##### 3.2.3.1.4 Vulnerabilities Property - Vulnerability - Scores
+Scores (`scores`) of value type `array` with 1 or more items holds scores and referenced product ids.
 
     "scores": {
-      "type": "array",
-      "minItems": 1,
+      // ...
       "items": [
         {
           "anyOf": [
             {
-              "type": "array",
-              "minItems": 0,
+              // ...
               "items": {
-                "$ref": "#/definitions/products_t",
-                "examples": [
-                  "CVRFID_123",
-                  "CSAFID_0815"
-                ],
-                "default": ""
+                // ...
               }
             },
             {
-              "type": "object",
+              // ...
               "properties": {
                 "cvss_v20": {
-                  "$ref": "https://www.first.org/cvss/cvss-v2.0.json"
+                  // ...
                 }
               }
             },
             {
-              "type": "object",
+              // ...
               "properties": {
                 "cvss_v30": {
-                  "$ref": "https://www.first.org/cvss/cvss-v3.0.json"
+                  // ...
                 }
               }
             },
             {
-              "type": "object",
+              // ...
               "properties": {
                 "cvss_v31": {
-                  "$ref": "https://www.first.org/cvss/cvss-v3.1.json"
+                  // ...
                 }
               }
             }
@@ -1435,6 +1429,21 @@ The Description (`description`) has value type `string` with 1 or more character
         }
       ]
     },
+
+The items are any of the following four types:
+
+An `array`of zero or more Product IDs (`products_t`) with an empty string as default.
+
+Examples:
+
+    CVRFID_123
+    CSAFID_0815
+
+An `object` with the property CVSS v2.0 (`cvss_v20`) holding a value abiding by the schema at [https://www.first.org/cvss/cvss-v2.0.json](https://www.first.org/cvss/cvss-v2.0.json).
+
+An `object` with the property CVSS v3.0 (`cvss_v30`) holding a value abiding by the schema at [https://www.first.org/cvss/cvss-v3.0.json](https://www.first.org/cvss/cvss-v3.0.json).
+
+An `object` with the property CVSS v3.1 (`cvss_v31`) holding a value abiding by the schema at [https://www.first.org/cvss/cvss-v3.1.json](https://www.first.org/cvss/cvss-v3.1.json).
 
 ##### 3.2.3.1.5 Vulnerabilities Property - Vulnerability - Discovery Date
 

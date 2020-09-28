@@ -796,6 +796,8 @@
             }
           },
           "scores": {
+            "title": "Scores",
+            "description": "Holds scores and referenced product ids.",
             "type": "array",
             "minItems": 1,
             "items": [
