@@ -1476,55 +1476,52 @@ Example:
     CSCso66472
 
 ##### 3.2.3.1.7 Vulnerabilities Property - Vulnerability - Involvements
+List of involvements (`involvements`) of value type `array` with 1 or more items of type `object` contains a list of involvements.
 
     "involvements": {
-      "type": "array",
-      "minItems": 1,
+      // ...
       "items": {
-        "title": "Involvement",
-        "description": "Is a container, that allows the document producers to comment on their level of Involvement (or engagement) in the vulnerability identification, scoping, and remediation process.",
-        "type": "object",
-        "required": [
-          "party",
-          "status"
-        ],
+        // ...
         "properties": {
           "description": {
-            "type": "string",
-            "minLength": 1
+            // ...
           },
           "party": {
-            "title": "Party type",
-            "description": "Defines the type of the involved party.",
-            "type": "string",
-            "enum": [
-              "coordinator",
-              "discoverer",
-              "other",
-              "user",
-              "vendor"
-            ]
+            // ...
           },
           "status": {
-            "title": "Party status",
-            "description": "Defines contact status of the involved party.",
-            "type": "string",
-            "enum": [
-              "completed",
-              "contact_accepted",
-              "disputed",
-              "in_progress",
-              "not_contacted",
-              "open"
-            ]
+            // ...
           }
         }
       }
     },
 
+Involvement (`involvement`) of value type `object` with the 2 mandatory properties Party (`party`), Status (`status`) and the optional property Description (`description`) is a container, that allows the document producers to comment on their level of Involvement (or engagement) in the vulnerability identification, scoping, and remediation process. 
+
+Description of involvement ( `description`) of value type `string` with 1 or more characters contains additional context regarding what is going on.
+
+Party type (`party`) of value type `string`and `enum` defines the type of the involved party.
+Valid values are:
+
+    coordinator
+    discoverer
+    other
+    user
+    vendor
+
+Party status (`status`) of value type `string`and `enum` defines contact status of the involved party.
+Valid values are:
+
+    completed
+    contact_accepted
+    disputed
+    in_progress
+    not_contacted
+    open
+
 ##### 3.2.3.1.8 Vulnerabilities Property - Vulnerability - Notes
 
-Notes have value type Notes (notes_t).
+Notes (`notes`) have value type Notes (notes_t).
 
 ##### 3.2.3.1.9 Vulnerabilities Property - Vulnerability - Product Status
 
