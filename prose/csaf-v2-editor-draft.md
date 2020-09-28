@@ -1446,8 +1446,7 @@ An `object` with the property CVSS v3.0 (`cvss_v30`) holding a value abiding by 
 An `object` with the property CVSS v3.1 (`cvss_v31`) holding a value abiding by the schema at [https://www.first.org/cvss/cvss-v3.1.json](https://www.first.org/cvss/cvss-v3.1.json).
 
 ##### 3.2.3.1.5 Vulnerabilities Property - Vulnerability - Discovery Date
-
-Discovery Date has value type string with format date-time.
+Discovery date (`discovery_date`) of value type `string` with format `date-time` holds the date and time the vulnerability was originally discovered.
 
 ##### 3.2.3.1.6 Vulnerabilities Property - Vulnerability - ID
 
