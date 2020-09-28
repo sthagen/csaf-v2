@@ -1520,11 +1520,9 @@ Valid values are:
     open
 
 ##### 3.2.3.1.8 Vulnerabilities Property - Vulnerability - Notes
-
 Notes (`notes`) have value type Notes (notes_t).
 
 ##### 3.2.3.1.9 Vulnerabilities Property - Vulnerability - Product Status
-
 Product status contains different lists of product_ids which provide details on the status of the referenced product related to the current vulnerability. Value type `object` with 1 or more properties.
 
     "product_status": {
