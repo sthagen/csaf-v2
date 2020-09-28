@@ -573,11 +573,11 @@ Valid `enum` values are:
     specification
     vendor
 
-#### Branch Type - Branches
+#### 3.1.2.3 Branch Type - Branches
 
 List of branches (`branches`) has the value type `array` providing 1 or more items of the Branch type (`branch_branches_t`). 
 
-#### Branch Type - Product
+#### 3.1.2.4 Branch Type - Product
 
 Product has the value type Full Product Name (`full_product_name_t`).
 
@@ -601,11 +601,11 @@ The properties `product_id` and `name` are required. The property `cpe` is optio
     },
 
 
-#### Full Product Name Type - Product ID
+#### 3.1.3.1 Full Product Name Type - Product ID
 
 Product ID (`product_id`) holds a value of type Product ID (`product_id_t`).
 
-#### Full Product Name Type - Name
+#### 3.1.3.2 Full Product Name Type - Name
 
 Textual description of the product (`name`) has value type `string` with 1 or more characters.
 The value should be the product's full canonical name, including version number and other attributes, as it would be used in a human-friendly document.
@@ -615,7 +615,7 @@ Examples:
     Microsoft Host Integration Server 2006 Service Pack 1
     Cisco AnyConnect Secure Mobility Client 2.3.185
 
-#### Full Product Name Type - CPE
+#### 3.1.3.3 Full Product Name Type - CPE
 
 Common Platform Enumeration representation (`cpe`) of value type `string` with `pattern` (regular expression):
 
