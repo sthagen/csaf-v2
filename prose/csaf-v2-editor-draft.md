@@ -1355,14 +1355,14 @@ Vulnerability ( `vulnerability`) of value type `object` with 1 or more propertie
 Any vulnerability may provide the optional properties Acknowledgements (`acknowledgments`), Common Vulnerability Enumeration (CVE)  (`cve`), Common Weakness Enumeration (CWE) (`cwe`), Scores (`scores`), Discovery Date (`discovery_date`), ID (`id`), Involvements (`involvements`), Notes (`notes`), Product Status (`product_status`), References (`references`), Release Date (`release_date`), Remediations (`remediations`), Threats (`threats`),and Title (`title`). 
 
 ##### 3.2.3.1.1 Vulnerabilities Property - Vulnerability - Acknowledgments
-
 List of acknowledgements (`acknowledgments`) of value type `array` with 1 or more items of type Acknowledgement (`acknowledgement_t`) contains a list of acknowledgement elements.
 
 ##### 3.2.3.1.2 Vulnerabilities Property - Vulnerability - CVE
-
-CVE has value type string matching the regular expression pattern:
+CVE (`cve`) of value type `string` with `pattern` (regular expression):
 
     ^CVE-[0-9]{4}-[0-9]{4,}$
+
+holds the MITRE standard Common Vulnerabilities and Exposures (CVE) tracking number for the vulnerability.
 
 ##### 3.2.3.1.3 Vulnerabilities Property - Vulnerability - CWE
 
