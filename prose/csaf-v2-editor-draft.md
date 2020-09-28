@@ -1221,44 +1221,38 @@ List of branches (`branches`) of value type `array` with 1 or more items of type
 List of full product names (`full_product_names`) of value type `array` with 1 or more items of type `full_product_name_t` contains a list of full product names.
 
 #### 3.2.2.3 Product Tree Property - Product Groups
+List of product groups (`product_groups`) of value type `array` with 1 or more items of type `object` contains a list of product groups.
 
-        "product_groups": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "title": "Product group",
-            "description": "Defines a new logical group of products that can then be referred to in other parts of the document to address a group of products with a single identifier.",
-            "type": "object",
-            "required": [
-              "group_id",
-              "product_ids"
-            ],
-            "properties": {
-              "description": {
-                "title": "Description of the product group",
-                "description": "Gives a short, optional description of the group.",
-                "examples": [
-                  "The x64 versions of the operating system.",
-                  "Products supporting Modbus."
-                ],
-                "type": "string",
-                "minLength": 1
-              },
-              "group_id": {
-                "$ref": "#/definitions/product_group_id_t"
-              },
-              "product_ids": {
-                "title": "List of product_ids",
-                "description": "Lists the product_ids of those products which known as one group in the document.",
-                "type": "array",
-                "minItems": 2,
-                "items": {
-                  "$ref": "#/definitions/product_id_t"
-                }
-              }
-            }
+    "product_groups": {
+      // ...
+      "items": {
+        // ...
+        "properties": {
+          "description": {
+            // ...
+          },
+          "group_id": {
+            // ...
+          },
+          "product_ids": {
+            // ...
           }
-        },
+        }
+      }
+    },
+
+The product group items are of value type `object` with the 2 mandatory properties Group ID (`group_id`) and Product IDs (`product_ids`) and the optional Description (`description`) property.
+
+The description of the product group (`description`) of type `string` with 1 or more characters gives a short, optional description of the group.
+
+Examples:
+
+    The x64 versions of the operating system.
+    Products supporting Modbus.
+
+Group ID (`group_id`) has value type Product Group ID (`product_group_id_t`).
+
+List of Product IDs (`product_ids`) of value type array with 2 or more items of type Product ID (`product_id_t`) lists the product_ids of those products which known as one group in the document.
 
 #### 3.2.2.4 Product Tree Property - Relationships
 
