@@ -1194,7 +1194,8 @@ Examples:
 
 ### 3.2.2 Product Tree Property
 
-Product Tree has value type `object` with 1 or more properties. The properties are branches, full_product_names, product_groups, and relationships.
+Product Tree (`product_tree`) has value type `object` with 1 or more properties is a container for all fully qualified product names that can be referenced elsewhere in the document. 
+The properties are Branches (`branches`), Full Product Names (`full_product_names`), Product Groups (`product_groups`), and Relationships (`relationships`).
 
     "product_tree": {
       // ...
@@ -1213,25 +1214,10 @@ Product Tree has value type `object` with 1 or more properties. The properties a
       }
     },
 
-#### 3.2.2.1 Product Tree Property - Product Tree
+#### 3.2.2.1 Product Tree Property - Branches
+List of branches (`branches`) of value type `array` with 1 or more items of type `branch_branches_t`) contains branch elements as children of the current element.
 
-    "product_tree": {
-      "$comment": "Currently only supports branch_t and full_product_name_t children of product_tree",
-      "type": "object",
-      "minProperties": 1,
-      "properties": {
-
-#### 3.2.2.2 Product Tree Property - Branches
-
-        "branches": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/branch_branches_t"
-          }
-        },
-
-#### 3.2.2.3 Product Tree Property - Full Product Names
+#### 3.2.2.2 Product Tree Property - Full Product Names
 
         "full_product_names": {
           "type": "array",
@@ -1241,7 +1227,7 @@ Product Tree has value type `object` with 1 or more properties. The properties a
           }
         },
 
-#### 3.2.2.4 Product Tree Property - Product Groups
+#### 3.2.2.3 Product Tree Property - Product Groups
 
         "product_groups": {
           "type": "array",
@@ -1281,7 +1267,7 @@ Product Tree has value type `object` with 1 or more properties. The properties a
           }
         },
 
-#### 3.2.2.5 Product Tree Property - Relationships
+#### 3.2.2.4 Product Tree Property - Relationships
 
         "relationships": {
           "type": "array",
