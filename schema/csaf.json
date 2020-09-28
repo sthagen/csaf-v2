@@ -781,6 +781,8 @@
             "pattern": "^CVE-[0-9]{4}-[0-9]{4,}$"
           },
           "cwe": {
+            "title": "CWE",
+            "description": "Holds the MITRE standard Common Weakness Enumeration (CWE) for the weakness associated.",
             "type": "object",
             "properties": {
               "id": {
