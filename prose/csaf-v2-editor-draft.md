@@ -1651,7 +1651,7 @@ Valid values are:
 
 Additional restart information (`description`) of value type `string` with 1 or more characters provides additional information for the restart. This can include details on procedures, scope or impact.
 
-Type of the remediation (`type`) of value type `string`and `enum` specifies the type which this remediation belongs to.
+Type of the remediation (`type`) of value type `string` and `enum` specifies the type which this remediation belongs to.
 Valid values are:
 
     workaround
@@ -1664,48 +1664,49 @@ Valid values are:
 URL (`url`) of value type `string`with format `uri` contains the URL where to obtain the remediation.
 
 ##### 3.2.3.1.13 Vulnerabilities Property - Vulnerability - Threats
+List of threats (`threats`) of value type `array` with 1 or more items of `object` type representing Threats contains information about a vulnerability that can change with time.
+A Threat item is of value type `object` with the two mandatory properties Description (`description`) and Type (`type`) and contains the vulnerability kinetic information. 
+This information can change as the vulnerability ages and new information becomes available.
+In addition, threat items may provide the three optional properties Date (`date`), Product IDs (`product_ids`) and Group IDs (`group_ids`). 
 
     "threats": {
-      "type": "array",
-      "minItems": 1,
+      // ...
       "items": {
-        "title": "Threat",
-        "description": "Contains the vulnerability kinetic information. This information can change as the vulnerability ages and new information becomes available.",
-        "type": "object",
-        "required": [
-          "description",
-          "type"
-        ],
+        // ...
         "properties": {
           "type": {
-            "title": "Type of the threat",
-            "description": "Categorizes the threat according to the rules of the specification.",
-            "type": "string",
-            "enum": [
-              "impact",
-              "exploit_status",
-              "target_set"
-            ]
+            // ...
           },
           "description": {
-            "title": "Description of the threat",
-            "description": "Represents a thorough human-readable discussion of the threat.",
-            "type": "string",
-            "minLength": 1
+            // ...
           },
           "date": {
-            "type": "string",
-            "format": "date-time"
+            // ...
           },
           "product_ids": {
-            "$ref": "#/definitions/products_t"
+            // ...
           },
           "group_ids": {
-            "$ref": "#/definitions/product_groups_t"
+            // ...
           }
         }
       }
     },
+
+Type of the threat (`type`) of value type `string` and `enum` categorizes the threat according to the rules of the specification.
+Valid values are:
+
+    impact
+    exploit_status
+    target_set
+
+Description of the threat (`description`) of value type `string` with 1 or more characters represents a thorough human-readable discussion of the threat.
+
+Date of the threat (`date`) of value type `string`with format `date-time` contains the date when the assessment was done or the threat appeared.
+
+Product IDs (`product_ids`) are of value type Products (`products_t`).
+
+Group IDs (`group_ids`) are of value type Product Groups (`product_groups_t`).
 
 ##### 3.2.3.1.14 Vulnerabilities Property - Vulnerability - Title
 Title (`title`) has value type `string` with 1 or more characters and gives the document producer the ability to apply a canonical name or title to the vulnerability.
