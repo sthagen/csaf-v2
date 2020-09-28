@@ -1449,26 +1449,31 @@ An `object` with the property CVSS v3.1 (`cvss_v31`) holding a value abiding by 
 Discovery date (`discovery_date`) of value type `string` with format `date-time` holds the date and time the vulnerability was originally discovered.
 
 ##### 3.2.3.1.6 Vulnerabilities Property - Vulnerability - ID
+ID (`id`) of value type `object`with the two mandatory properties System Name (`system_name`) and Text (`text`) gives the document producer a place to publish a unique label or tracking ID for the vulnerability (if such information exists).
 
     "id": {
-      "type": "object",
+      // ...
       "properties": {
         "system_name": {
-          "title": "System name",
-          "description": "Indicates the name of the vulnerability tracking or numbering system.",
-          "type": "string",
-          "minLength": 1
+          // ...
         },
         "text": {
-          "type": "string",
-          "minLength": 1
+          // ...
         }
-      },
-      "required": [
-        "system_name",
-        "text"
-      ]
+      }
     },
+
+System name (`system_name`) of value type `string` with 1 or more characters indicates the name of the vulnerability tracking or numbering system.
+
+Example:
+
+    Cisco Bug ID
+
+Text (`text`) of value type `string` with 1 or more characters is unique label or tracking ID for the vulnerability (if such information exists).
+
+Example:
+
+    CSCso66472
 
 ##### 3.2.3.1.7 Vulnerabilities Property - Vulnerability - Involvements
 
