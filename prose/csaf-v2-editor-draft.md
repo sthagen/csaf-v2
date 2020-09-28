@@ -1215,17 +1215,10 @@ The properties are Branches (`branches`), Full Product Names (`full_product_name
     },
 
 #### 3.2.2.1 Product Tree Property - Branches
-List of branches (`branches`) of value type `array` with 1 or more items of type `branch_branches_t`) contains branch elements as children of the current element.
+List of branches (`branches`) of value type `array` with 1 or more items of type `branch_branches_t` contains branch elements as children of the current element.
 
 #### 3.2.2.2 Product Tree Property - Full Product Names
-
-        "full_product_names": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/full_product_name_t"
-          }
-        },
+List of full product names (`full_product_names`) of value type `array` with 1 or more items of type `full_product_name_t` contains a list of full product names.
 
 #### 3.2.2.3 Product Tree Property - Product Groups
 
