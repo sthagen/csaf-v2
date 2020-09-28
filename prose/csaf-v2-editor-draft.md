@@ -1579,98 +1579,89 @@ References (`references`) have value type References (`references_t`).
 Release date (`release_date`) with value type `string` of format `date-time` holds the date and time the vulnerability was originally released into the wild.
 
 ##### 3.2.3.1.12 Vulnerabilities Property - Vulnerability - Remediations
+List of remediations (`remediations`) of value type `array`with 1 or more Remediation items of type `object` contains a list of remediations.
+Remediation of value type `object` with the 2 mandatory properties Description (`description`) and Type (`type`) specifies details on how to handle (and presumably, fix) a vulnerability.
+In addition, any Remediation may expose the six optional properties Date (`date`), Entitlements (`entitlements`), Group IDs (`group_ids`), Product IDs (`product_ids`), Restart required (`restart_required`), and URL (`url`).
 
     "remediations": {
-      "type": "array",
-      "minItems": 1,
+      // ...
       "items": {
-        "title": "Remedation",
-        "description": "Specifies details on how to handle (and presumably, fix) a vulnerability.",
-        "type": "object",
-        "required": [
-          "description",
-          "type"
-        ],
+        // ...
         "properties": {
           "date": {
-            "type": "string",
-            "format": "date-time"
+            // ...
           },
           "description": {
-            "title": "Description of the remediation",
-            "description": "Contains a thorough human-readable discussion of the remediation.",
-            "type": "string",
-            "minLength": 1
+            // ...
           },
           "entitlements": {
-            "type": "array",
-            "minItems": 1,
-            "items": {
-              "title": "Entitlement of the remediation",
-              "description": "Contains any possible vendor-defined constraints for obtaining fixed software or hardware that fully resolves the vulnerability.",
-              "type": "string",
-              "minLength": 1
-            }
+            // ...
           },
           "group_ids": {
-            "$ref": "#/definitions/product_groups_t"
+            // ...
           },
           "product_ids": {
-            "$ref": "#/definitions/products_t"
+            // ...
           },
           "restart_required": {
-            "title": "Restart required by remediation",
-            "description": "Provides information on type of restart is required by this remediation to become effective.",
-            "type": "object",
-            "required": [
-              "type"
-            ],
+            // ...
             "properties": {
               "type": {
-                "title": "Type of restart",
-                "description": "Specifies what type of restart is required by this remediation to become effective.",
-                "type": "string",
-                "enum": [
-                  "none",
-                  "vulnerable_component",
-                  "service",
-                  "parent",
-                  "dependencies",
-                  "connected",
-                  "machine",
-                  "zone",
-                  "system"
-                ]
+                // ...
               },
               "description": {
-                "title": "Additional restart information",
-                "description": "Provides additional information for the restart. This can include details on procedures, scope or impact.",
-                "type": "string",
-                "minLength": 1
+                // ...
               }
             }
           },
           "type": {
-            "title": "Type of the remediation",
-            "description": "Specifies the type which this remediation belongs to.",
-            "type": "string",
-            "enum": [
-              "workaround",
-              "mitigation",
-              "vendor_fix",
-              "none_available",
-              "will_not_fix"
-            ]
+            // ...
           },
           "url": {
-            "title": "URL to the remediation",
-            "description": "Contains the URL where to obtain the remediation.",
-            "type": "string",
-            "format": "uri"
+            // ...
           }
         }
       }
     },
+
+Date of the remediation (`date`) of value type `string`with format `date-time` contains the date from which the remediation is available.
+
+Description of the remediation (`description`) of value type `string`with 1 or more characters contains a thorough human-readable discussion of the remediation.
+
+List of entitlements (`entitlements`) of value type `array` with 1 or more items of type Entitlement of the remediation as `string` with 1 or more characters contains a list of entitlements.
+Every Entitlement of the remediation contains any possible vendor-defined constraints for obtaining fixed software or hardware that fully resolves the vulnerability.
+
+Group IDs (`group_ids`) are of value type Product Groups (`product_groups_t`).
+
+Product IDs (`product_ids`) are of value type Products (`products_t`).
+
+Restart required by remediation (`restart_required`) of value type `object` with the 1 mandatory property Type (`type`) and the optional property Description (`description`) provides information on type of restart is required by this remediation to become effective.
+Type of restart (`type`) of value type `string`and `enum` specifies what type of restart is required by this remediation to become effective.
+Valid values are:
+
+    none
+    vulnerable_component
+    service
+    parent
+    dependencies
+    connected
+    machine
+    zone
+    system
+
+Additional restart information (`description`) of value type `string` with 1 or more characters provides additional information for the restart. This can include details on procedures, scope or impact.
+
+Type of the remediation (`type`) of value type `string`and `enum` specifies the type which this remediation belongs to.
+Valid values are:
+
+    workaround
+    mitigation
+    vendor_fix
+    none_available
+    no_fix_planned
+
+
+URL (`url`) of value type `string`with format `uri` contains the URL where to obtain the remediation.
 
 ##### 3.2.3.1.13 Vulnerabilities Property - Vulnerability - Threats
 
