@@ -1523,56 +1523,54 @@ Valid values are:
 Notes (`notes`) have value type Notes (notes_t).
 
 ##### 3.2.3.1.9 Vulnerabilities Property - Vulnerability - Product Status
-Product status contains different lists of product_ids which provide details on the status of the referenced product related to the current vulnerability. Value type `object` with 1 or more properties.
+Product status (`product_status`) of value type `object` with 1 or more properties contains different lists of product_ids which provide details on the status of the referenced product related to the current vulnerability.
+The eight defined properties are Fixed (`fixed`), First fixed (`first_fixed`), Recommended (`recommended`), Known affected (`known_affected`), First affected (`first_affected`), Last affected (`last_affected`), Known not affected (`known_not_affected`), and Under investigation (`under_investigation`) are all of value type Products (`products_t`).
 
     "product_status": {
-      "title": "Product status",
-      "description": "Contains different lists of product_ids which provide details on the status of the referenced product related to the current vulnerability. ",
-      "type": "object",
-      "minProperties": 1,
+      // ...
       "properties": {
         "fixed": {
-          "title": "Fixed",
-          "description": "These versions contain a fix for the vulnerability but may not be the recommended fixed versions.",
-          "$ref": "#/definitions/products_t"
+          // ...
         },
         "first_fixed": {
-          "title": "First fixed",
-          "description": "These versions contain the first fix for the vulnerability but may not be the recommended fixed versions.",
-          "$ref": "#/definitions/products_t"
+          // ...
         },
         "recommended": {
-          "title": "Recommended",
-          "description": "These versions have a fix for the vulnerability and are the vendor-recommended versions for fixing the vulnerability.",
-          "$ref": "#/definitions/products_t"
+          // ...
         },
         "known_affected": {
-          "title": "Known affected",
-          "description": "These versions are known to be affected by the vulnerability.",
-          "$ref": "#/definitions/products_t"
+          // ...
         },
         "first_affected": {
-          "title": "First affected",
-          "description": "These are the first versions of the releases known to be affected by the vulnerability.",
-          "$ref": "#/definitions/products_t"
+          // ...
         },
         "last_affected": {
-          "title": "Last affected",
-          "description": "These are the last versions in a release train known to be affected by the vulnerability. Subsequently released versions would contain a fix for the vulnerability.",
-          "$ref": "#/definitions/products_t"
+          // ...
         },
         "known_not_affected": {
-          "title": "Known not affected",
-          "description": "These versions are known not to be affected by the vulnerability.",
-          "$ref": "#/definitions/products_t"
+          // ...
         },
         "under_investigation": {
-          "title": "Under investigation",
-          "description": "It is not known yet whether this version is or is not affected by the vulnerability. However, it is still under investigation - the result will be provided in a later release of the document.",
-          "$ref": "#/definitions/products_t"
+          // ..
         }
       }
     },
+
+Fixed (`fixed`) of value type Products (`products_t`) represents that these versions contain a fix for the vulnerability but may not be the recommended fixed versions.
+
+First fixed (`first_fixed`) of value type Products (`products_t`) represents that these versions contain the first fix for the vulnerability but may not be the recommended fixed versions.
+
+Recommended (`recommended`) of value type Products (`products_t`) represents that these versions have a fix for the vulnerability and are the vendor-recommended versions for fixing the vulnerability.
+
+Known affected (`known_affected`) of value type Products (`products_t`) represents that these versions are known to be affected by the vulnerability.
+
+First affected (`first_affected`) of value type Products (`products_t`) represents that these are the first versions of the releases known to be affected by the vulnerability.
+
+Last affected (`last_affected`) of value type Products (`products_t`) represents that these are the last versions in a release train known to be affected by the vulnerability. Subsequently released versions would contain a fix for the vulnerability.
+
+Known not affected (`known_not_affected`) of value type Products (`products_t`) represents that these versions are known not to be affected by the vulnerability.
+
+Under investigation (`under_investigation`) of value type Products (`products_t`) represents that it is not known yet whether this version is or is not affected by the vulnerability. However, it is still under investigation - the result will be provided in a later release of the document.
 
 ##### 3.2.3.1.10 Vulnerabilities Property - Vulnerability - References
 
