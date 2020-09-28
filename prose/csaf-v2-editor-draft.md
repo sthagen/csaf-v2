@@ -6,7 +6,7 @@
 
 ## Committee Specification Draft 01 /<br>Public Review Draft 01
 
-## 27 September 2020
+## 28 September 2020
 
 #### Technical Committee:
 [OASIS Common Security Advisory Framework (CSAF) TC](https://www.oasis-open.org/committees/csaf/)
@@ -1297,61 +1297,62 @@ The valid values are:
 
 
 ### 3.2.3 Vulnerabilities Property
-
-Vulnerabilities represents a list of all relevant vulnerability information items. Value type is array with 1 or more objects representing vulnerabilities and providing 1 or more properties.
+Vulnerabilities (`vulnerabilities`) of value type `array` with 1 or more objects representing vulnerabilities and providing 1 or more properties represents a list of all relevant vulnerability information items. 
 
     "vulnerabilities": {
+      // ...
       "items": {
         // ...
+        "properties": {
+          "acknowledgments": {
+            // ...
+          },
+          "cve": {
+            // ...
+          },
+          "cwe": {
+            // ...
+          },
+          "scores": {
+            // ...
+          },
+          "discovery_date": {
+            // ...
+          },
+          "id": {
+            // ...
+          },
+          "involvements": {
+            // ...
+          },
+          "notes": {
+            // ...
+          },
+          "product_status": {
+            // ...
+          },
+          "references": {
+            // ...
+          },
+          "release_date": {
+            // ...
+          },
+          "remediations": {
+            // ...
+          },
+          "threats": {
+            // ...
+          },
+          "title": {
+            // ...
+          }
+        }
       }
     }
 
 #### 3.2.3.1 Vulnerabilities Property - Vulnerability
-
-Vulnerability is a container for the aggregation of all fields that are related to a single vulnerability in the document. Value type is `object` with 1 or more properties. Any vulnerability may provide the optional properties acknowledgments, cve, cwe, scores, discovery_date, id, involvements, notes, product_status, references, release_date, remediations, and title. 
-
-    "acknowledgments": {
-      // ...
-    },
-    "cve": {
-      // ...
-    },
-    "cwe": {
-      // ...
-    },
-    "scores": {
-      // ...
-    },
-    "discovery_date": {
-      // ...
-    },
-    "id": {
-      // ...
-    },
-    "involvements": {
-      // ...
-    },
-    "notes": {
-      // ...
-    },
-    "product_status": {
-      // ...
-    },
-    "references": {
-      // ...
-    },
-    "release_date": {
-      // ...
-    },
-    "remediations": {
-      // ...
-    },
-    "threats": {
-      // ...
-    },
-    "title": {
-      // ...
-    }
+Vulnerability ( `vulnerability`) of value type `object` with 1 or more properties is a container for the aggregation of all fields that are related to a single vulnerability in the document. 
+Any vulnerability may provide the optional properties Acknowledgements (`acknowledgments`), Common Vulnerability Enumeration (CVE)  (`cve`), Common Weakness Enumeration (CWE) (`cwe`), Scores (`scores`), Discovery Date (`discovery_date`), ID (`id`), Involvements (`involvements`), Notes (`notes`), Product Status (`product_status`), References (`references`), Release Date (`release_date`), Remediations (`remediations`), Threats (`threats`),and Title (`title`). 
 
 ##### 3.2.3.1.1 Vulnerabilities Property - Vulnerability - Acknowledgments
 
