@@ -711,7 +711,7 @@ List of Product IDs (`products_t`) of value type `array` with 1 or more unique i
     "products_t": {
       // ...
       "items": {
-        "$ref": "#/definitions/product_id_t"
+        // ...
       }      
     },
 
@@ -721,7 +721,7 @@ List of Product Group ID (`product_groups_t`) of value type `array` with 1 or mo
     "product_groups_t": {
       // ...
       "items": {
-        "$ref": "#/definitions/product_group_id_t"
+        // ...
       }
     },
 
