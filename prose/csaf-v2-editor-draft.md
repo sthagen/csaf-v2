@@ -1365,27 +1365,40 @@ CVE (`cve`) of value type `string` with `pattern` (regular expression):
 holds the MITRE standard Common Vulnerabilities and Exposures (CVE) tracking number for the vulnerability.
 
 ##### 3.2.3.1.3 Vulnerabilities Property - Vulnerability - CWE
-CWE (`cwe`) of value type `object` with the 2 optional properties ID (`id`) and Description (`description`) holds the MITRE standard Common Weakness Enumeration (CWE) for the weakness associated.
+CWE (`cwe`) of value type `object` with the 2 mandatory properties Weakness ID (`id`) and Weakness Name (`name`) holds the MITRE standard Common Weakness Enumeration (CWE) for the weakness associated.
 
     "cwe": {
       // ...
       "properties": {
         "id": {
-          "type": "string",
-          "pattern": "^CWE-[1-9]\\d{0,5}$"
+          // ...
         },
-        "description": {
-          "type": "string",
-          "minLength": 1
+        "name": {
+          // ...
         }
       }
     },
 
-The ID (`id`) has value type `string` with `pattern` (regular expression):
+The Weakness ID (`id`) has value type `string` with `pattern` (regular expression):
 
     ^CWE-[1-9]\\d{0,5}$
 
-The Description (`description`) has value type `string` with 1 or more characters.
+and holds the ID for the weakness associated.
+
+Examples:
+
+    CWE-79
+    CWE-22
+    CWE-352
+
+The Weakness name (`name`) has value type `string` with 1 or more characters and holds the full name of the weakness as given in the CWE specification.
+
+Examples:
+
+    Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
+    Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')
+    Cross-Site Request Forgery (CSRF)
+
 
 ##### 3.2.3.1.4 Vulnerabilities Property - Vulnerability - Scores
 Scores (`scores`) of value type `array` with 1 or more items holds scores and referenced product ids.
