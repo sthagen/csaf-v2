@@ -5,124 +5,130 @@
   "description": "Representation of security advisory information as a JSON document.",
   "type": "object",
   "definitions": {
-    "acknowledgment_t": {
-      "title": "Acknowledgement",
-      "description": "Acknowledges contributions by describing those that contributed.",
-      "type": "object",
-      "minProperties": 1,
-      "properties": {
-        "names": {
-          "title": "List of acknowledged names",
-          "description": "Contains the names of entities being recognized.",
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "title": "Name of entity being recognized",
-            "description": "Contains the name of a single person.",
+    "acknowledgments_t": {
+      "title": "List of acknowledgments",
+      "description": "Contains a list of acknowledgment elements.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "title": "Acknowledgment",
+        "description": "Acknowledges contributions by describing those that contributed.",
+        "type": "object",
+        "minProperties": 1,
+        "properties": {
+          "names": {
+            "title": "List of acknowledged names",
+            "description": "Contains the names of entities being recognized.",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "title": "Name of entity being recognized",
+              "description": "Contains the name of a single person.",
+              "type": "string",
+              "minLength": 1,
+              "examples": [
+                "Johann Sebastian Bach",
+                "Albert Einstein"
+              ]
+            }
+          },
+          "organizations": {
+            "title": "List of contributing organizations",
+            "description": "Contains the names of contributing organizations being recognized.",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "title": "Contributing organization",
+              "description": "Contains the name of a single organization.",
+              "type": "string",
+              "minLength": 1,
+              "examples": [
+                "CISA",
+                "Talos",
+                "Google Project Zero"
+              ]
+            }
+          },
+          "summary": {
+            "title": "Summary of the acknowledgment",
+            "description": "SHOULD represent any contextual details the document producers wish to make known about the acknowledgment or acknowledged parties.",
             "type": "string",
             "minLength": 1,
             "examples": [
-              "Johann Sebastian Bach",
-              "Albert Einstein"
+              "First analysis of Coordinated Multi-Stream Attack (CMSA)"
             ]
-          }
-        },
-        "organizations": {
-          "title": "List of contributing organizations",
-          "description": "Contains the names of contributing organizations being recognized.",
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "title": "Contributing organization",
-            "description": "Contains the name of a single organization.",
-            "type": "string",
-            "minLength": 1,
-            "examples": [
-              "CISA",
-              "Talos",
-              "Google Project Zero"
-            ]
-          }
-        },
-        "description": {
-          "title": "Description of the acknowledgment",
-          "description": "SHOULD represent any contextual details the document producers wish to make known about the acknowledgment or acknowledged parties",
-          "type": "string",
-          "minLength": 1,
-          "examples": [
-            "First analysis of Coordinated Multi-Stream Attack (CMSA)"
-          ]
-        },
-        "urls": {
-          "title": "List of URLs",
-          "description": "Specifies a list of URLs or location of the reference to be acknowledged.",
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "title": "URL of acknowledgment",
-            "description": "Contains the URL or location of the reference to be acknowledged.",
-            "type": "string",
-            "format": "uri"
+          },
+          "urls": {
+            "title": "List of URLs",
+            "description": "Specifies a list of URLs or location of the reference to be acknowledged.",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "title": "URL of acknowledgment",
+              "description": "Contains the URL or location of the reference to be acknowledged.",
+              "type": "string",
+              "format": "uri"
+            }
           }
         }
       }
     },
-    "branch_branches_t": {
-      "title": "Branch",
-      "description": "Is a part of the hierarchical structure of the product tree.",
-      "type": "object",
-      "maxProperties": 3,
-      "minProperties": 3,
-      "required": [
-        "name",
-        "type"
-      ],
-      "properties": {
-        "name": {
-          "title": "Name of the branch",
-          "description": "Contains the canonical descriptor or 'friendly name' of the branch.",
-          "type": "string",
-          "minLength": 1,
-          "examples": [
-            "Microsoft",
-            "Siemens",
-            "Windows",
-            "Office",
-            "SIMATIC",
-            "10",
-            "365",
-            "PCS 7"
-          ]
-        },
-        "type": {
-          "title": "Type of the branch",
-          "description": "Describes the characteristics of the labeled branch.",
-          "type": "string",
-          "enum": [
-            "architecture",
-            "host_name",
-            "language",
-            "legacy",
-            "patch_level",
-            "product_family",
-            "product_name",
-            "product_version",
-            "service_pack",
-            "specification",
-            "vendor"
-          ]
-        },
-        "branches": {
-          "title": "List of branches",
-          "description": "Contains branch elements as children of the current element.",
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/branch_branches_t"
+    "branches_t": {
+      "title": "List of branches",
+      "description": "Contains branch elements as children of the current element.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "title": "Branch",
+        "description": "Is a part of the hierarchical structure of the product tree.",
+        "type": "object",
+        "maxProperties": 3,
+        "minProperties": 3,
+        "required": [
+          "name",
+          "type"
+        ],
+        "properties": {
+          "name": {
+            "title": "Name of the branch",
+            "description": "Contains the canonical descriptor or 'friendly name' of the branch.",
+            "type": "string",
+            "minLength": 1,
+            "examples": [
+              "Microsoft",
+              "Siemens",
+              "Windows",
+              "Office",
+              "SIMATIC",
+              "10",
+              "365",
+              "PCS 7"
+            ]
+          },
+          "type": {
+            "title": "Type of the branch",
+            "description": "Describes the characteristics of the labeled branch.",
+            "type": "string",
+            "enum": [
+              "architecture",
+              "host_name",
+              "language",
+              "legacy",
+              "patch_level",
+              "product_family",
+              "product_name",
+              "product_version",
+              "service_pack",
+              "specification",
+              "vendor"
+            ]
+          },
+          "branches": {
+            "$ref": "#/definitions/branches_t"
+          },
+          "product": {
+            "$ref": "#/definitions/full_product_name_t"
           }
-        },
-        "product": {
-          "$ref": "#/definitions/full_product_name_t"
         }
       }
     },
@@ -284,11 +290,11 @@
         "type": "object",
         "required": [
           "url",
-          "description"
+          "summary"
         ],
         "properties": {
-          "description": {
-            "title": "Description of reference",
+          "summary": {
+            "title": "Summary of the reference",
             "description": "Indicates what this reference refers to.",
             "type": "string",
             "minLength": 1
@@ -342,13 +348,7 @@
       ],
       "properties": {
         "acknowledgments": {
-          "title": "List of acknowledgements",
-          "description": "Contains a list of acknowledgement elements.",
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/acknowledgment_t"
-          }
+          "$ref": "#/definitions/acknowledgments_t"
         },
         "aggregate_severity" : {
           "title": "Aggregate severity",
@@ -596,7 +596,7 @@
                 "required": [
                   "number",
                   "date",
-                  "description"
+                  "summary"
                 ],
                 "properties": {
                   "number": {
@@ -608,8 +608,8 @@
                     "type": "string",
                     "format": "date-time"
                   },
-                  "description": {
-                    "title": "Description of the revision",
+                  "summary": {
+                    "title": "Summary of the revision",
                     "description": "Holds a single non-empty string representing a short description of the changes.",
                     "type": "string",
                     "minLength": 1
@@ -646,20 +646,13 @@
       }
     },
     "product_tree": {
-      "$comment": "Currently only supports branch_t and full_product_name_t children of product_tree",
       "title": "Product tree",
       "description": "Is a container for all fully qualified product names that can be referenced elsewhere in the document.",
       "type": "object",
       "minProperties": 1,
       "properties": {
         "branches": {
-          "title": "List of branches",
-          "description": "Contains branch elements as children of the current element.",
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/branch_branches_t"
-          }
+          "$ref": "#/definitions/branches_t"
         },
         "full_product_names": {
           "title": "List of full product names",
@@ -684,8 +677,8 @@
               "product_ids"
             ],
             "properties": {
-              "description": {
-                "title": "Description of the product group",
+              "summary": {
+                "title": "Summary of the product group",
                 "description": "Gives a short, optional description of the group.",
                 "type": "string",
                 "minLength": 1,
@@ -724,12 +717,8 @@
               "relationship_type"
             ],
             "properties": {
-              "full_product_names": {
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                  "$ref": "#/definitions/full_product_name_t"
-                }
+              "full_product_name": {
+                "$ref": "#/definitions/full_product_name_t"
               },
               "product_reference": {
                 "$ref": "#/definitions/product_id_t"
@@ -766,13 +755,7 @@
         "minProperties": 1,
         "properties": {
           "acknowledgments": {
-            "title": "List of acknowledgements",
-            "description": "Contains a list of acknowledgement elements.",
-            "type": "array",
-            "minItems": 1,
-            "items": {
-              "$ref": "#/definitions/acknowledgment_t"
-            }
+            "$ref": "#/definitions/acknowledgments_t"
           },
           "cve": {
             "title": "CVE",
@@ -814,52 +797,33 @@
             }
           },
           "scores": {
-            "title": "Scores",
-            "description": "Holds scores and referenced product ids.",
+            "title": "List of scores",
+            "description": "contains score objects for the currrent vulnerability.",
             "type": "array",
             "minItems": 1,
-            "items": [
-              {
-                "anyOf": [
-                  {
-                    "type": "array",
-                    "minItems": 0,
-                    "items": {
-                      "$ref": "#/definitions/products_t",
-                      "default": "",
-                      "examples": [
-                        "CVRFID_123",
-                        "CSAFID_0815"
-                      ]
-                    }
-                  },
-                  {
-                    "type": "object",
-                    "properties": {
-                      "cvss_v20": {
-                        "$ref": "https://www.first.org/cvss/cvss-v2.0.json"
-                      }
-                    }
-                  },
-                  {
-                    "type": "object",
-                    "properties": {
-                      "cvss_v30": {
-                        "$ref": "https://www.first.org/cvss/cvss-v3.0.json"
-                      }
-                    }
-                  },
-                  {
-                    "type": "object",
-                    "properties": {
-                      "cvss_v31": {
-                        "$ref": "https://www.first.org/cvss/cvss-v3.1.json"
-                      }
-                    }
-                  }
-                ]
+            "items": {
+              "title": "Score",
+              "description": "specifies information about (at least one) score of the vulnerability and for which products the given value applies.",
+              "type": "object",
+              "minItems": 2,
+              "required": [
+                "products"
+              ],
+              "properties": {
+                "products": {
+                  "$ref": "#/definitions/products_t"
+                },
+                "cvss_v2": {
+                  "$ref": "https://www.first.org/cvss/cvss-v2.0.json"
+                },
+                "cvss_v3": {
+                  "oneOf": [
+                    {"$ref": "https://www.first.org/cvss/cvss-v3.0.json"},
+                    {"$ref": "https://www.first.org/cvss/cvss-v3.1.json"}
+                  ]
+                }
               }
-            ]
+            }
           },
           "discovery_date": {
             "title": "Discovery date",
@@ -910,8 +874,8 @@
                 "status"
               ],
               "properties": {
-                "description": {
-                  "title": "Description of involvement",
+                "summary": {
+                  "title": "Summary of the involvement",
                   "description": "Contains additional context regarding what is going on.",
                   "type": "string",
                   "minLength": 1
@@ -1014,7 +978,7 @@
               "description": "Specifies details on how to handle (and presumably, fix) a vulnerability.",
               "type": "object",
               "required": [
-                "description",
+                "details",
                 "type"
               ],
               "properties": {
@@ -1024,8 +988,8 @@
                   "type": "string",
                   "format": "date-time"
                 },
-                "description": {
-                  "title": "Description of the remediation",
+                "details": {
+                  "title": "Details of the remediation",
                   "description": "Contains a thorough human-readable discussion of the remediation.",
                   "type": "string",
                   "minLength": 1
@@ -1072,7 +1036,7 @@
                         "system"
                       ]
                     },
-                    "description": {
+                    "details": {
                       "title": "Additional restart information",
                       "description": "Provides additional information for the restart. This can include details on procedures, scope or impact.",
                       "type": "string",
@@ -1111,7 +1075,7 @@
               "description": "Contains the vulnerability kinetic information. This information can change as the vulnerability ages and new information becomes available.",
               "type": "object",
               "required": [
-                "description",
+                "details",
                 "type"
               ],
               "properties": {
@@ -1125,8 +1089,8 @@
                     "target_set"
                   ]
                 },
-                "description": {
-                  "title": "Description of the threat",
+                "details": {
+                  "title": "Details of the threat",
                   "description": "Represents a thorough human-readable discussion of the threat.",
                   "type": "string",
                   "minLength": 1
