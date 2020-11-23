@@ -1,0 +1,1342 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>CSAF v2.0 - API Documentation</title><script>var sourceBoxes= new Array('source_#/Schema', 
+				'source_#/properties/document', 
+				'source_#/properties/document/properties/acknowledgments', 
+				'source_#/properties/document/properties/aggregate_severity', 
+				'source_#/properties/document/properties/aggregate_severity/properties/namespace', 
+				'source_#/properties/document/properties/aggregate_severity/properties/text', 
+				'source_#/properties/document/properties/csaf_version', 
+				'source_#/properties/document/properties/distribution', 
+				'source_#/properties/document/properties/distribution/properties/text', 
+				'source_#/properties/document/properties/distribution/properties/tlp', 
+				'source_#/properties/document/properties/distribution/properties/tlp/properties/label', 
+				'source_#/properties/document/properties/distribution/properties/tlp/properties/url', 
+				'source_#/properties/document/properties/lang', 
+				'source_#/properties/document/properties/source_lang', 
+				'source_#/properties/document/properties/notes', 
+				'source_#/properties/document/properties/publisher', 
+				'source_#/properties/document/properties/publisher/properties/contact_details', 
+				'source_#/properties/document/properties/publisher/properties/issuing_authority', 
+				'source_#/properties/document/properties/publisher/properties/type', 
+				'source_#/properties/document/properties/publisher/properties/vendor_id', 
+				'source_#/properties/document/properties/references', 
+				'source_#/properties/document/properties/title', 
+				'source_#/properties/document/properties/tracking', 
+				'source_#/properties/document/properties/tracking/properties/id', 
+				'source_#/properties/document/properties/tracking/properties/aliases', 
+				'source_#/properties/document/properties/tracking/properties/aliases/items', 
+				'source_#/properties/document/properties/tracking/properties/current_release_date', 
+				'source_#/properties/document/properties/tracking/properties/generator', 
+				'source_#/properties/document/properties/tracking/properties/generator/properties/engine', 
+				'source_#/properties/document/properties/tracking/properties/generator/properties/date', 
+				'source_#/properties/document/properties/tracking/properties/initial_release_date', 
+				'source_#/properties/document/properties/tracking/properties/revision_history', 
+				'source_#/properties/document/properties/tracking/properties/revision_history/items', 
+				'source_#/properties/document/properties/tracking/properties/revision_history/items/properties/number', 
+				'source_#/properties/document/properties/tracking/properties/revision_history/items/properties/date', 
+				'source_#/properties/document/properties/tracking/properties/revision_history/items/properties/summary', 
+				'source_#/properties/document/properties/tracking/properties/status', 
+				'source_#/properties/document/properties/tracking/properties/version', 
+				'source_#/properties/document/properties/type', 
+				'source_#/properties/product_tree', 
+				'source_#/properties/product_tree/properties/branches', 
+				'source_#/properties/product_tree/properties/full_product_names', 
+				'source_#/properties/product_tree/properties/full_product_names/items', 
+				'source_#/properties/product_tree/properties/product_groups', 
+				'source_#/properties/product_tree/properties/product_groups/items', 
+				'source_#/properties/product_tree/properties/product_groups/items/properties/summary', 
+				'source_#/properties/product_tree/properties/product_groups/items/properties/group_id', 
+				'source_#/properties/product_tree/properties/product_groups/items/properties/product_ids', 
+				'source_#/properties/product_tree/properties/product_groups/items/properties/product_ids/items', 
+				'source_#/properties/product_tree/properties/relationships', 
+				'source_#/properties/product_tree/properties/relationships/items', 
+				'source_#/properties/product_tree/properties/relationships/items/properties/full_product_name', 
+				'source_#/properties/product_tree/properties/relationships/items/properties/product_reference', 
+				'source_#/properties/product_tree/properties/relationships/items/properties/relates_to_product_reference', 
+				'source_#/properties/product_tree/properties/relationships/items/properties/relationship_type', 
+				'source_#/properties/vulnerabilities', 
+				'source_#/properties/vulnerabilities/items', 
+				'source_#/properties/vulnerabilities/items/properties/acknowledgments', 
+				'source_#/properties/vulnerabilities/items/properties/cve', 
+				'source_#/properties/vulnerabilities/items/properties/cwe', 
+				'source_#/properties/vulnerabilities/items/properties/cwe/properties/id', 
+				'source_#/properties/vulnerabilities/items/properties/cwe/properties/name', 
+				'source_#/properties/vulnerabilities/items/properties/scores', 
+				'source_#/properties/vulnerabilities/items/properties/scores/items', 
+				'source_#/properties/vulnerabilities/items/properties/scores/items/properties/products', 
+				'source_#/properties/vulnerabilities/items/properties/scores/items/properties/cvss_v2', 
+				'source_#/properties/vulnerabilities/items/properties/scores/items/properties/cvss_v3', 
+				'source_#/properties/vulnerabilities/items/properties/scores/items/properties/cvss_v3/oneOf/0', 
+				'source_#/properties/vulnerabilities/items/properties/scores/items/properties/cvss_v3/oneOf/1', 
+				'source_#/properties/vulnerabilities/items/properties/discovery_date', 
+				'source_#/properties/vulnerabilities/items/properties/id', 
+				'source_#/properties/vulnerabilities/items/properties/id/properties/system_name', 
+				'source_#/properties/vulnerabilities/items/properties/id/properties/text', 
+				'source_#/properties/vulnerabilities/items/properties/involvements', 
+				'source_#/properties/vulnerabilities/items/properties/involvements/items', 
+				'source_#/properties/vulnerabilities/items/properties/involvements/items/properties/summary', 
+				'source_#/properties/vulnerabilities/items/properties/involvements/items/properties/party', 
+				'source_#/properties/vulnerabilities/items/properties/involvements/items/properties/status', 
+				'source_#/properties/vulnerabilities/items/properties/notes', 
+				'source_#/properties/vulnerabilities/items/properties/product_status', 
+				'source_#/properties/vulnerabilities/items/properties/product_status/properties/fixed', 
+				'source_#/properties/vulnerabilities/items/properties/product_status/properties/first_fixed', 
+				'source_#/properties/vulnerabilities/items/properties/product_status/properties/recommended', 
+				'source_#/properties/vulnerabilities/items/properties/product_status/properties/known_affected', 
+				'source_#/properties/vulnerabilities/items/properties/product_status/properties/first_affected', 
+				'source_#/properties/vulnerabilities/items/properties/product_status/properties/last_affected', 
+				'source_#/properties/vulnerabilities/items/properties/product_status/properties/known_not_affected', 
+				'source_#/properties/vulnerabilities/items/properties/product_status/properties/under_investigation', 
+				'source_#/properties/vulnerabilities/items/properties/references', 
+				'source_#/properties/vulnerabilities/items/properties/release_date', 
+				'source_#/properties/vulnerabilities/items/properties/remediations', 
+				'source_#/properties/vulnerabilities/items/properties/remediations/items', 
+				'source_#/properties/vulnerabilities/items/properties/remediations/items/properties/date', 
+				'source_#/properties/vulnerabilities/items/properties/remediations/items/properties/details', 
+				'source_#/properties/vulnerabilities/items/properties/remediations/items/properties/entitlements', 
+				'source_#/properties/vulnerabilities/items/properties/remediations/items/properties/entitlements/items', 
+				'source_#/properties/vulnerabilities/items/properties/remediations/items/properties/group_ids', 
+				'source_#/properties/vulnerabilities/items/properties/remediations/items/properties/product_ids', 
+				'source_#/properties/vulnerabilities/items/properties/remediations/items/properties/restart_required', 
+				'source_#/properties/vulnerabilities/items/properties/remediations/items/properties/restart_required/properties/type', 
+				'source_#/properties/vulnerabilities/items/properties/remediations/items/properties/restart_required/properties/details', 
+				'source_#/properties/vulnerabilities/items/properties/remediations/items/properties/type', 
+				'source_#/properties/vulnerabilities/items/properties/remediations/items/properties/url', 
+				'source_#/properties/vulnerabilities/items/properties/threats', 
+				'source_#/properties/vulnerabilities/items/properties/threats/items', 
+				'source_#/properties/vulnerabilities/items/properties/threats/items/properties/type', 
+				'source_#/properties/vulnerabilities/items/properties/threats/items/properties/details', 
+				'source_#/properties/vulnerabilities/items/properties/threats/items/properties/date', 
+				'source_#/properties/vulnerabilities/items/properties/threats/items/properties/product_ids', 
+				'source_#/properties/vulnerabilities/items/properties/threats/items/properties/group_ids', 
+				'source_#/properties/vulnerabilities/items/properties/title', 
+				'source_#/definitions/acknowledgments_t', 
+				'source_#/definitions/acknowledgments_t/items', 
+				'source_#/definitions/acknowledgments_t/items/properties/names', 
+				'source_#/definitions/acknowledgments_t/items/properties/names/items', 
+				'source_#/definitions/acknowledgments_t/items/properties/organizations', 
+				'source_#/definitions/acknowledgments_t/items/properties/organizations/items', 
+				'source_#/definitions/acknowledgments_t/items/properties/summary', 
+				'source_#/definitions/acknowledgments_t/items/properties/urls', 
+				'source_#/definitions/acknowledgments_t/items/properties/urls/items', 
+				'source_#/definitions/lang_t', 
+				'source_#/definitions/notes_t', 
+				'source_#/definitions/notes_t/items', 
+				'source_#/definitions/notes_t/items/properties/audience', 
+				'source_#/definitions/notes_t/items/properties/title', 
+				'source_#/definitions/notes_t/items/properties/type', 
+				'source_#/definitions/notes_t/items/properties/text', 
+				'source_#/definitions/references_t', 
+				'source_#/definitions/references_t/items', 
+				'source_#/definitions/references_t/items/properties/summary', 
+				'source_#/definitions/references_t/items/properties/type', 
+				'source_#/definitions/references_t/items/properties/url', 
+				'source_#/definitions/version_t', 
+				'source_#/definitions/branches_t', 
+				'source_#/definitions/branches_t/items', 
+				'source_#/definitions/branches_t/items/properties/name', 
+				'source_#/definitions/branches_t/items/properties/type', 
+				'source_#/definitions/branches_t/items/properties/branches', 
+				'source_#/definitions/full_product_name_t', 
+				'source_#/definitions/product_id_t', 
+				'source_#/definitions/full_product_name_t/properties/product_id', 
+				'source_#/definitions/full_product_name_t/properties/name', 
+				'source_#/definitions/full_product_name_t/properties/cpe', 
+				'source_#/definitions/branches_t/items/properties/product', 
+				'source_#/definitions/product_group_id_t', 
+				'source_#/definitions/products_t', 
+				'source_#/definitions/products_t/items', 
+				'source_#/definitions/product_groups_t', 
+				'source_#/definitions/product_groups_t/items', 
+				'source_#0', 
+				'source_#1', 
+				'source_#2', 
+				'source_#3', 
+				'source_#4', 
+				'source_#5', 
+				'source_#6', 
+				'source_#7', 
+				'source_#8', 
+				'source_#9', 
+				'source_https://www.first.org/cvss/cvss-v2.0.json', 
+				'source_https://www.first.org/cvss/cvss-v2.0.json#/properties/version', 
+				'source_https://www.first.org/cvss/cvss-v2.0.json#/properties/vectorString', 
+				'source_https://www.first.org/cvss/cvss-v2.0.json#/definitions/accessVectorType', 
+				'source_#10', 
+				'source_https://www.first.org/cvss/cvss-v2.0.json#/properties/accessVector', 
+				'source_https://www.first.org/cvss/cvss-v2.0.json#/definitions/accessComplexityType', 
+				'source_#11', 
+				'source_https://www.first.org/cvss/cvss-v2.0.json#/properties/accessComplexity', 
+				'source_https://www.first.org/cvss/cvss-v2.0.json#/definitions/authenticationType', 
+				'source_#12', 
+				'source_https://www.first.org/cvss/cvss-v2.0.json#/properties/authentication', 
+				'source_https://www.first.org/cvss/cvss-v2.0.json#/definitions/ciaType', 
+				'source_#13', 
+				'source_https://www.first.org/cvss/cvss-v2.0.json#/properties/confidentialityImpact', 
+				'source_https://www.first.org/cvss/cvss-v2.0.json#/properties/integrityImpact', 
+				'source_https://www.first.org/cvss/cvss-v2.0.json#/properties/availabilityImpact', 
+				'source_https://www.first.org/cvss/cvss-v2.0.json#/definitions/scoreType', 
+				'source_https://www.first.org/cvss/cvss-v2.0.json#/properties/baseScore', 
+				'source_https://www.first.org/cvss/cvss-v2.0.json#/definitions/exploitabilityType', 
+				'source_#14', 
+				'source_https://www.first.org/cvss/cvss-v2.0.json#/properties/exploitability', 
+				'source_https://www.first.org/cvss/cvss-v2.0.json#/definitions/remediationLevelType', 
+				'source_#15', 
+				'source_https://www.first.org/cvss/cvss-v2.0.json#/properties/remediationLevel', 
+				'source_https://www.first.org/cvss/cvss-v2.0.json#/definitions/reportConfidenceType', 
+				'source_#16', 
+				'source_https://www.first.org/cvss/cvss-v2.0.json#/properties/reportConfidence', 
+				'source_https://www.first.org/cvss/cvss-v2.0.json#/properties/temporalScore', 
+				'source_https://www.first.org/cvss/cvss-v2.0.json#/definitions/collateralDamagePotentialType', 
+				'source_#17', 
+				'source_https://www.first.org/cvss/cvss-v2.0.json#/properties/collateralDamagePotential', 
+				'source_https://www.first.org/cvss/cvss-v2.0.json#/definitions/targetDistributionType', 
+				'source_#18', 
+				'source_https://www.first.org/cvss/cvss-v2.0.json#/properties/targetDistribution', 
+				'source_https://www.first.org/cvss/cvss-v2.0.json#/definitions/ciaRequirementType', 
+				'source_#19', 
+				'source_https://www.first.org/cvss/cvss-v2.0.json#/properties/confidentialityRequirement', 
+				'source_https://www.first.org/cvss/cvss-v2.0.json#/properties/integrityRequirement', 
+				'source_https://www.first.org/cvss/cvss-v2.0.json#/properties/availabilityRequirement', 
+				'source_https://www.first.org/cvss/cvss-v2.0.json#/properties/environmentalScore', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/properties/version', 
+				'source_#20', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/properties/vectorString', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/definitions/attackVectorType', 
+				'source_#21', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/properties/attackVector', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/definitions/attackComplexityType', 
+				'source_#22', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/properties/attackComplexity', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/definitions/privilegesRequiredType', 
+				'source_#23', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/properties/privilegesRequired', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/definitions/userInteractionType', 
+				'source_#24', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/properties/userInteraction', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/definitions/scopeType', 
+				'source_#25', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/properties/scope', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/definitions/ciaType', 
+				'source_#26', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/properties/confidentialityImpact', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/properties/integrityImpact', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/properties/availabilityImpact', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/definitions/scoreType', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/properties/baseScore', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/definitions/severityType', 
+				'source_#27', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/properties/baseSeverity', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/definitions/exploitCodeMaturityType', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/properties/exploitCodeMaturity', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/definitions/remediationLevelType', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/properties/remediationLevel', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/definitions/confidenceType', 
+				'source_#28', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/properties/reportConfidence', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/properties/temporalScore', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/properties/temporalSeverity', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/definitions/ciaRequirementType', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/properties/confidentialityRequirement', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/properties/integrityRequirement', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/properties/availabilityRequirement', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/definitions/modifiedAttackVectorType', 
+				'source_#29', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/properties/modifiedAttackVector', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/definitions/modifiedAttackComplexityType', 
+				'source_#30', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/properties/modifiedAttackComplexity', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/definitions/modifiedPrivilegesRequiredType', 
+				'source_#31', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/properties/modifiedPrivilegesRequired', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/definitions/modifiedUserInteractionType', 
+				'source_#32', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/properties/modifiedUserInteraction', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/definitions/modifiedScopeType', 
+				'source_#33', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/properties/modifiedScope', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/definitions/modifiedCiaType', 
+				'source_#34', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/properties/modifiedConfidentialityImpact', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/properties/modifiedIntegrityImpact', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/properties/modifiedAvailabilityImpact', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/properties/environmentalScore', 
+				'source_https://www.first.org/cvss/cvss-v3.0.json#/properties/environmentalSeverity', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/properties/version', 
+				'source_#35', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/properties/vectorString', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/definitions/attackVectorType', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/properties/attackVector', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/definitions/attackComplexityType', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/properties/attackComplexity', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/definitions/privilegesRequiredType', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/properties/privilegesRequired', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/definitions/userInteractionType', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/properties/userInteraction', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/definitions/scopeType', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/properties/scope', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/definitions/ciaType', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/properties/confidentialityImpact', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/properties/integrityImpact', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/properties/availabilityImpact', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/definitions/scoreType', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/properties/baseScore', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/definitions/severityType', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/properties/baseSeverity', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/definitions/exploitCodeMaturityType', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/properties/exploitCodeMaturity', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/definitions/remediationLevelType', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/properties/remediationLevel', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/definitions/confidenceType', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/properties/reportConfidence', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/properties/temporalScore', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/properties/temporalSeverity', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/definitions/ciaRequirementType', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/properties/confidentialityRequirement', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/properties/integrityRequirement', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/properties/availabilityRequirement', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/definitions/modifiedAttackVectorType', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/properties/modifiedAttackVector', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/definitions/modifiedAttackComplexityType', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/properties/modifiedAttackComplexity', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/definitions/modifiedPrivilegesRequiredType', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/properties/modifiedPrivilegesRequired', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/definitions/modifiedUserInteractionType', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/properties/modifiedUserInteraction', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/definitions/modifiedScopeType', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/properties/modifiedScope', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/definitions/modifiedCiaType', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/properties/modifiedConfidentialityImpact', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/properties/modifiedIntegrityImpact', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/properties/modifiedAvailabilityImpact', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/properties/environmentalScore', 
+				'source_https://www.first.org/cvss/cvss-v3.1.json#/properties/environmentalSeverity', 
+				'source_#36', 
+				'source_#37', 
+				'source_#38', 
+				'source_#39', 
+				'source_#40');
+var annotationsBoxes= new Array('annotations_#/Schema', 
+				'annotations_#/properties/document', 
+				'annotations_#/properties/document/properties/aggregate_severity', 
+				'annotations_#/properties/document/properties/aggregate_severity/properties/namespace', 
+				'annotations_#/properties/document/properties/aggregate_severity/properties/text', 
+				'annotations_#/properties/document/properties/csaf_version', 
+				'annotations_#/properties/document/properties/distribution', 
+				'annotations_#/properties/document/properties/distribution/properties/text', 
+				'annotations_#/properties/document/properties/distribution/properties/tlp', 
+				'annotations_#/properties/document/properties/distribution/properties/tlp/properties/label', 
+				'annotations_#/properties/document/properties/distribution/properties/tlp/properties/url', 
+				'annotations_#/properties/document/properties/lang', 
+				'annotations_#/properties/document/properties/source_lang', 
+				'annotations_#/properties/document/properties/notes', 
+				'annotations_#/properties/document/properties/publisher', 
+				'annotations_#/properties/document/properties/publisher/properties/contact_details', 
+				'annotations_#/properties/document/properties/publisher/properties/issuing_authority', 
+				'annotations_#/properties/document/properties/publisher/properties/type', 
+				'annotations_#/properties/document/properties/publisher/properties/vendor_id', 
+				'annotations_#/properties/document/properties/title', 
+				'annotations_#/properties/document/properties/tracking', 
+				'annotations_#/properties/document/properties/tracking/properties/id', 
+				'annotations_#/properties/document/properties/tracking/properties/aliases', 
+				'annotations_#/properties/document/properties/tracking/properties/aliases/items', 
+				'annotations_#/properties/document/properties/tracking/properties/current_release_date', 
+				'annotations_#/properties/document/properties/tracking/properties/generator', 
+				'annotations_#/properties/document/properties/tracking/properties/generator/properties/engine', 
+				'annotations_#/properties/document/properties/tracking/properties/generator/properties/date', 
+				'annotations_#/properties/document/properties/tracking/properties/initial_release_date', 
+				'annotations_#/properties/document/properties/tracking/properties/revision_history', 
+				'annotations_#/properties/document/properties/tracking/properties/revision_history/items/properties/date', 
+				'annotations_#/properties/document/properties/tracking/properties/revision_history/items/properties/summary', 
+				'annotations_#/properties/document/properties/tracking/properties/status', 
+				'annotations_#/properties/document/properties/type', 
+				'annotations_#/properties/product_tree', 
+				'annotations_#/properties/product_tree/properties/full_product_names', 
+				'annotations_#/properties/product_tree/properties/product_groups', 
+				'annotations_#/properties/product_tree/properties/product_groups/items', 
+				'annotations_#/properties/product_tree/properties/product_groups/items/properties/summary', 
+				'annotations_#/properties/product_tree/properties/product_groups/items/properties/product_ids', 
+				'annotations_#/properties/product_tree/properties/relationships', 
+				'annotations_#/properties/product_tree/properties/relationships/items', 
+				'annotations_#/properties/product_tree/properties/relationships/items/properties/relationship_type', 
+				'annotations_#/properties/vulnerabilities', 
+				'annotations_#/properties/vulnerabilities/items', 
+				'annotations_#/properties/vulnerabilities/items/properties/cve', 
+				'annotations_#/properties/vulnerabilities/items/properties/cwe', 
+				'annotations_#/properties/vulnerabilities/items/properties/cwe/properties/id', 
+				'annotations_#/properties/vulnerabilities/items/properties/cwe/properties/name', 
+				'annotations_#/properties/vulnerabilities/items/properties/scores', 
+				'annotations_#/properties/vulnerabilities/items/properties/scores/items', 
+				'annotations_#/properties/vulnerabilities/items/properties/discovery_date', 
+				'annotations_#/properties/vulnerabilities/items/properties/id', 
+				'annotations_#/properties/vulnerabilities/items/properties/id/properties/system_name', 
+				'annotations_#/properties/vulnerabilities/items/properties/id/properties/text', 
+				'annotations_#/properties/vulnerabilities/items/properties/involvements', 
+				'annotations_#/properties/vulnerabilities/items/properties/involvements/items', 
+				'annotations_#/properties/vulnerabilities/items/properties/involvements/items/properties/summary', 
+				'annotations_#/properties/vulnerabilities/items/properties/involvements/items/properties/party', 
+				'annotations_#/properties/vulnerabilities/items/properties/involvements/items/properties/status', 
+				'annotations_#/properties/vulnerabilities/items/properties/product_status', 
+				'annotations_#/properties/vulnerabilities/items/properties/product_status/properties/fixed', 
+				'annotations_#/properties/vulnerabilities/items/properties/product_status/properties/first_fixed', 
+				'annotations_#/properties/vulnerabilities/items/properties/product_status/properties/recommended', 
+				'annotations_#/properties/vulnerabilities/items/properties/product_status/properties/known_affected', 
+				'annotations_#/properties/vulnerabilities/items/properties/product_status/properties/first_affected', 
+				'annotations_#/properties/vulnerabilities/items/properties/product_status/properties/last_affected', 
+				'annotations_#/properties/vulnerabilities/items/properties/product_status/properties/known_not_affected', 
+				'annotations_#/properties/vulnerabilities/items/properties/product_status/properties/under_investigation', 
+				'annotations_#/properties/vulnerabilities/items/properties/release_date', 
+				'annotations_#/properties/vulnerabilities/items/properties/remediations', 
+				'annotations_#/properties/vulnerabilities/items/properties/remediations/items', 
+				'annotations_#/properties/vulnerabilities/items/properties/remediations/items/properties/date', 
+				'annotations_#/properties/vulnerabilities/items/properties/remediations/items/properties/details', 
+				'annotations_#/properties/vulnerabilities/items/properties/remediations/items/properties/entitlements', 
+				'annotations_#/properties/vulnerabilities/items/properties/remediations/items/properties/entitlements/items', 
+				'annotations_#/properties/vulnerabilities/items/properties/remediations/items/properties/restart_required', 
+				'annotations_#/properties/vulnerabilities/items/properties/remediations/items/properties/restart_required/properties/type', 
+				'annotations_#/properties/vulnerabilities/items/properties/remediations/items/properties/restart_required/properties/details', 
+				'annotations_#/properties/vulnerabilities/items/properties/remediations/items/properties/type', 
+				'annotations_#/properties/vulnerabilities/items/properties/remediations/items/properties/url', 
+				'annotations_#/properties/vulnerabilities/items/properties/threats', 
+				'annotations_#/properties/vulnerabilities/items/properties/threats/items', 
+				'annotations_#/properties/vulnerabilities/items/properties/threats/items/properties/type', 
+				'annotations_#/properties/vulnerabilities/items/properties/threats/items/properties/details', 
+				'annotations_#/properties/vulnerabilities/items/properties/threats/items/properties/date', 
+				'annotations_#/properties/vulnerabilities/items/properties/title', 
+				'annotations_#/definitions/acknowledgments_t', 
+				'annotations_#/definitions/acknowledgments_t/items', 
+				'annotations_#/definitions/acknowledgments_t/items/properties/names', 
+				'annotations_#/definitions/acknowledgments_t/items/properties/names/items', 
+				'annotations_#/definitions/acknowledgments_t/items/properties/organizations', 
+				'annotations_#/definitions/acknowledgments_t/items/properties/organizations/items', 
+				'annotations_#/definitions/acknowledgments_t/items/properties/summary', 
+				'annotations_#/definitions/acknowledgments_t/items/properties/urls', 
+				'annotations_#/definitions/acknowledgments_t/items/properties/urls/items', 
+				'annotations_#/definitions/lang_t', 
+				'annotations_#/definitions/notes_t', 
+				'annotations_#/definitions/notes_t/items', 
+				'annotations_#/definitions/notes_t/items/properties/audience', 
+				'annotations_#/definitions/notes_t/items/properties/title', 
+				'annotations_#/definitions/notes_t/items/properties/type', 
+				'annotations_#/definitions/notes_t/items/properties/text', 
+				'annotations_#/definitions/references_t', 
+				'annotations_#/definitions/references_t/items', 
+				'annotations_#/definitions/references_t/items/properties/summary', 
+				'annotations_#/definitions/references_t/items/properties/type', 
+				'annotations_#/definitions/references_t/items/properties/url', 
+				'annotations_#/definitions/version_t', 
+				'annotations_#/definitions/branches_t', 
+				'annotations_#/definitions/branches_t/items', 
+				'annotations_#/definitions/branches_t/items/properties/name', 
+				'annotations_#/definitions/branches_t/items/properties/type', 
+				'annotations_#/definitions/full_product_name_t', 
+				'annotations_#/definitions/product_id_t', 
+				'annotations_#/definitions/full_product_name_t/properties/name', 
+				'annotations_#/definitions/full_product_name_t/properties/cpe', 
+				'annotations_#/definitions/product_group_id_t', 
+				'annotations_#/definitions/products_t', 
+				'annotations_#/definitions/product_groups_t', 
+				'annotations_https://www.first.org/cvss/cvss-v2.0.json', 
+				'annotations_https://www.first.org/cvss/cvss-v2.0.json#/properties/version', 
+				'annotations_https://www.first.org/cvss/cvss-v3.0.json', 
+				'annotations_https://www.first.org/cvss/cvss-v3.0.json#/properties/version', 
+				'annotations_https://www.first.org/cvss/cvss-v3.1.json', 
+				'annotations_https://www.first.org/cvss/cvss-v3.1.json#/properties/version');
+var propertiesBoxes= new Array('properties_#/Schema', 
+				'properties_#/properties/document', 
+				'properties_#/properties/document/properties/aggregate_severity', 
+				'properties_#/properties/document/properties/distribution', 
+				'properties_#/properties/document/properties/distribution/properties/tlp', 
+				'properties_#/properties/document/properties/publisher', 
+				'properties_#/properties/document/properties/tracking', 
+				'properties_#/properties/document/properties/tracking/properties/generator', 
+				'properties_#/properties/document/properties/tracking/properties/revision_history/items', 
+				'properties_#/properties/product_tree', 
+				'properties_#/properties/product_tree/properties/product_groups/items', 
+				'properties_#/properties/product_tree/properties/relationships/items', 
+				'properties_#/properties/vulnerabilities/items', 
+				'properties_#/properties/vulnerabilities/items/properties/cwe', 
+				'properties_#/properties/vulnerabilities/items/properties/id', 
+				'properties_#/properties/vulnerabilities/items/properties/involvements/items', 
+				'properties_#/properties/vulnerabilities/items/properties/product_status', 
+				'properties_#/properties/vulnerabilities/items/properties/remediations/items', 
+				'properties_#/properties/vulnerabilities/items/properties/remediations/items/properties/restart_required', 
+				'properties_#/properties/vulnerabilities/items/properties/threats/items', 
+				'properties_#/definitions/acknowledgments_t/items', 
+				'properties_#/definitions/notes_t/items', 
+				'properties_#/definitions/references_t/items', 
+				'properties_#/definitions/branches_t/items', 
+				'properties_#/definitions/full_product_name_t', 
+				'properties_#9', 
+				'properties_https://www.first.org/cvss/cvss-v2.0.json', 
+				'properties_https://www.first.org/cvss/cvss-v3.0.json', 
+				'properties_https://www.first.org/cvss/cvss-v3.1.json');
+var constraintsBoxes= new Array('constraints_#/properties/document/properties/aggregate_severity/properties/namespace', 
+				'constraints_#/properties/document/properties/aggregate_severity/properties/text', 
+				'constraints_#/properties/document/properties/distribution', 
+				'constraints_#/properties/document/properties/distribution/properties/text', 
+				'constraints_#/properties/document/properties/distribution/properties/tlp/properties/url', 
+				'constraints_#/properties/document/properties/publisher/properties/contact_details', 
+				'constraints_#/properties/document/properties/publisher/properties/issuing_authority', 
+				'constraints_#/properties/document/properties/publisher/properties/vendor_id', 
+				'constraints_#/properties/document/properties/title', 
+				'constraints_#/properties/document/properties/tracking/properties/id', 
+				'constraints_#/properties/document/properties/tracking/properties/aliases', 
+				'constraints_#/properties/document/properties/tracking/properties/aliases/items', 
+				'constraints_#/properties/document/properties/tracking/properties/current_release_date', 
+				'constraints_#/properties/document/properties/tracking/properties/generator/properties/engine', 
+				'constraints_#/properties/document/properties/tracking/properties/generator/properties/date', 
+				'constraints_#/properties/document/properties/tracking/properties/initial_release_date', 
+				'constraints_#/properties/document/properties/tracking/properties/revision_history', 
+				'constraints_#/properties/document/properties/tracking/properties/revision_history/items/properties/date', 
+				'constraints_#/properties/document/properties/tracking/properties/revision_history/items/properties/summary', 
+				'constraints_#/properties/document/properties/type', 
+				'constraints_#/properties/product_tree', 
+				'constraints_#/properties/product_tree/properties/full_product_names', 
+				'constraints_#/properties/product_tree/properties/product_groups', 
+				'constraints_#/properties/product_tree/properties/product_groups/items/properties/summary', 
+				'constraints_#/properties/product_tree/properties/product_groups/items/properties/product_ids', 
+				'constraints_#/properties/product_tree/properties/relationships', 
+				'constraints_#/properties/vulnerabilities', 
+				'constraints_#/properties/vulnerabilities/items', 
+				'constraints_#/properties/vulnerabilities/items/properties/cve', 
+				'constraints_#/properties/vulnerabilities/items/properties/cwe/properties/id', 
+				'constraints_#/properties/vulnerabilities/items/properties/cwe/properties/name', 
+				'constraints_#/properties/vulnerabilities/items/properties/scores', 
+				'constraints_#/properties/vulnerabilities/items/properties/discovery_date', 
+				'constraints_#/properties/vulnerabilities/items/properties/id/properties/system_name', 
+				'constraints_#/properties/vulnerabilities/items/properties/id/properties/text', 
+				'constraints_#/properties/vulnerabilities/items/properties/involvements', 
+				'constraints_#/properties/vulnerabilities/items/properties/involvements/items/properties/summary', 
+				'constraints_#/properties/vulnerabilities/items/properties/product_status', 
+				'constraints_#/properties/vulnerabilities/items/properties/release_date', 
+				'constraints_#/properties/vulnerabilities/items/properties/remediations', 
+				'constraints_#/properties/vulnerabilities/items/properties/remediations/items/properties/date', 
+				'constraints_#/properties/vulnerabilities/items/properties/remediations/items/properties/details', 
+				'constraints_#/properties/vulnerabilities/items/properties/remediations/items/properties/entitlements', 
+				'constraints_#/properties/vulnerabilities/items/properties/remediations/items/properties/entitlements/items', 
+				'constraints_#/properties/vulnerabilities/items/properties/remediations/items/properties/restart_required/properties/details', 
+				'constraints_#/properties/vulnerabilities/items/properties/remediations/items/properties/url', 
+				'constraints_#/properties/vulnerabilities/items/properties/threats', 
+				'constraints_#/properties/vulnerabilities/items/properties/threats/items/properties/details', 
+				'constraints_#/properties/vulnerabilities/items/properties/threats/items/properties/date', 
+				'constraints_#/properties/vulnerabilities/items/properties/title', 
+				'constraints_#/definitions/acknowledgments_t', 
+				'constraints_#/definitions/acknowledgments_t/items', 
+				'constraints_#/definitions/acknowledgments_t/items/properties/names', 
+				'constraints_#/definitions/acknowledgments_t/items/properties/names/items', 
+				'constraints_#/definitions/acknowledgments_t/items/properties/organizations', 
+				'constraints_#/definitions/acknowledgments_t/items/properties/organizations/items', 
+				'constraints_#/definitions/acknowledgments_t/items/properties/summary', 
+				'constraints_#/definitions/acknowledgments_t/items/properties/urls', 
+				'constraints_#/definitions/acknowledgments_t/items/properties/urls/items', 
+				'constraints_#/definitions/lang_t', 
+				'constraints_#/definitions/notes_t', 
+				'constraints_#/definitions/notes_t/items/properties/audience', 
+				'constraints_#/definitions/notes_t/items/properties/title', 
+				'constraints_#/definitions/notes_t/items/properties/text', 
+				'constraints_#/definitions/references_t', 
+				'constraints_#/definitions/references_t/items/properties/summary', 
+				'constraints_#/definitions/references_t/items/properties/type', 
+				'constraints_#/definitions/references_t/items/properties/url', 
+				'constraints_#/definitions/version_t', 
+				'constraints_#/definitions/branches_t', 
+				'constraints_#/definitions/branches_t/items', 
+				'constraints_#/definitions/branches_t/items/properties/name', 
+				'constraints_#/definitions/product_id_t', 
+				'constraints_#/definitions/full_product_name_t/properties/name', 
+				'constraints_#/definitions/full_product_name_t/properties/cpe', 
+				'constraints_#/definitions/product_group_id_t', 
+				'constraints_#/definitions/products_t', 
+				'constraints_#/definitions/product_groups_t', 
+				'constraints_https://www.first.org/cvss/cvss-v2.0.json#/properties/vectorString', 
+				'constraints_https://www.first.org/cvss/cvss-v2.0.json#/definitions/scoreType', 
+				'constraints_https://www.first.org/cvss/cvss-v3.0.json#/properties/vectorString', 
+				'constraints_https://www.first.org/cvss/cvss-v3.0.json#/definitions/scoreType', 
+				'constraints_https://www.first.org/cvss/cvss-v3.1.json#/properties/vectorString', 
+				'constraints_https://www.first.org/cvss/cvss-v3.1.json#/definitions/scoreType', 
+				'constraints_#36');
+var enumerationsBoxes= new Array('enumeration_#1', 
+				'enumeration_#2', 
+				'enumeration_#3', 
+				'enumeration_#4', 
+				'enumeration_#5', 
+				'enumeration_#6', 
+				'enumeration_#7', 
+				'enumeration_#8', 
+				'enumeration_#10', 
+				'enumeration_#11', 
+				'enumeration_#12', 
+				'enumeration_#13', 
+				'enumeration_#14', 
+				'enumeration_#15', 
+				'enumeration_#16', 
+				'enumeration_#17', 
+				'enumeration_#18', 
+				'enumeration_#19', 
+				'enumeration_#20', 
+				'enumeration_#21', 
+				'enumeration_#22', 
+				'enumeration_#23', 
+				'enumeration_#24', 
+				'enumeration_#25', 
+				'enumeration_#26', 
+				'enumeration_#27', 
+				'enumeration_#28', 
+				'enumeration_#29', 
+				'enumeration_#30', 
+				'enumeration_#31', 
+				'enumeration_#32', 
+				'enumeration_#33', 
+				'enumeration_#34', 
+				'enumeration_#35', 
+				'enumeration_#37', 
+				'enumeration_#38', 
+				'enumeration_#39', 
+				'enumeration_#40');
+var combinedBoxes= new Array('combined_#/Schema', 
+				'combined_#/properties/document', 
+				'combined_#/properties/document/properties/acknowledgments', 
+				'combined_#/properties/document/properties/aggregate_severity', 
+				'combined_#/properties/document/properties/aggregate_severity/properties/namespace', 
+				'combined_#/properties/document/properties/aggregate_severity/properties/text', 
+				'combined_#/properties/document/properties/csaf_version', 
+				'combined_#/properties/document/properties/distribution', 
+				'combined_#/properties/document/properties/distribution/properties/text', 
+				'combined_#/properties/document/properties/distribution/properties/tlp', 
+				'combined_#/properties/document/properties/distribution/properties/tlp/properties/label', 
+				'combined_#/properties/document/properties/distribution/properties/tlp/properties/url', 
+				'combined_#/properties/document/properties/lang', 
+				'combined_#/properties/document/properties/source_lang', 
+				'combined_#/properties/document/properties/notes', 
+				'combined_#/properties/document/properties/publisher', 
+				'combined_#/properties/document/properties/publisher/properties/contact_details', 
+				'combined_#/properties/document/properties/publisher/properties/issuing_authority', 
+				'combined_#/properties/document/properties/publisher/properties/type', 
+				'combined_#/properties/document/properties/publisher/properties/vendor_id', 
+				'combined_#/properties/document/properties/references', 
+				'combined_#/properties/document/properties/title', 
+				'combined_#/properties/document/properties/tracking', 
+				'combined_#/properties/document/properties/tracking/properties/id', 
+				'combined_#/properties/document/properties/tracking/properties/aliases', 
+				'combined_#/properties/document/properties/tracking/properties/aliases/items', 
+				'combined_#/properties/document/properties/tracking/properties/current_release_date', 
+				'combined_#/properties/document/properties/tracking/properties/generator', 
+				'combined_#/properties/document/properties/tracking/properties/generator/properties/engine', 
+				'combined_#/properties/document/properties/tracking/properties/generator/properties/date', 
+				'combined_#/properties/document/properties/tracking/properties/initial_release_date', 
+				'combined_#/properties/document/properties/tracking/properties/revision_history', 
+				'combined_#/properties/document/properties/tracking/properties/revision_history/items', 
+				'combined_#/properties/document/properties/tracking/properties/revision_history/items/properties/number', 
+				'combined_#/properties/document/properties/tracking/properties/revision_history/items/properties/date', 
+				'combined_#/properties/document/properties/tracking/properties/revision_history/items/properties/summary', 
+				'combined_#/properties/document/properties/tracking/properties/status', 
+				'combined_#/properties/document/properties/tracking/properties/version', 
+				'combined_#/properties/document/properties/type', 
+				'combined_#/properties/product_tree', 
+				'combined_#/properties/product_tree/properties/branches', 
+				'combined_#/properties/product_tree/properties/full_product_names', 
+				'combined_#/properties/product_tree/properties/full_product_names/items', 
+				'combined_#/properties/product_tree/properties/product_groups', 
+				'combined_#/properties/product_tree/properties/product_groups/items', 
+				'combined_#/properties/product_tree/properties/product_groups/items/properties/summary', 
+				'combined_#/properties/product_tree/properties/product_groups/items/properties/group_id', 
+				'combined_#/properties/product_tree/properties/product_groups/items/properties/product_ids', 
+				'combined_#/properties/product_tree/properties/product_groups/items/properties/product_ids/items', 
+				'combined_#/properties/product_tree/properties/relationships', 
+				'combined_#/properties/product_tree/properties/relationships/items', 
+				'combined_#/properties/product_tree/properties/relationships/items/properties/full_product_name', 
+				'combined_#/properties/product_tree/properties/relationships/items/properties/product_reference', 
+				'combined_#/properties/product_tree/properties/relationships/items/properties/relates_to_product_reference', 
+				'combined_#/properties/product_tree/properties/relationships/items/properties/relationship_type', 
+				'combined_#/properties/vulnerabilities', 
+				'combined_#/properties/vulnerabilities/items', 
+				'combined_#/properties/vulnerabilities/items/properties/acknowledgments', 
+				'combined_#/properties/vulnerabilities/items/properties/cve', 
+				'combined_#/properties/vulnerabilities/items/properties/cwe', 
+				'combined_#/properties/vulnerabilities/items/properties/cwe/properties/id', 
+				'combined_#/properties/vulnerabilities/items/properties/cwe/properties/name', 
+				'combined_#/properties/vulnerabilities/items/properties/scores', 
+				'combined_#/properties/vulnerabilities/items/properties/scores/items', 
+				'combined_#/properties/vulnerabilities/items/properties/scores/items/properties/products', 
+				'combined_#/properties/vulnerabilities/items/properties/scores/items/properties/cvss_v2', 
+				'combined_#/properties/vulnerabilities/items/properties/scores/items/properties/cvss_v3', 
+				'combined_#/properties/vulnerabilities/items/properties/scores/items/properties/cvss_v3/oneOf/0', 
+				'combined_#/properties/vulnerabilities/items/properties/scores/items/properties/cvss_v3/oneOf/1', 
+				'combined_#/properties/vulnerabilities/items/properties/discovery_date', 
+				'combined_#/properties/vulnerabilities/items/properties/id', 
+				'combined_#/properties/vulnerabilities/items/properties/id/properties/system_name', 
+				'combined_#/properties/vulnerabilities/items/properties/id/properties/text', 
+				'combined_#/properties/vulnerabilities/items/properties/involvements', 
+				'combined_#/properties/vulnerabilities/items/properties/involvements/items', 
+				'combined_#/properties/vulnerabilities/items/properties/involvements/items/properties/summary', 
+				'combined_#/properties/vulnerabilities/items/properties/involvements/items/properties/party', 
+				'combined_#/properties/vulnerabilities/items/properties/involvements/items/properties/status', 
+				'combined_#/properties/vulnerabilities/items/properties/notes', 
+				'combined_#/properties/vulnerabilities/items/properties/product_status', 
+				'combined_#/properties/vulnerabilities/items/properties/product_status/properties/fixed', 
+				'combined_#/properties/vulnerabilities/items/properties/product_status/properties/first_fixed', 
+				'combined_#/properties/vulnerabilities/items/properties/product_status/properties/recommended', 
+				'combined_#/properties/vulnerabilities/items/properties/product_status/properties/known_affected', 
+				'combined_#/properties/vulnerabilities/items/properties/product_status/properties/first_affected', 
+				'combined_#/properties/vulnerabilities/items/properties/product_status/properties/last_affected', 
+				'combined_#/properties/vulnerabilities/items/properties/product_status/properties/known_not_affected', 
+				'combined_#/properties/vulnerabilities/items/properties/product_status/properties/under_investigation', 
+				'combined_#/properties/vulnerabilities/items/properties/references', 
+				'combined_#/properties/vulnerabilities/items/properties/release_date', 
+				'combined_#/properties/vulnerabilities/items/properties/remediations', 
+				'combined_#/properties/vulnerabilities/items/properties/remediations/items', 
+				'combined_#/properties/vulnerabilities/items/properties/remediations/items/properties/date', 
+				'combined_#/properties/vulnerabilities/items/properties/remediations/items/properties/details', 
+				'combined_#/properties/vulnerabilities/items/properties/remediations/items/properties/entitlements', 
+				'combined_#/properties/vulnerabilities/items/properties/remediations/items/properties/entitlements/items', 
+				'combined_#/properties/vulnerabilities/items/properties/remediations/items/properties/group_ids', 
+				'combined_#/properties/vulnerabilities/items/properties/remediations/items/properties/product_ids', 
+				'combined_#/properties/vulnerabilities/items/properties/remediations/items/properties/restart_required', 
+				'combined_#/properties/vulnerabilities/items/properties/remediations/items/properties/restart_required/properties/type', 
+				'combined_#/properties/vulnerabilities/items/properties/remediations/items/properties/restart_required/properties/details', 
+				'combined_#/properties/vulnerabilities/items/properties/remediations/items/properties/type', 
+				'combined_#/properties/vulnerabilities/items/properties/remediations/items/properties/url', 
+				'combined_#/properties/vulnerabilities/items/properties/threats', 
+				'combined_#/properties/vulnerabilities/items/properties/threats/items', 
+				'combined_#/properties/vulnerabilities/items/properties/threats/items/properties/type', 
+				'combined_#/properties/vulnerabilities/items/properties/threats/items/properties/details', 
+				'combined_#/properties/vulnerabilities/items/properties/threats/items/properties/date', 
+				'combined_#/properties/vulnerabilities/items/properties/threats/items/properties/product_ids', 
+				'combined_#/properties/vulnerabilities/items/properties/threats/items/properties/group_ids', 
+				'combined_#/properties/vulnerabilities/items/properties/title', 
+				'combined_#/definitions/acknowledgments_t', 
+				'combined_#/definitions/acknowledgments_t/items', 
+				'combined_#/definitions/acknowledgments_t/items/properties/names', 
+				'combined_#/definitions/acknowledgments_t/items/properties/names/items', 
+				'combined_#/definitions/acknowledgments_t/items/properties/organizations', 
+				'combined_#/definitions/acknowledgments_t/items/properties/organizations/items', 
+				'combined_#/definitions/acknowledgments_t/items/properties/summary', 
+				'combined_#/definitions/acknowledgments_t/items/properties/urls', 
+				'combined_#/definitions/acknowledgments_t/items/properties/urls/items', 
+				'combined_#/definitions/lang_t', 
+				'combined_#/definitions/notes_t', 
+				'combined_#/definitions/notes_t/items', 
+				'combined_#/definitions/notes_t/items/properties/audience', 
+				'combined_#/definitions/notes_t/items/properties/title', 
+				'combined_#/definitions/notes_t/items/properties/type', 
+				'combined_#/definitions/notes_t/items/properties/text', 
+				'combined_#/definitions/references_t', 
+				'combined_#/definitions/references_t/items', 
+				'combined_#/definitions/references_t/items/properties/summary', 
+				'combined_#/definitions/references_t/items/properties/type', 
+				'combined_#/definitions/references_t/items/properties/url', 
+				'combined_#/definitions/version_t', 
+				'combined_#/definitions/branches_t', 
+				'combined_#/definitions/branches_t/items', 
+				'combined_#/definitions/branches_t/items/properties/name', 
+				'combined_#/definitions/branches_t/items/properties/type', 
+				'combined_#/definitions/branches_t/items/properties/branches', 
+				'combined_#/definitions/full_product_name_t', 
+				'combined_#/definitions/product_id_t', 
+				'combined_#/definitions/full_product_name_t/properties/product_id', 
+				'combined_#/definitions/full_product_name_t/properties/name', 
+				'combined_#/definitions/full_product_name_t/properties/cpe', 
+				'combined_#/definitions/branches_t/items/properties/product', 
+				'combined_#/definitions/product_group_id_t', 
+				'combined_#/definitions/products_t', 
+				'combined_#/definitions/products_t/items', 
+				'combined_#/definitions/product_groups_t', 
+				'combined_#/definitions/product_groups_t/items', 
+				'combined_#0', 
+				'combined_#1', 
+				'combined_#2', 
+				'combined_#3', 
+				'combined_#4', 
+				'combined_#5', 
+				'combined_#6', 
+				'combined_#7', 
+				'combined_#8', 
+				'combined_#9', 
+				'combined_https://www.first.org/cvss/cvss-v2.0.json', 
+				'combined_https://www.first.org/cvss/cvss-v2.0.json#/properties/version', 
+				'combined_https://www.first.org/cvss/cvss-v2.0.json#/properties/vectorString', 
+				'combined_https://www.first.org/cvss/cvss-v2.0.json#/definitions/accessVectorType', 
+				'combined_#10', 
+				'combined_https://www.first.org/cvss/cvss-v2.0.json#/properties/accessVector', 
+				'combined_https://www.first.org/cvss/cvss-v2.0.json#/definitions/accessComplexityType', 
+				'combined_#11', 
+				'combined_https://www.first.org/cvss/cvss-v2.0.json#/properties/accessComplexity', 
+				'combined_https://www.first.org/cvss/cvss-v2.0.json#/definitions/authenticationType', 
+				'combined_#12', 
+				'combined_https://www.first.org/cvss/cvss-v2.0.json#/properties/authentication', 
+				'combined_https://www.first.org/cvss/cvss-v2.0.json#/definitions/ciaType', 
+				'combined_#13', 
+				'combined_https://www.first.org/cvss/cvss-v2.0.json#/properties/confidentialityImpact', 
+				'combined_https://www.first.org/cvss/cvss-v2.0.json#/properties/integrityImpact', 
+				'combined_https://www.first.org/cvss/cvss-v2.0.json#/properties/availabilityImpact', 
+				'combined_https://www.first.org/cvss/cvss-v2.0.json#/definitions/scoreType', 
+				'combined_https://www.first.org/cvss/cvss-v2.0.json#/properties/baseScore', 
+				'combined_https://www.first.org/cvss/cvss-v2.0.json#/definitions/exploitabilityType', 
+				'combined_#14', 
+				'combined_https://www.first.org/cvss/cvss-v2.0.json#/properties/exploitability', 
+				'combined_https://www.first.org/cvss/cvss-v2.0.json#/definitions/remediationLevelType', 
+				'combined_#15', 
+				'combined_https://www.first.org/cvss/cvss-v2.0.json#/properties/remediationLevel', 
+				'combined_https://www.first.org/cvss/cvss-v2.0.json#/definitions/reportConfidenceType', 
+				'combined_#16', 
+				'combined_https://www.first.org/cvss/cvss-v2.0.json#/properties/reportConfidence', 
+				'combined_https://www.first.org/cvss/cvss-v2.0.json#/properties/temporalScore', 
+				'combined_https://www.first.org/cvss/cvss-v2.0.json#/definitions/collateralDamagePotentialType', 
+				'combined_#17', 
+				'combined_https://www.first.org/cvss/cvss-v2.0.json#/properties/collateralDamagePotential', 
+				'combined_https://www.first.org/cvss/cvss-v2.0.json#/definitions/targetDistributionType', 
+				'combined_#18', 
+				'combined_https://www.first.org/cvss/cvss-v2.0.json#/properties/targetDistribution', 
+				'combined_https://www.first.org/cvss/cvss-v2.0.json#/definitions/ciaRequirementType', 
+				'combined_#19', 
+				'combined_https://www.first.org/cvss/cvss-v2.0.json#/properties/confidentialityRequirement', 
+				'combined_https://www.first.org/cvss/cvss-v2.0.json#/properties/integrityRequirement', 
+				'combined_https://www.first.org/cvss/cvss-v2.0.json#/properties/availabilityRequirement', 
+				'combined_https://www.first.org/cvss/cvss-v2.0.json#/properties/environmentalScore', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/properties/version', 
+				'combined_#20', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/properties/vectorString', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/definitions/attackVectorType', 
+				'combined_#21', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/properties/attackVector', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/definitions/attackComplexityType', 
+				'combined_#22', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/properties/attackComplexity', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/definitions/privilegesRequiredType', 
+				'combined_#23', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/properties/privilegesRequired', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/definitions/userInteractionType', 
+				'combined_#24', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/properties/userInteraction', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/definitions/scopeType', 
+				'combined_#25', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/properties/scope', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/definitions/ciaType', 
+				'combined_#26', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/properties/confidentialityImpact', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/properties/integrityImpact', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/properties/availabilityImpact', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/definitions/scoreType', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/properties/baseScore', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/definitions/severityType', 
+				'combined_#27', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/properties/baseSeverity', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/definitions/exploitCodeMaturityType', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/properties/exploitCodeMaturity', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/definitions/remediationLevelType', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/properties/remediationLevel', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/definitions/confidenceType', 
+				'combined_#28', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/properties/reportConfidence', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/properties/temporalScore', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/properties/temporalSeverity', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/definitions/ciaRequirementType', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/properties/confidentialityRequirement', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/properties/integrityRequirement', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/properties/availabilityRequirement', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/definitions/modifiedAttackVectorType', 
+				'combined_#29', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/properties/modifiedAttackVector', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/definitions/modifiedAttackComplexityType', 
+				'combined_#30', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/properties/modifiedAttackComplexity', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/definitions/modifiedPrivilegesRequiredType', 
+				'combined_#31', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/properties/modifiedPrivilegesRequired', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/definitions/modifiedUserInteractionType', 
+				'combined_#32', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/properties/modifiedUserInteraction', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/definitions/modifiedScopeType', 
+				'combined_#33', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/properties/modifiedScope', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/definitions/modifiedCiaType', 
+				'combined_#34', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/properties/modifiedConfidentialityImpact', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/properties/modifiedIntegrityImpact', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/properties/modifiedAvailabilityImpact', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/properties/environmentalScore', 
+				'combined_https://www.first.org/cvss/cvss-v3.0.json#/properties/environmentalSeverity', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/properties/version', 
+				'combined_#35', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/properties/vectorString', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/definitions/attackVectorType', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/properties/attackVector', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/definitions/attackComplexityType', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/properties/attackComplexity', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/definitions/privilegesRequiredType', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/properties/privilegesRequired', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/definitions/userInteractionType', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/properties/userInteraction', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/definitions/scopeType', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/properties/scope', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/definitions/ciaType', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/properties/confidentialityImpact', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/properties/integrityImpact', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/properties/availabilityImpact', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/definitions/scoreType', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/properties/baseScore', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/definitions/severityType', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/properties/baseSeverity', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/definitions/exploitCodeMaturityType', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/properties/exploitCodeMaturity', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/definitions/remediationLevelType', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/properties/remediationLevel', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/definitions/confidenceType', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/properties/reportConfidence', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/properties/temporalScore', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/properties/temporalSeverity', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/definitions/ciaRequirementType', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/properties/confidentialityRequirement', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/properties/integrityRequirement', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/properties/availabilityRequirement', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/definitions/modifiedAttackVectorType', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/properties/modifiedAttackVector', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/definitions/modifiedAttackComplexityType', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/properties/modifiedAttackComplexity', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/definitions/modifiedPrivilegesRequiredType', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/properties/modifiedPrivilegesRequired', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/definitions/modifiedUserInteractionType', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/properties/modifiedUserInteraction', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/definitions/modifiedScopeType', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/properties/modifiedScope', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/definitions/modifiedCiaType', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/properties/modifiedConfidentialityImpact', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/properties/modifiedIntegrityImpact', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/properties/modifiedAvailabilityImpact', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/properties/environmentalScore', 
+				'combined_https://www.first.org/cvss/cvss-v3.1.json#/properties/environmentalSeverity', 
+				'combined_#36', 
+				'combined_#37', 
+				'combined_#38', 
+				'combined_#39', 
+				'combined_#40');
+
+                           
+                           
+                           var button_prefix = 'button_';
+                           
+                           /**
+                           * Returns an element in the current HTML document.
+                           *
+                           * @param elementID Identifier of HTML element
+                           * @return               HTML element object
+                           */
+                           function getElementObject(elementID) {
+                           var elemObj = null;
+                           if (document.getElementById) {
+                           elemObj = document.getElementById(elementID);
+                           }
+                           return elemObj;
+                           }
+                           
+                           /**
+                           * Switches the state of a collapseable box, e.g.
+                           * if it's opened, it'll be closed, and vice versa.
+                           *
+                           * @param boxID Identifier of box
+                           */
+                           function switchState(boxID) {
+                           var boxObj = getElementObject(boxID);
+                           var buttonObj = getElementObject(button_prefix + boxID);
+                           if (boxObj == null || buttonObj == null) {
+                           // Box or button not found
+                           } else if (boxObj.style.display == "none") {
+                           // Box is closed, so open it
+                           openBox(boxObj, buttonObj);
+                           } else if (boxObj.style.display == "block") {
+                           // Box is opened, so close it
+                           closeBox(boxObj, buttonObj);
+                           }
+                           }
+                           
+                           /**
+                           * Opens a collapseable box.
+                           *
+                           * @param boxObj       Collapseable box
+                           * @param buttonObj Button controlling box
+                           */
+                           function openBox(boxObj, buttonObj) {
+                           if (boxObj == null || buttonObj == null) {
+                           // Box or button not found
+                           } else {
+                           // Change 'display' CSS property of box
+                           boxObj.style.display = "block";
+                           
+                           // Change text of button
+                           if (boxObj.style.display == "block") {
+                           buttonObj.src = "img/btM.gif";
+                           }
+                           }
+                           }
+                           
+                           /**
+                           * Closes a collapseable box.
+                           *
+                           * @param boxObj       Collapseable box
+                           * @param buttonObj Button controlling box
+                           */
+                           function closeBox(boxObj, buttonObj) {
+                           if (boxObj == null || buttonObj == null) {
+                           // Box or button not found
+                           } else {
+                           // Change 'display' CSS property of box
+                           boxObj.style.display = "none";
+                           
+                           // Change text of button
+                           if (boxObj.style.display == "none") {
+                           buttonObj.src = "img/btP.gif";
+                           }
+                           }
+                           }
+                           
+                           function switchStateForAll(buttonObj, boxList) {
+                           if (buttonObj == null) {
+                           // button not found
+                           } else if (buttonObj.value == "+") {
+                           // Expand all
+                           expandAll(boxList);
+                           buttonObj.value = "-";
+                           } else if (buttonObj.value == "-") {
+                           // Collapse all
+                           collapseAll(boxList);
+                           buttonObj.value = "+";
+                           }
+                           }
+                           
+                           /**
+                           * Closes all boxes in a given list.
+                           *
+                           * @param boxList Array of box IDs
+                           */
+                           function collapseAll(boxList) {
+                           var idx;
+                           for (idx = 0; idx < boxList.length; idx++) {
+                           var boxObj = getElementObject(boxList[idx]);
+                           var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                           closeBox(boxObj, buttonObj);
+                           }
+                           }
+                           
+                           /**
+                           * Open all boxes in a given list.
+                           *
+                           * @param boxList Array of box IDs
+                           */
+                           function expandAll(boxList) {
+                           var idx;
+                           for (idx = 0; idx < boxList.length; idx++) {
+                           var boxObj = getElementObject(boxList[idx]);
+                           var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                           openBox(boxObj, buttonObj);
+                           }
+                           }
+                           
+                           /**
+                           * Update the message presented in the title of the html page.
+                           * - If the documentation was splited by namespace we present something like: "Documentation for namespace 'ns'"
+                           * - If the documentation was splited by location we present somehing like: "Documentation for 'Schema.xsd'"
+                           * - If no split we always present: "Documentation for 'MainSchema.xsd'"
+                           */
+                           function updatePageTitle(message) {
+                           top.document.title = message;
+                           }
+                           
+                           
+                           
+                           /**
+                           * Finds an HTML element by its ID and makes it floatable over the normal content.
+                           *
+                           * @param x_displacement The difference in pixels to the right side of the window from 
+                           *           the left side of the element.
+                           * @param y_displacement The difference in pixels to the right side of the window from 
+                           *           the top of the element.          
+                           */
+                           function findAndFloat(id, x_displacement, y_displacement){
+                           
+                           var element = getElementObject(id);            
+                           
+                           window[id + "_obj"] = element;
+                           
+                           if(document.layers) {
+                           element.style = element;
+                           }
+                           
+                           element.current_y = y_displacement;      
+                           element.first_time = true;
+                           
+                           element.floatElement = function(){
+                           // It may be closed by an user action.
+                           
+                           // Target X and Y coordinates.
+                           var x, y;
+                           
+                           var myWidth = 0, myHeight = 0;
+                           if( typeof( window.innerWidth ) == 'number' ) {
+                           //Non-IE
+                           myWidth = window.innerWidth;
+                           myHeight = window.innerHeight;
+                           } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+                           //IE 6+ in 'standards compliant mode'
+                           myWidth = document.documentElement.clientWidth;
+                           myHeight = document.documentElement.clientHeight;
+                           } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+                           //IE 4 compatible
+                           myWidth = document.body.clientWidth;
+                           myHeight = document.body.clientHeight;
+                           }
+                           
+                           
+                           x = myWidth - x_displacement;
+                           
+                           var ns = (navigator.appName.indexOf("Netscape") != -1);               
+                           y = ns ? pageYOffset : document.documentElement && document.documentElement.scrollTop ? 
+                           document.documentElement.scrollTop : document.body.scrollTop;               
+                           y = y + y_displacement;               
+                           
+                           // The current y is the current coordinate of the floating element.
+                           // This should be at the limit the y target coordinate.
+                           this.current_y += (y - this.current_y)/1.25;
+                           
+                           // Add the pixels constant after the values
+                           // and move the element.
+                           var px = document.layers ? "" : "px";
+                           this.style.left =  x + px;
+                           this.style.top =  this.current_y + px;
+                           
+                           setTimeout(this.id + "_obj.floatElement()", 100);
+                           }
+                           
+                           element.floatElement();
+                           return element;
+                           }
+                           
+                           /**
+                           * Finds an HTML element by its ID and makes it floatable over the normal content.
+                           *
+                           * @param x_displacement The difference in pixels to the right side of the window from 
+                           *           the left side of the element.
+                           * @param y_displacement The difference in pixels to the right side of the window from 
+                           *           the top of the element.          
+                           */
+                           function selectTOCGroupBy(id, isChunked, indexFileLocation, indexFileNamespace, indexFileComponent){
+                           
+                           if (!isChunked) {
+                           var selectIds = new Array('toc_group_by_namespace', 'toc_group_by_location', 'toc_group_by_component_type');
+                           // Make all the tabs invisible.
+                           for (i = 0; i < 3; i++){
+                           var tab = getElementObject(selectIds[i]);
+                           tab.style.display = 'none';
+                           }
+                           var selTab = getElementObject(id);
+                           selTab.style.display = 'block';
+                           } else {
+                           if (id == 'toc_group_by_namespace') {
+                           parent.indexFrame.location = indexFileNamespace;
+                           } else  if (id == 'toc_group_by_location') {
+                           parent.indexFrame.location = indexFileLocation;
+                           } else  if (id == 'toc_group_by_component_type') {
+                           parent.indexFrame.location = indexFileComponent;
+                           }
+                           }
+                           }
+                       </script><link rel="stylesheet" href="index.css" type="text/css">
+   </head>
+   <body>
+      <div id="gr_content" style="display: block;">
+         <h2><a id="INDEX">Table of Contents</a></h2>
+         <div class="horizontalLayout">
+            <table class="rt">
+               <tbody>
+                  <tr>
+                     <td class="rt_cornerTopLeft"></td>
+                     <td class="rt_lineTop"></td>
+                     <td class="rt_cornerTopRight"></td>
+                  </tr>
+                  <tr>
+                     <td class="rt_lineLeft"></td>
+                     <td class="rt_content">
+                        <table class="componentGroup">
+                           <tbody>
+                              <tr>
+                                 <td class="componentGroup"><input id="button_Main_Schema" type="image" alt="mainButton" src="img/btM.gif" onclick="switchState('Main_Schema');" class="control"></td>
+                                 <td class="componentGroup">
+                                    <div class="componentGroupTitle">Main Schema</div>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td class="componentGroup"></td>
+                                 <td class="componentGroup">
+                                    <div id="Main_Schema" class="componentGroup" style="display:block">
+                                       <div><b><b><a href="content.html#/Schema" target="mainFrame">Schema</a></b></b></div>
+                                    </div>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </td>
+                     <td class="rt_lineRight"></td>
+                  </tr>
+                  <tr>
+                     <td class="rt_cornerBottomLeft"></td>
+                     <td class="rt_lineBottom"></td>
+                     <td class="rt_cornerBottomRight"></td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+         <div class="horizontalLayout">
+            <table class="rt">
+               <tbody>
+                  <tr>
+                     <td class="rt_cornerTopLeft"></td>
+                     <td class="rt_lineTop"></td>
+                     <td class="rt_cornerTopRight"></td>
+                  </tr>
+                  <tr>
+                     <td class="rt_lineLeft"></td>
+                     <td class="rt_content">
+                        <table class="componentGroup">
+                           <tbody>
+                              <tr>
+                                 <td class="componentGroup"><input id="button_Main_Properties" type="image" alt="PropertiesButton" src="img/btM.gif" onclick="switchState('Main_Properties');" class="control"></td>
+                                 <td class="componentGroup">
+                                    <div class="componentGroupTitle">Properties</div>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td class="componentGroup"></td>
+                                 <td class="componentGroup">
+                                    <div id="Main_Properties" class="componentGroup" style="display:block">
+                                       <div><b><b><a href="content.html#/properties/document" target="mainFrame">document</a></b></b></div>
+                                       <div><b><b><a href="content.html#/properties/product_tree" target="mainFrame">product_tree</a></b></b></div>
+                                       <div><b><b><a href="content.html#/properties/vulnerabilities" target="mainFrame">vulnerabilities</a></b></b></div>
+                                    </div>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </td>
+                     <td class="rt_lineRight"></td>
+                  </tr>
+                  <tr>
+                     <td class="rt_cornerBottomLeft"></td>
+                     <td class="rt_lineBottom"></td>
+                     <td class="rt_cornerBottomRight"></td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+         <div class="horizontalLayout">
+            <table class="rt">
+               <tbody>
+                  <tr>
+                     <td class="rt_cornerTopLeft"></td>
+                     <td class="rt_lineTop"></td>
+                     <td class="rt_cornerTopRight"></td>
+                  </tr>
+                  <tr>
+                     <td class="rt_lineLeft"></td>
+                     <td class="rt_content">
+                        <table class="componentGroup">
+                           <tbody>
+                              <tr>
+                                 <td class="componentGroup"><input id="button_Main_Definitions" type="image" alt="DefinitionButton" src="img/btM.gif" onclick="switchState('Main_Definitions');" class="control"></td>
+                                 <td class="componentGroup">
+                                    <div class="componentGroupTitle">Definitions</div>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td class="componentGroup"></td>
+                                 <td class="componentGroup">
+                                    <div id="Main_Definitions" class="componentGroup" style="display:block">
+                                       <div><b><b><a href="content.html#/definitions/acknowledgments_t" target="mainFrame">acknowledgments_t</a></b></b></div>
+                                       <div><b><b><a href="content.html#/definitions/lang_t" target="mainFrame">lang_t</a></b></b></div>
+                                       <div><b><b><a href="content.html#/definitions/notes_t" target="mainFrame">notes_t</a></b></b></div>
+                                       <div><b><b><a href="content.html#/definitions/references_t" target="mainFrame">references_t</a></b></b></div>
+                                       <div><b><b><a href="content.html#/definitions/version_t" target="mainFrame">version_t</a></b></b></div>
+                                       <div><b><b><a href="content.html#/definitions/branches_t" target="mainFrame">branches_t</a></b></b></div>
+                                       <div><b><b><a href="content.html#/definitions/full_product_name_t" target="mainFrame">full_product_name_t</a></b></b></div>
+                                       <div><b><b><a href="content.html#/definitions/product_id_t" target="mainFrame">product_id_t</a></b></b></div>
+                                       <div><b><b><a href="content.html#/definitions/product_group_id_t" target="mainFrame">product_group_id_t</a></b></b></div>
+                                       <div><b><b><a href="content.html#/definitions/products_t" target="mainFrame">products_t</a></b></b></div>
+                                       <div><b><b><a href="content.html#/definitions/product_groups_t" target="mainFrame">product_groups_t</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v2.0.json#/definitions/accessVectorType" target="mainFrame">accessVectorType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v2.0.json#/definitions/accessComplexityType" target="mainFrame">accessComplexityType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v2.0.json#/definitions/authenticationType" target="mainFrame">authenticationType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v2.0.json#/definitions/ciaType" target="mainFrame">ciaType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v2.0.json#/definitions/scoreType" target="mainFrame">scoreType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v2.0.json#/definitions/exploitabilityType" target="mainFrame">exploitabilityType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v2.0.json#/definitions/remediationLevelType" target="mainFrame">remediationLevelType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v2.0.json#/definitions/reportConfidenceType" target="mainFrame">reportConfidenceType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v2.0.json#/definitions/collateralDamagePotentialType" target="mainFrame">collateralDamagePotentialType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v2.0.json#/definitions/targetDistributionType" target="mainFrame">targetDistributionType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v2.0.json#/definitions/ciaRequirementType" target="mainFrame">ciaRequirementType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v3.0.json#/definitions/attackVectorType" target="mainFrame">attackVectorType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v3.0.json#/definitions/attackComplexityType" target="mainFrame">attackComplexityType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v3.0.json#/definitions/privilegesRequiredType" target="mainFrame">privilegesRequiredType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v3.0.json#/definitions/userInteractionType" target="mainFrame">userInteractionType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v3.0.json#/definitions/scopeType" target="mainFrame">scopeType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v3.0.json#/definitions/ciaType" target="mainFrame">ciaType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v3.0.json#/definitions/scoreType" target="mainFrame">scoreType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v3.0.json#/definitions/severityType" target="mainFrame">severityType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v3.0.json#/definitions/exploitCodeMaturityType" target="mainFrame">exploitCodeMaturityType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v3.0.json#/definitions/remediationLevelType" target="mainFrame">remediationLevelType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v3.0.json#/definitions/confidenceType" target="mainFrame">confidenceType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v3.0.json#/definitions/ciaRequirementType" target="mainFrame">ciaRequirementType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v3.0.json#/definitions/modifiedAttackVectorType" target="mainFrame">modifiedAttackVectorType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v3.0.json#/definitions/modifiedAttackComplexityType" target="mainFrame">modifiedAttackComplexityType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v3.0.json#/definitions/modifiedPrivilegesRequiredType" target="mainFrame">modifiedPrivilegesRequiredType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v3.0.json#/definitions/modifiedUserInteractionType" target="mainFrame">modifiedUserInteractionType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v3.0.json#/definitions/modifiedScopeType" target="mainFrame">modifiedScopeType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v3.0.json#/definitions/modifiedCiaType" target="mainFrame">modifiedCiaType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v3.1.json#/definitions/attackVectorType" target="mainFrame">attackVectorType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v3.1.json#/definitions/attackComplexityType" target="mainFrame">attackComplexityType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v3.1.json#/definitions/privilegesRequiredType" target="mainFrame">privilegesRequiredType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v3.1.json#/definitions/userInteractionType" target="mainFrame">userInteractionType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v3.1.json#/definitions/scopeType" target="mainFrame">scopeType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v3.1.json#/definitions/ciaType" target="mainFrame">ciaType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v3.1.json#/definitions/scoreType" target="mainFrame">scoreType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v3.1.json#/definitions/severityType" target="mainFrame">severityType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v3.1.json#/definitions/exploitCodeMaturityType" target="mainFrame">exploitCodeMaturityType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v3.1.json#/definitions/remediationLevelType" target="mainFrame">remediationLevelType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v3.1.json#/definitions/confidenceType" target="mainFrame">confidenceType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v3.1.json#/definitions/ciaRequirementType" target="mainFrame">ciaRequirementType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v3.1.json#/definitions/modifiedAttackVectorType" target="mainFrame">modifiedAttackVectorType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v3.1.json#/definitions/modifiedAttackComplexityType" target="mainFrame">modifiedAttackComplexityType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v3.1.json#/definitions/modifiedPrivilegesRequiredType" target="mainFrame">modifiedPrivilegesRequiredType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v3.1.json#/definitions/modifiedUserInteractionType" target="mainFrame">modifiedUserInteractionType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v3.1.json#/definitions/modifiedScopeType" target="mainFrame">modifiedScopeType</a></b></b></div>
+                                       <div><b><b><a href="content.htmlhttps://www.first.org/cvss/cvss-v3.1.json#/definitions/modifiedCiaType" target="mainFrame">modifiedCiaType</a></b></b></div>
+                                    </div>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </td>
+                     <td class="rt_lineRight"></td>
+                  </tr>
+                  <tr>
+                     <td class="rt_cornerBottomLeft"></td>
+                     <td class="rt_lineBottom"></td>
+                     <td class="rt_cornerBottomRight"></td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+         <div style="clear:left"></div>
+      </div>
+      <div class="footer">
+         <hr>
+            <div align="center">Status: Prototype, Date: 2020-11-22</div>
+         
+      </div>
+   </body>
+</html>
